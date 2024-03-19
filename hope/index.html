@@ -3,16 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Formatted Text</title>
+    <script>
+        function formatText() {
+            var inputText = document.getElementById("inputText").value;
+            var formattedText = document.getElementById("formattedText");
+            
+            // Style 1: Bold Fraktur
+            var style1 = inputText.split('').map(function(c) {
+                return String.fromCharCode(c.charCodeAt(0) + 119951);
+            }).join('');
+            
+            // Style 2: Italic Fraktur
+            var style2 = inputText.split('').map(function(c) {
+                return String.fromCharCode(c.charCodeAt(0) + 119947);
+            }).join('');
+            
+            // Style 3: Bold Script
+            var style3 = inputText.split('').map(function(c) {
+                return String.fromCharCode(c.charCodeAt(0) + 119943);
+            }).join('');
+            
+            // Style 4: Italic Script
+            var style4 = inputText.split('').map(function(c) {
+                return String.fromCharCode(c.charCodeAt(0) + 119939);
+            }).join('');
+            
+            // Style 5: Bold Italics
+            var style5 = inputText.split('').map(function(c) {
+                return String.fromCharCode(c.charCodeAt(0) + 120017);
+            }).join('');
+            
+            // Style 6: Strikethrough
+            var style6 = inputText.split('').map(function(c) {
+                return c + '\u0333';
+            }).join('');
+            
+            formattedText.innerHTML = `
+                <ol>
+                    <li>${style1}</li>
+                    <li>${style2}</li>
+                    <li>${style3}</li>
+                    <li>${style4}</li>
+                    <li>${style5}</li>
+                    <li>${style6}</li>
+                </ol>
+            `;
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Movie Search</h1>
-        <input type="text" id="searchInput" placeholder="Enter movie name">
-        <button onclick="searchMovie()">Search</button>
-        <div id="movieResults"></div>
-    </div>
-    <script src="script.js"></script>
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText">
+    <button onclick="formatText()">Format Text</button>
+    
+    <div id="formattedText"></div>
 </body>
 </html>
