@@ -4,7 +4,10 @@ body {
     text-align: center;
 }
 
-#message {
-    font-size: 24px;
+.search-container {
     margin-top: 50px;
+}
+
+#movieDetails {
+    margin-top: 20px;
 }
