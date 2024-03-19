@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMDb Movie Search</title>
+</head>
+<body>
+
+<h1>IMDb Movie Search</h1>
+
+<form id="searchForm">
+  <label for="movieName">Enter movie name:</label><br>
+  <input type="text" id="movieName" name="movieName"><br><br>
+  <button type="submit">Search</button>
+</form>
+
+<div id="searchResults">
+  <!-- Search results will be displayed here -->
+</div>
+
+<script>
+document.getElementById("searchForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+  
+  var movieName = document.getElementById("movieName").value;
+  
+  // Construct IMDb search URL
+  var imdbSearchUrl = "https://www.imdb.com/find?q=" + encodeURIComponent(movieName) + "&s=tt&ttype=ft&ref_=fn_ft";
+  
+  // Display search results in iframe
+  document.getElementById("searchResults").innerHTML = '<iframe src="' + imdbSearchUrl + '" width="100%" height="800px"></iframe>';
+});
+</script>
+
+</body>
+</html>
