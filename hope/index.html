@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Movie Search</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="message"></div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter a movie title...">
+        <button onclick="searchMovie()">Search</button>
+    </div>
+    <div id="movieDetails"></div>
     <script src="script.js"></script>
 </body>
 </html>
