@@ -1,74 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>InstaText</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-
-    <div class="container text-center">
-      <div class="row">
-        <div class="col">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InstaText</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-7">
+        <div class="container-fluid mb-3">
+          <h1>❇️InstaText</h1>
+          <h5>Send WhatsApp message without saving the phone number.</h5>
         </div>
-        <div class="col-7">
-          <div class="container-fluid mb-3">
-            <h1>❇️InstaText</h1>
-            <h5>Send WhatsApp message without saving the phone number.</h5>
-          </div>
-          <div class="container-fluid mb-3" id="defaultwa" style="display: block;">
-            <div class="input-group flex-nowrap">
-              <span class="input-group-text" id="addon-wrapping">+91</span>
-              <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
-            </div>
-          </div>
-
-          <div class="container-fluid mb-3" id="settingsInput" style="display: none;">
-            <div class="input-group flex-nowrap">
-              <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number w/ country code without +">
-            </div>
-          </div>
-      
-          <div class="container-fluid mb-3">
-            <button type="button" class="btn btn-success" id="WAButton">WhatsApp</button>
-            <button type="button" class="btn btn-outline-danger" id="clearButton">Clear</button>
-            <button type="button" class="btn btn-outline-secondary" id="settings">⚙️ Country Code</button>
+        <div class="container-fluid mb-3" id="defaultwa" style="display: block;">
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">+91</span>
+            <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
           </div>
         </div>
-        <div class="col">
+        <div class="container-fluid mb-3" id="ccdefaultwa" style="display: none;">
+          <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" id="phoneNumberInputcc" placeholder="Enter phone number w/ country code without +">
+          </div>
+        </div>
+        <div class="container-fluid mb-3" id="defaultwabutton" style="display: block;">
+          <button type="button" class="btn btn-success" id="WAButton">WhatsApp</button>
+          <button type="button" class="btn btn-outline-danger" id="clearButton">Clear</button>
+          <button type="button" class="btn btn-outline-secondary" id="settingsCC">⚙️ Country Code</button>
+        </div>
+        <div class="container-fluid mb-3" id="ccdefaultwabutton" style="display: none;">
+          <button type="button" class="btn btn-success" id="WAButton2">WhatsApp</button>
+          <button type="button" class="btn btn-outline-primary" id="clearButtoncc">🔃 Refresh</button>
         </div>
       </div>
-
+      <div class="col"></div>
     </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    const phoneNumberInput = document.getElementById('phoneNumber');
+    const phoneNumberInputcc = document.getElementById('phoneNumberInputcc'); 
+    const WAButton = document.getElementById('WAButton');
+    const WAButton2 = document.getElementById('WAButton2'); 
+    const clearButton = document.getElementById('clearButton');
+    const clearButtoncc = document.getElementById('clearButtoncc');
+    const settingsCC = document.getElementById('settingsCC');
+
+    clearButton.addEventListener('click', () => {
+      phoneNumberInput.value = '';
+    });
+
+    clearButtoncc.addEventListener('click', () => {
+      location.reload();
+    });
+
+    settingsCC.addEventListener('click', () => {
+      defaultwa.style.display = defaultwa.style.display === 'block' ? 'none' : 'block';
+      defaultwabutton.style.display = defaultwabutton.style.display === 'block' ? 'none' : 'block';
+      ccdefaultwa.style.display = ccdefaultwa.style.display === 'none' ? 'block' : 'none'; 
+      ccdefaultwabutton.style.display = ccdefaultwabutton.style.display === 'none' ? 'block' : 'none'; 
+      phoneNumberInput.value = '';
+    });
+
+    WAButton.addEventListener('click', () => {
+      const phoneNumber = phoneNumberInput.value;
+      const formattedNumber = encodeURIComponent(phoneNumber);
+      window.location.href = `https://wa.me/91${formattedNumber}`;
+    });
+
+    WAButton2.addEventListener('click', () => { 
+      const phoneNumbercc = phoneNumberInputcc.value;
+      const formattedNumber = encodeURIComponent(phoneNumbercc);
+      window.location.href = `https://wa.me/${formattedNumber}`;
+    });
+  </script>
+   <!-- Made by TSKY -->
+   <div style="margin-top: 20px; text-align: center; color: gray;"></div>
+
+   <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">© 2024 SiddharthSky</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="https://github.com/siddharthsky">GitHub</a></li>
+      <!-- <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li> -->
+    </ul>
+  </footer>
 
 
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-      const phoneNumberInput = document.getElementById('phoneNumber');
-      const WAButton = document.getElementById('WAButton');
-      const clearButton = document.getElementById('clearButton');
-      const searchButton = document.getElementById('searchButton');
-      const settings = document.getElementById('settings');
-
-      clearButton.addEventListener('click', () => {
-        phoneNumberInput.value = '';
-      });
-
-      settings.addEventListener('click', () => {
-        defaultwa.style.display = defaultwa.style.display === 'block' ? 'none' : 'block';
-        settingsInput.style.display = settingsInput.style.display === 'none' ? 'block' : 'none';
-        
-      });
-
-      WAButton.addEventListener('click', () => {
-        const phoneNumber = phoneNumberInput.value;
-        const formattedNumber = encodeURIComponent(phoneNumber);
-        window.location.href = `https://wa.me/91${formattedNumber}`;
-      });
-
-    </script>
-  </body>
+</body>
 </html>
