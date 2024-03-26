@@ -12,22 +12,28 @@
       <div class="row">
         <div class="col">
         </div>
-        <div class="col-6">
+        <div class="col-7">
           <div class="container-fluid mb-3">
             <h1>❇️InstaText</h1>
             <h5>Send WhatsApp message without saving the phone number.</h5>
           </div>
-          <div class="container-fluid mb-3">
+          <div class="container-fluid mb-3" id="defaultwa" style="display: block;">
             <div class="input-group flex-nowrap">
               <span class="input-group-text" id="addon-wrapping">+91</span>
               <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
+            </div>
+          </div>
+
+          <div class="container-fluid mb-3" id="settingsInput" style="display: none;">
+            <div class="input-group flex-nowrap">
+              <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number w/ country code without +">
             </div>
           </div>
       
           <div class="container-fluid mb-3">
             <button type="button" class="btn btn-success" id="WAButton">WhatsApp</button>
             <button type="button" class="btn btn-outline-danger" id="clearButton">Clear</button>
-            <button type="button" class="btn btn-outline-secondary" id="settings">⚙️</button>
+            <button type="button" class="btn btn-outline-secondary" id="settings">⚙️ Country Code</button>
           </div>
         </div>
         <div class="col">
@@ -52,7 +58,9 @@
       });
 
       settings.addEventListener('click', () => {
-        phoneNumberInput.value = 'Implementation is on its way !!';
+        defaultwa.style.display = defaultwa.style.display === 'block' ? 'none' : 'block';
+        settingsInput.style.display = settingsInput.style.display === 'none' ? 'block' : 'none';
+        
       });
 
       WAButton.addEventListener('click', () => {
