@@ -26,6 +26,7 @@
             <input type="text" class="form-control" id="phoneNumberInputcc" placeholder="Enter phone number w/ country code without +">
           </div>
         </div>
+
         <div class="container-fluid mb-3" id="defaultwabutton" style="display: block;">
           <button type="button" class="btn btn-success" id="WAButton">WhatsApp</button>
           <button type="button" class="btn btn-outline-danger" id="clearButton">Clear</button>
@@ -51,6 +52,7 @@
     const settingsCC = document.getElementById('settingsCC');
 
     clearButton.addEventListener('click', () => {
+      WAalert.style.display = WAalert.style.display === 'none' ? 'block' : 'none'; 
       phoneNumberInput.value = '';
     });
 
@@ -67,18 +69,27 @@
     });
 
     WAButton.addEventListener('click', () => {
-      const phoneNumber = phoneNumberInput.value;
-      const formattedNumber = encodeURIComponent(phoneNumber);
-      window.location.href = `https://wa.me/91${formattedNumber}`;
-    });
+    const phoneNumber = phoneNumberInput.value;
+    if (!phoneNumber) {
+      alert('Please enter a phone number.');
+      return;
+    }
+    const formattedNumber = encodeURIComponent(phoneNumber);
+    window.location.href = `https://wa.me/91${formattedNumber}`;
+  });
 
-    WAButton2.addEventListener('click', () => { 
-      const phoneNumbercc = phoneNumberInputcc.value;
-      const formattedNumber = encodeURIComponent(phoneNumbercc);
-      window.location.href = `https://wa.me/${formattedNumber}`;
-    });
-  </script>
-   <!-- Made by TSKY -->
+  WAButton2.addEventListener('click', () => { 
+    const phoneNumbercc = phoneNumberInputcc.value;
+    if (!phoneNumbercc) {
+      alert('Please enter a phone number.');
+      return;
+    }
+    const formattedNumber = encodeURIComponent(phoneNumbercc);
+    window.location.href = `https://wa.me/${formattedNumber}`;
+  });
+</script>
+
+
    <div style="margin-top: 20px; text-align: center; color: gray;"></div>
 
    <footer class="my-5 pt-5 text-muted text-center text-small">
