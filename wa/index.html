@@ -69,24 +69,24 @@
     });
 
     WAButton.addEventListener('click', () => {
-    const phoneNumber = phoneNumberInput.value;
-    if (!phoneNumber) {
-      alert('Please enter a phone number.');
-      return;
-    }
-    const formattedNumber = encodeURIComponent(phoneNumber);
-    window.location.href = `https://wa.me/91${formattedNumber}`;
-  });
+      const phoneNumber = phoneNumberInput.value;
+      if (!phoneNumber) {
+        alert('Please enter a phone number.');
+        return;
+      }
+      const formattedNumber = encodeURIComponent(phoneNumber);
+      window.location.href = `https://wa.me/91${formattedNumber}`;
+    });
 
-  WAButton2.addEventListener('click', () => { 
-    const phoneNumbercc = phoneNumberInputcc.value;
-    if (!phoneNumbercc) {
-      alert('Please enter a phone number.');
-      return;
-    }
-    const formattedNumber = encodeURIComponent(phoneNumbercc);
-    window.location.href = `https://wa.me/${formattedNumber}`;
-  });
+    WAButton2.addEventListener('click', () => { 
+      const phoneNumbercc = phoneNumberInputcc.value;
+      if (!phoneNumbercc) {
+        alert('Please enter a phone number.');
+        return;
+      }
+      const formattedNumber = encodeURIComponent(phoneNumbercc);
+      window.location.href = `https://wa.me/${formattedNumber}`;
+    });
 </script>
 
 
