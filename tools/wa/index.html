@@ -88,7 +88,7 @@
 </script>
 
 <div id="footer"></div>
-<script src='../src/components/navspace.js'></script>
+<script src='../../src/components/navspace.js'></script>
 <script>
     fetch('../src/components/nav.html')
         .then(response => response.text())
@@ -100,7 +100,7 @@
             console.error('Error fetching navbar:', error);
         });
 
-    fetch('../src/components/footer.html')
+    fetch('../../src/components/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer').innerHTML = data;
