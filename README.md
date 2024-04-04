@@ -1,9 +1,9 @@
 # Sky7t Utilz
 
 
-## Whatsapp Utility: For sending message to a unsaved phone number.
+## ✳️ InstaText: Whatsapp Utility, For sending message to a unsaved phone number.
 https://sky7t.github.io/tools/wa
 
-## Linify: For formatting Linkedin post text.
+## 💼 Linify: For formatting Linkedin post text.
 https://sky7t.github.io/tools/linify
 
