@@ -1,4 +1,4 @@
-# sky7t.github.io
+# Sky7t Utilz
 
 
 ## Whatsapp Utility: For sending message to a unsaved phone number.
