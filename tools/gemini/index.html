@@ -28,41 +28,27 @@
   </div>
 </div>
 
+<div class="container mb-3 text-center">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="chat-input" placeholder="Type your message..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="send-btn">Send</button>
+      </div>      
+</div>
+
+<div class="chat-container"></div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="accordion container" id="accordionExample" style="display: none;">
+    <div class="accordion-item" >
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body" id="result_latest">
+          
+        </div>
+      </div>
+    </div>
+</div>
 
 
 
@@ -251,6 +237,53 @@ function clearApiKey() {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+
+  
+<script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    // Fetch your API_KEY
+    var savedApiKey = getSavedApiKeyFromCookies();
+    const API_KEY = savedApiKey;
+
+    // Access your API key (see "Set up your API key" above)
+    const genAI = new GoogleGenerativeAI(API_KEY);
+
+    async function generateStory(prompt) {
+        // For text-only input, use the gemini-pro model
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        return text;
+    }
+
+    document.getElementById("send-btn").addEventListener("click", async () => {
+        const prompt = document.getElementById("chat-input").value;
+        const resultText = await generateStory(prompt);
+        
+        console.log(resultText);
+        // Display the result within the accordion container
+        const resultContainer = document.getElementById("result_latest");
+        accordionExample.style.display = 'block';
+        // Convert Markdown to HTML
+        const htmlResult = marked.parse(resultText);
+
+        // Update the content of resultContainer with HTML
+        resultContainer.innerHTML = htmlResult;
+    });
+</script>
+
 
 </body>
 </html>
