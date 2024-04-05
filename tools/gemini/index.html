@@ -41,30 +41,31 @@
 
   <!-- Loading indicator using Bootstrap -->
   <div class="container mb-2 text-center">
-  <div id="loading-indicator" style="display: none;">
-    <button class="btn btn-primary mb" type="button"  disabled>
-      <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-      <span role="status">Generating...</span>
-    </button>
+    <div id="loading-indicator" style="display: none;">
+      <button class="btn btn-primary mb" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+        <span role="status">Generating...</span>
+      </button>
+    </div>
   </div>
 
-
-  <div class="accordion container " id="accordionExample" style="display: none;">
-      <div class="accordion-item mb-2" >
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-          <div class="accordion-body" id="result_latest">
-            
-          </div>
+  <!-- Accordion -->
+  <div class="accordion container mb-4" id="accordionExample" style="display: none;">
+    <div class="accordion-item mb-2">
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body" id="result_latest">    
         </div>
       </div>
-      <div class="btn-group text-right mb-2" role="group" aria-label="Basic outlined example">
-        <button type="button" onclick="copyText()" id="liveToastBtn" class="btn btn-outline-primary" data-bs-toggle="tooltip" title="Copy result">📋</button>
-      </div>
+    </div>
+    <div class="btn-group text-right mb-2" role="group" aria-label="Basic outlined example">
+      <button type="button" onclick="copyText()" id="liveToastBtn" class="btn btn-outline-primary" data-bs-toggle="tooltip" title="Copy result">📋</button>
+    </div>
   </div>
+
 
 
   <div class="toast text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex" id="liveToast">
+    <div class="d-flex">
       <div class="toast-body">
         Result has been copied to clipboard.
       </div>
@@ -273,37 +274,21 @@
 
 
 <script>
+  // Initialize the toast instance
+  const toastLiveExample = document.getElementById('liveToast');
+  const toastBootstrap = new bootstrap.Toast(toastLiveExample);
+
   function copyText() {
-    // Get the text from the element
     var textToCopy = document.getElementById("result_latest").innerText;
-    
-    // Create a textarea element to hold the text temporarily
     var textarea = document.createElement("textarea");
     textarea.value = textToCopy;
-    
-    // Append the textarea to the body
     document.body.appendChild(textarea);
-    
-    // Select the text inside the textarea
     textarea.select();
-    
-    // Copy the selected text
     document.execCommand("copy");
-    
-    // Remove the textarea from the body
     document.body.removeChild(textarea);
-    
-    // Alert the user that the text has been copied
-    // alert( textToCopy);
-    const toastTrigger = document.getElementById('liveToastBtn')
-    const toastLiveExample = document.getElementById('liveToast')
 
-    if (toastTrigger) {
-      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-      toastTrigger.addEventListener('click', () => {
-        toastBootstrap.show()
-      })
-    }
+    // Show the toast
+    toastBootstrap.show();
   }
 </script>
 
