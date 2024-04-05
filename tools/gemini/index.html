@@ -16,17 +16,18 @@
     <h5>Customized Google Gemini Pro LLM</h5>
   </div>
 
-  <div class="dropdown-center">
+  <div class="dropdown-center mb-3">
     <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       API ⚙️
     </button>
     <ul class="dropdown-menu mb-2 text-center">
-      <li><button type="button" class="btn btn-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip" title="Save API key to cookies">Add</button></li>
+      <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip" title="Save API key to cookies">Add</button></li>
+      <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()" target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li>
       <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()" data-bs-toggle="tooltip" title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show saved key</button></li>
-      <li><button type="button" class="btn btn-outline-danger mb-2" onclick="clearApiKey()" data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
+      <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()" data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
     </ul>
   </div>
-</div>
+  
 
 <div class="container mb-3 text-center">
     <div class="input-group mb-3">
@@ -37,23 +38,38 @@
 
 <div class="chat-container"></div>
 
+<!-- Loading indicator using Bootstrap -->
+<div class="container mb-2 text-center">
+<div id="loading-indicator" style="display: none;">
+  <button class="btn btn-primary mb" type="button"  disabled>
+    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+    <span role="status">Generating...</span>
+  </button>
+</div>
 
 
-
-<div class="accordion container" id="accordionExample" style="display: none;">
-    <div class="accordion-item" >
+<div class="accordion container " id="accordionExample" style="display: none;">
+    <div class="accordion-item mb-2" >
       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
         <div class="accordion-body" id="result_latest">
           
         </div>
       </div>
     </div>
+    <div class="btn-group text-right mb-2" role="group" aria-label="Basic outlined example">
+      <button type="button" onclick="copyText()" id="liveToastBtn" class="btn btn-outline-primary" data-bs-toggle="tooltip" title="Copy result">📋</button>
+    </div>
 </div>
 
 
-
-
-
+<div class="toast text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex" id="liveToast">
+    <div class="toast-body">
+      Result has been copied to clipboard.
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
 
 
 
@@ -91,63 +107,8 @@
 
 
 <div id="footer"></div>
-<!-- Modal -->
-<div class="modal fade" id="saveApiKeyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Save API Key</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="apiKeyInput" class="form-label">API Key:</label>
-            <input type="text" class="form-control" id="apiKeyInput">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="saveApiKey()">Save API Key</button>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="modals"></div>
 
-<!-- Modal -->
-<div class="modal fade" id="savedApiKeyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Saved API Key</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p id="savedApiKeyDisplay">API Key will be displayed here</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-<!-- Modal -->
-<div class="modal fade" id="clearAPIdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">API key cleared from cookies!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
     
 
 <script>
@@ -158,41 +119,33 @@
   }
 
   function saveApiKey() {
-    // Get the API key from the input
     var apiKey = document.getElementById('apiKeyInput').value;
-    // Save the API key to cookies (implementation required)
     document.cookie = "savedAPI=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
     document.getElementById("apiKeyInput").value = "";
-    // For now, let's just display the API key
     showSavedApiKey()
-    
-    // alert("API key saved to cookies: " + apiKey);
-    // Close the modal after saving
     var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
     myModal.hide();
   }
 
   function showSavedApiKey() {
-  // Retrieve the saved API key from cookies (implementation required)
-  // For now, let's assume the saved API key is stored in a variable named savedApiKey
-  var savedApiKey = getSavedApiKeyFromCookies(); // Replace this with your actual implementation
 
-  // Display the saved API key in the modal
+  var savedApiKey = getSavedApiKeyFromCookies(); 
+
+  
   document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
 
-  // Open the modal to display the saved API key
+
   var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
   myModal.show();
 }
 
-// Function to retrieve the saved API key from cookies (placeholder implementation)
 function getSavedApiKeyFromCookies() {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].trim();
         if (cookie.startsWith("savedAPI=")) {
             var savedAPI = cookie.substring("savedAPI=".length);
-            return savedAPI; // Return the saved text
+            return savedAPI; 
         }
     }
     return savedAPI = "No API key 🚫";
@@ -200,15 +153,23 @@ function getSavedApiKeyFromCookies() {
 
 
 
-function clearApiKey() {
-    // Remove the cookie by setting its expiry date to a past date
-    document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
-    myModal.show();
-
-}
-
 </script>
+
+<script>
+  function showConfirmationModal() {
+      var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      confirmationModal.show();
+  }
+
+  function clearApiKey() {
+      document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
+      myModal.show();
+  }
+</script>
+
+
+
 <script>
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
@@ -234,6 +195,15 @@ function clearApiKey() {
       .catch(error => {
           console.error('Error fetching navbar:', error);
       });
+
+  fetch('../gemini/components/modal.html')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('modals').innerHTML = data;
+      })
+      .catch(error => {
+          console.error('Error fetching navbar:', error);
+      });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -247,7 +217,6 @@ function clearApiKey() {
     }
   </script>
 
-  
 <script type="module">
     import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -259,7 +228,7 @@ function clearApiKey() {
     const genAI = new GoogleGenerativeAI(API_KEY);
 
     async function generateStory(prompt) {
-        // For text-only input, use the gemini-pro model
+        
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
         const result = await model.generateContent(prompt);
@@ -270,8 +239,18 @@ function clearApiKey() {
 
     document.getElementById("send-btn").addEventListener("click", async () => {
         const prompt = document.getElementById("chat-input").value;
+
+        // Show loading indicator
+        document.getElementById("loading-indicator").style.display = 'block';
+
+  
         const resultText = await generateStory(prompt);
-        
+        console.log(resultText);
+
+        // Hide loading indicator
+        document.getElementById("loading-indicator").style.display = 'none';
+
+ 
         console.log(resultText);
         // Display the result within the accordion container
         const resultContainer = document.getElementById("result_latest");
@@ -284,6 +263,42 @@ function clearApiKey() {
     });
 </script>
 
+
+
+<script>
+  function copyText() {
+    // Get the text from the element
+    var textToCopy = document.getElementById("result_latest").innerText;
+    
+    // Create a textarea element to hold the text temporarily
+    var textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    
+    // Append the textarea to the body
+    document.body.appendChild(textarea);
+    
+    // Select the text inside the textarea
+    textarea.select();
+    
+    // Copy the selected text
+    document.execCommand("copy");
+    
+    // Remove the textarea from the body
+    document.body.removeChild(textarea);
+    
+    // Alert the user that the text has been copied
+    // alert( textToCopy);
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+
+    if (toastTrigger) {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+      toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show()
+      })
+    }
+  }
+</script>
 
 </body>
 </html>
