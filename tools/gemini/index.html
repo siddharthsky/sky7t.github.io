@@ -209,20 +209,21 @@
   let promptgiven = "";
 
   function PromptSelector(promptNumber) {
+    
       // Set the value of input box based on the selected prompt
       switch(promptNumber) {
           case 1:
           promptgiven = document.getElementById('prompt1').value;
-          break;
+          return promptgiven;
           case 2:
           promptgiven = document.getElementById('prompt2').value;
-          break;
+          return promptgiven;
           case 3:
           promptgiven = document.getElementById('prompt3').value;
-          break;
+          return promptgiven;
           case 4:
           promptgiven = document.getElementById('prompt4').value;
-          break;
+          return promptgiven;
           default:
           promptgiven = "";
       }
@@ -329,6 +330,8 @@
       prompt4: document.getElementById('prompt4').value
     };
     savePrompts(prompts);
+    // Reload the page
+    location.reload();
   });
 </script>
 
