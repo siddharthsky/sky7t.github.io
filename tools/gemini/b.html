@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Receiver</title>
+</head>
+<body>
+    <script>
+        // Function to parse URL parameters
+        function parseParams() {
+            var params = {};
+            var paramStr = window.location.search.substring(1);
+            var paramPairs = paramStr.split('&');
+            for (var i = 0; i < paramPairs.length; i++) {
+                var pair = paramPairs[i].split('=');
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+            }
+            return params;
+        }
+
+        // Function to generate JSON and provide download link
+        function generateJSON(data) {
+            var jsonData = JSON.stringify(data, null, 2);
+            var blob = new Blob([jsonData], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // Parse URL parameters
+        var params = parseParams();
+
+        // Check if data is present
+        if (params.data) {
+            // Parse data
+            var data = JSON.parse(params.data);
+            // Generate JSON file
+            generateJSON(data);
+        } else {
+            console.log('No data found in URL parameters.');
+        }
+    </script>
+</body>
+</html>
