@@ -73,7 +73,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    <div id="footer"></div>
+    
     <script src='../../src/components/navspace.js'></script>
     <script>
         fetch('../../src/components/nav.html')
@@ -86,14 +86,6 @@
                 console.error('Error fetching navbar:', error);
             });
 
-        fetch('../../src/components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error fetching navbar:', error);
-            });
     </script>
     <script>
         fetch('../gemini/components/modal.html')
