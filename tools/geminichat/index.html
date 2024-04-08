@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>🦜 CustomGemini Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <style>
+    .chat-container {
+      height: 100vh; /* Set height to 100% viewport height */
+    }
+  </style>
+  </head>
+
+
+    
+  <body>
+    <div id="navbar"></div>
+    <div class="container mb-3 text-center">
+      <div class="container-fluid mb-3 text-center">
+        <h1>🦜CustomGemini Chat</h1>
+        <h5>Google Gemini Pro LLM with Chat Interface</h5>
+      </div>
+      <div class="dropdown-center mb-3">
+        <button class="btn btn-outline-primary" type="button" onclick="location.href='/tools/gemini'"  data-bs-toggle="tooltip" title="Back to working gemini xD">
+          ↩️
+        </button>
+        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">API ⚙️</button>
+        <ul class="dropdown-menu mb-2 text-center">
+          <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip" title="Save API key to cookies">Add</button></li>
+          <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()" target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li>
+          <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()" data-bs-toggle="tooltip" title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show saved key</button></li>
+          <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()" data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
+        </ul>
+      </div>
+    </div>
+    
+      <div class="container fixed-up ">
+        <div class="chat-container mb-4" id="chat-container"></div>
+      </div>
+      
+      <div class="fixed-bottom bg-light p-3">
+        <div class="container">
+          <div class="input-group">
+            <input type="text" id="message-input" class="form-control" placeholder="Type your message...">
+            <button id="send-btn" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div id="modals"></div>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <div id="footer"></div>
+    <script src='../../src/components/navspace.js'></script>
+    <script>
+        fetch('../../src/components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                displayRandomVariation();
+            })
+            .catch(error => {
+                console.error('Error fetching navbar:', error);
+            });
+
+        fetch('../../src/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching navbar:', error);
+            });
+    </script>
+    <script>
+        fetch('../gemini/components/modal.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('modals').innerHTML = data;
+          })
+          .catch(error => {
+            console.error('Error fetching modals:', error);
+          });
+      </script>9
+
+    <!-- Bootstrap JS and any other required scripts -->
+    <script type="importmap">
+        {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+        }
+    </script>
+
+    <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    var savedApiKey = getSavedApiKeyFromCookies();
+    const API_KEY = savedApiKey;
+    
+    const genAI = new GoogleGenerativeAI(API_KEY);
+    
+    async function run() {
+        const chatContainer = document.getElementById('chat-container');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-btn');
+    
+        sendButton.addEventListener('click', async () => {
+            const userMessage = messageInput.value.trim();
+            if (userMessage === '') return;
+    
+            appendMessage(userMessage, 'user');
+    
+            // Show loading indicator
+            appendLoadingIndicator();
+    
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    
+            const chat = model.startChat({
+                history: [
+                    {
+                        role: "user",
+                        parts: [{ text: userMessage }],
+                        
+                    },
+                    {
+                        role: "model",
+                        parts: [{ text: "Great to meet you. What would you like to know?" }],
+                    },
+                ],
+                generationConfig: {
+                    maxOutputTokens: 100,
+                },
+            });
+            console.log("User:"+userMessage);
+            //const result = await chat.sendMessage(userMessage);
+            const result = await model.generateContentStream(userMessage);
+    
+            const response = await result.response;
+            let text = '';
+            for await (const chunk of result.stream) {
+                const chunkText = chunk.text();
+                console.log(chunkText);
+                text += chunkText;
+            }
+    
+            // Convert Markdown to HTML
+            const htmlResult = marked.parse(text);
+    
+            // Hide loading indicator
+            removeLoadingIndicator();
+    
+            // Append the HTML result to the chat container
+            appendMessage(htmlResult, 'model');
+    
+            messageInput.value = ''; // Clear input field after sending
+        });
+    
+        function appendMessage(message, role) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('mb-3');
+            if (role === 'user') {
+                messageDiv.innerHTML = `<div class="text-end"><span class="badge bg-primary">You</span>: ${message}</div>`;
+            } else {
+                messageDiv.innerHTML = `<div><span class="badge bg-secondary">Bot</span>: ${message}</div>`;
+            }
+            chatContainer.appendChild(messageDiv);
+        }
+    
+        function appendLoadingIndicator() {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.classList.add('text-center', 'text-muted');
+            loadingDiv.textContent = 'Loading...';
+            chatContainer.appendChild(loadingDiv);
+        }
+    
+        function removeLoadingIndicator() {
+            const loadingDiv = chatContainer.querySelector('.text-muted');
+            if (loadingDiv) {
+                loadingDiv.remove();
+            }
+        }
+    }
+    
+    run();
+    
+    </script>
+
+<script>
+    function openModal() {
+      // Open the modal
+      var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
+      myModal.show();
+    }
+    function saveApiKey() {
+      var apiKey = document.getElementById('apiKeyInput').value;
+      document.cookie = "savedAPI=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+      document.getElementById("apiKeyInput").value = "";
+      showSavedApiKey()
+      var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
+      myModal.hide();
+      // Reload the page
+      location.reload();
+    }
+    function showSavedApiKey() {
+      var savedApiKey = getSavedApiKeyFromCookies();
+      document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
+      var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
+      myModal.show();
+    }
+    function getSavedApiKeyFromCookies() {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith("savedAPI=")) {
+          var savedAPI = cookie.substring("savedAPI=".length);
+          return savedAPI;
+        }
+      }
+      return savedAPI = "No API key 🚫";
+    }
+  
+  </script>
+
+  
+<script>
+    function showConfirmationModal() {
+      var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      confirmationModal.show();
+    }
+    function clearApiKey() {
+      document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
+      myModal.show();
+    }
+  </script>
+
+    </html>
+
