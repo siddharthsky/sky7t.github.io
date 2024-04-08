@@ -124,6 +124,16 @@
     const genAI = new GoogleGenerativeAI(API_KEY);
     
     async function run() {
+        let chatHistory = [
+      {
+        role: "user",
+        parts: [{ text: "Hi" }],
+      },
+      {
+        role: "model",
+        parts: [{ text: "Great to meet you. What would you like to know?" }],
+      },
+    ]; // Initialize chat history
         const chatContainer = document.getElementById('chat-container');
         const messageInput = document.getElementById('message-input');
         const sendButton = document.getElementById('send-btn');
@@ -133,6 +143,7 @@
             if (userMessage === '') return;
     
             appendMessage(userMessage, 'user');
+            // Update chat history
     
             // Show loading indicator
             appendLoadingIndicator();
@@ -140,24 +151,17 @@
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
             const chat = model.startChat({
-                history: [
-                    {
-                        role: "user",
-                        parts: [{ text: userMessage }],
-                        
-                    },
-                    {
-                        role: "model",
-                        parts: [{ text: "Great to meet you. What would you like to know?" }],
-                    },
-                ],
+              history: chatHistory,
                 generationConfig: {
                     maxOutputTokens: 100,
                 },
             });
+            console.log(chatHistory)
             console.log("User:"+userMessage);
             //const result = await chat.sendMessage(userMessage);
-            const result = await model.generateContentStream(userMessage);
+            const result = await chat.sendMessageStream(userMessage);
+
+            //const result = await model.generateContentStream(userMessage);
     
             const response = await result.response;
             let text = '';
@@ -175,6 +179,8 @@
     
             // Append the HTML result to the chat container
             appendMessage(htmlResult, 'model');
+            //updateChatHistory('user', userMessage);
+            //updateChatHistory('model', htmlResult); // Update chat history
     
             messageInput.value = ''; // Clear input field after sending
         });
@@ -203,8 +209,17 @@
                 loadingDiv.remove();
             }
         }
-    }
     
+        function updateChatHistory(role, message) {
+                chatHistory.push({
+                    role: role,
+                    parts: [{ text: message }]
+                });
+
+                console.log(chatHistory);
+            }
+          
+    }    
     run();
     
     </script>
