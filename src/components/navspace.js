@@ -48,7 +48,14 @@ const displayRandomVariation = () => {
     // Get the span element
     const craftedText = document.getElementById("crafted-text");
     // Set the content of the span to the randomly chosen variation
-    craftedText.textContent = randomVariation;
+    if (craftedText) { // Check if the element exists
+        craftedText.textContent = randomVariation;
+    } else {
+        console.error("Element with id 'crafted-text' not found.");
+    }
 }
+
 // Call the function to display a random variation
-displayRandomVariation();
+document.addEventListener("DOMContentLoaded", () => {
+    displayRandomVariation();
+});
