@@ -72,11 +72,14 @@
 
 
     <div class="container mb-3 text-center">
+      <form id="message-form" class="row g-3">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="chat-input" placeholder="Type your message..." aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-primary" type="button" id="send-btn">Send</button>
+        <input type="text" class="form-control" id="chat-input" placeholder="Type your message..." >
+        <button class="btn btn-primary"  type="submit" id="send-btn">Send</button>
       </div>
+    </form>
     </div>
+
     <div class="chat-container"></div>
     <!-- Loading indicator using Bootstrap -->
     <div class="container mb-2 text-center">
@@ -410,46 +413,46 @@
 </script>
 <script type="module">
   import { GoogleGenerativeAI } from "@google/generative-ai";
-  // Fetch your API_KEY
+
   var savedApiKey = getSavedApiKeyFromCookies();
   const API_KEY = savedApiKey;
-  // Access your API key (see "Set up your API key" above)
+
   const genAI = new GoogleGenerativeAI(API_KEY);
+
   async function generateStory(prompt, modelx) {
-  let model;
-  if (modelx) {
-      const generationConfig = {}; // Define your generation config here
-      console.log("here");
-      console.log(model);
-      model = genAI.getGenerativeModel({ model: "gemini-pro" }, generationConfig);
-  } else {
-      console.log("not here");
-      model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      let model;
+      if (modelx) {
+          const generationConfig = {}; // Define your generation config here
+          console.log("here");
+          console.log(model);
+          model = genAI.getGenerativeModel({ model: "gemini-pro" }, generationConfig);
+      } else {
+          console.log("not here");
+          model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      }
+
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      return text;
   }
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  return text;
-  }
-  document.getElementById("send-btn").addEventListener("click", async () => {
-      // var promptgiven = "give output in binary for this text :"
+  document.getElementById("message-form").addEventListener("submit", async (event) => {
+      event.preventDefault(); // Prevent form submission
+
       const promptinput = document.getElementById("chat-input").value;
-      const prompt = promptgiven + " " +promptinput;
+      const prompt = promptgiven + " " + promptinput;
       console.log(prompt);
       const sliderValue = document.getElementById("customRange2").value; // Get the value of the slider
       console.log(sliderValue);
 
       const modelx = {
-            stopSequences: ["red"],
-            maxOutputTokens: 10,
-            temperature: sliderValue,
-            topP: 0.1,
-            topK: 16,
-          };
-
-
-
+          stopSequences: ["red"],
+          maxOutputTokens: 10,
+          temperature: sliderValue,
+          topP: 0.1,
+          topK: 16,
+      };
 
       // Show loading indicator
       document.getElementById("loading-indicator").style.display = 'block';
