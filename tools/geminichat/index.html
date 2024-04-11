@@ -10,9 +10,13 @@
   
   <style>
     .chat-container {
-      height: 100vh; /* Set height to 100% viewport height */
+      max-height: calc(100vh - 300px); /* Adjust as needed */
+      overflow-y: auto; /* Enable vertical scrolling */
+      margin-bottom: 10px;
+      /* margin-right: 10px; */
     }
   </style>
+  
   </head>
 
 
@@ -37,8 +41,15 @@
         </ul>
       </div>
     </div>
+      <div class="container" id="apialerts" style="display: none;">
+          <div class="alert alert-warning" role="alert">
+            API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey" target="_blank" class="alert-link">API key</a> to use Google Gemini.
+          </div>
+      </div>
     
-      <div class="container fixed-up ">
+
+ 
+      <div class="container fixed-up p-3" >
         <div class="chat-container mb-4" id="chat-container"></div>
       </div>
       
@@ -51,8 +62,10 @@
               </div>
               </form>
         </div>
-    </div>
+      </div>
 
+
+  </div>
 
 
 
@@ -112,7 +125,13 @@
       // Fetch your API_KEY
       var savedApiKey = getSavedApiKeyFromCookies();
       const API_KEY = savedApiKey;
-  
+      
+      if (!API_KEY) {
+        apialerts.style.display = 'block';
+      } else {
+        apialerts.style.display = 'none';
+      }
+
       const genAI = new GoogleGenerativeAI(API_KEY);
   
       async function run() {
@@ -179,11 +198,14 @@
               const messageDiv = document.createElement('div');
               messageDiv.classList.add('mb-3');
               if (role === 'user') {
-                  messageDiv.innerHTML = `<div class="text-end"><span class="badge bg-primary">You</span>: ${message}</div>`;
+                  messageDiv.innerHTML = `<div class="text-end" style="margin-right: 10px;"><span class="badge bg-primary">You</span>: ${message}</div>`;
               } else {
                   messageDiv.innerHTML = `<div><span class="badge bg-secondary">Bot</span>: ${message}</div>`;
               }
               chatContainer.appendChild(messageDiv);
+
+              // Scroll to the bottom
+              chatContainer.scrollTop = chatContainer.scrollHeight;
           }
   
           function appendLoadingIndicator() {
@@ -245,7 +267,8 @@
           return savedAPI;
         }
       }
-      return savedAPI = "No API key 🚫";
+      return savedAPI = null;
+      // return savedAPI = "No API key 🚫";
     }
   
   </script>
@@ -260,6 +283,8 @@
       document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
       myModal.show();
+      // Reload the page
+      location.reload();
     }
   </script>
 
