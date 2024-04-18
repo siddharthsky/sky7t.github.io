@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>🧿 CustomGemini</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
   <div id="navbar"></div>
   <div class="container mb-3 text-center">
@@ -14,107 +17,125 @@
       <h5>Customized Google Gemini Pro LLM</h5>
     </div>
     <div class="dropdown-center mb-3">
-        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-          Model 🔧
-        </button>
+      <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+        aria-expanded="false" aria-controls="collapseExample1">
+        Model 🔧
+      </button>
 
-        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-          Prompt 🛠️
-        </button>
+      <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
+        aria-expanded="false" aria-controls="collapseExample2">
+        Prompt 🛠️
+      </button>
 
-      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">API ⚙️</button>
+      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">API ⚙️</button>
       <ul class="dropdown-menu mb-2 text-center">
-        <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip" title="Save API key to cookies">Add</button></li>
-        <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()" target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li>
-        <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()" data-bs-toggle="tooltip" title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show saved key</button></li>
-        <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()" data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
+        <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
+            title="Save API key to cookies">Add</button></li>
+        <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()"
+            target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li>
+        <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
+            data-bs-toggle="tooltip"
+            title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show
+            saved key</button></li>
+        <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
+            data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
       </ul>
-      <button class="btn btn-outline-primary" type="button" onclick="location.href='/tools/geminichat'"  data-bs-toggle="tooltip" title="Chat Conversation">
+      <button class="btn btn-outline-primary" type="button" onclick="location.href='/tools/geminichat'"
+        data-bs-toggle="tooltip" title="Chat Conversation">
         Chat 🦜
       </button>
     </div>
 
 
- 
- 
+
+
     <div class="collapse mb-2" id="collapseExample1">
       <div class="card card-body">
         <label for="customRange2" class="form-label">Model Temperature [0-1]</label>
-        <input type="range" class="form-range" min="0" max="1" step="0.2" id="customRange2">        
+        <input type="range" class="form-range" min="0" max="1" step="0.2" id="customRange2">
       </div>
-  </div>
+    </div>
 
 
 
-  <div class="collapse mb-2" id="collapseExample2">
-    <!-- <div class="card card-body"> -->
+    <div class="collapse mb-2" id="collapseExample2">
+      <!-- <div class="card card-body"> -->
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" onclick="PromptSelector(1)">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+          onclick="PromptSelector(1)">
         <label class="form-check-label" for="inlineRadio1">Prompt 1</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" onclick="PromptSelector(2)">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+          onclick="PromptSelector(2)">
         <label class="form-check-label" for="inlineRadio2">Prompt 2</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"  onclick="PromptSelector(3)">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"
+          onclick="PromptSelector(3)">
         <label class="form-check-label" for="inlineRadio3">Prompt 3</label>
-      </div> 
+      </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"  onclick="PromptSelector(4)">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"
+          onclick="PromptSelector(4)">
         <label class="form-check-label" for="inlineRadio3">Prompt 4</label>
-      </div> 
+      </div>
       <div class="form-check form-check-inline">
-        <button type="button" class="btn btn-outline-primary mb-2" onclick="PromptPromise()" >⚙️</button>
-      </div>     
+        <button type="button" class="btn btn-outline-primary mb-2" onclick="PromptPromise()">⚙️</button>
+      </div>
     </div>
-</div>
+  </div>
 
 
-    <div class="container mb-3 text-center">
-      <form id="message-form" class="row g-3">
+  <div class="container mb-3 text-center">
+    <form id="message-form" class="row g-3">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" id="chat-input" placeholder="Type your message..." >
-        <button class="btn btn-primary"  type="submit" id="send-btn">Send</button>
+        <input type="text" class="form-control" id="chat-input" placeholder="Type your message...">
+        <button class="btn btn-primary" type="submit" id="send-btn">Send</button>
       </div>
     </form>
-    </div>
+  </div>
 
-     <div class="container" id="apialerts" style="display: none;">
-          <div class="alert alert-warning" role="alert">
-            API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey" target="_blank" class="alert-link">API key</a> to use Google Gemini.
-          </div>
-      </div>
+  <div class="container" id="apialerts" style="display: none;">
+    <div class="alert alert-warning" role="alert">
+      API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
+        target="_blank" class="alert-link">API key</a> to use Google Gemini.
+    </div>
+  </div>
 
-    <div class="chat-container"></div>
-    <!-- Loading indicator using Bootstrap -->
-    <div class="container mb-2 text-center">
-      <div id="loading-indicator" style="display: none;">
-        <button class="btn btn-primary mb" type="button" disabled>
-          <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-          <span role="status">Generating...</span>
-        </button>
+  <div class="chat-container"></div>
+  <!-- Loading indicator using Bootstrap -->
+  <div class="container mb-2 text-center">
+    <div id="loading-indicator" style="display: none;">
+      <button class="btn btn-primary mb" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+        <span role="status">Generating...</span>
+      </button>
+    </div>
+  </div>
+  <!-- Accordion -->
+  <div class="accordion container mb-4" id="accordionExample" style="display: none;">
+    <div class="accordion-item mb-2">
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body" id="result_latest"></div>
       </div>
     </div>
-    <!-- Accordion -->
-    <div class="accordion container mb-4" id="accordionExample" style="display: none;">
-      <div class="accordion-item mb-2">
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-          <div class="accordion-body" id="result_latest"></div>
-        </div>
-      </div>
-      <div class="btn-group text-right mb-2" role="group" aria-label="Basic outlined example">
-        <button type="button" onclick="copyText()" id="liveToastBtn" class="btn btn-outline-primary" data-bs-toggle="tooltip" title="Copy result">📋</button>
-      </div>
+    <div class="btn-group text-right mb-2" role="group" aria-label="Basic outlined example">
+      <button type="button" onclick="copyText()" id="liveToastBtn" class="btn btn-outline-primary"
+        data-bs-toggle="tooltip" title="Copy result">📋</button>
     </div>
-    <div class="toast text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          Result has been copied to clipboard.
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive"
+    aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Result has been copied to clipboard.
       </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+        aria-label="Close"></button>
     </div>
+  </div>
   </div>
   <div id="footer"></div>
   <div id="modals"></div>
@@ -132,24 +153,28 @@
       <div class="modal-body">
         <p id="1">Prompt 1</p>
         <div class="input-group">
-          <textarea class="form-control" id="prompt1" placeholder="Enter Prompt 1" aria-label="With textarea"></textarea>
+          <textarea class="form-control" id="prompt1" placeholder="Enter Prompt 1"
+            aria-label="With textarea"></textarea>
         </div>
         <hr>
         <p id="2">Prompt 2</p>
         <div class="input-group">
-          <textarea class="form-control" id="prompt2" placeholder="Enter Prompt 2" aria-label="With textarea"></textarea>
+          <textarea class="form-control" id="prompt2" placeholder="Enter Prompt 2"
+            aria-label="With textarea"></textarea>
         </div>
         <hr>
 
         <p id="3">Prompt 3</p>
         <div class="input-group">
-          <textarea class="form-control" id="prompt3" placeholder="Enter Prompt 3" aria-label="With textarea"></textarea>
+          <textarea class="form-control" id="prompt3" placeholder="Enter Prompt 3"
+            aria-label="With textarea"></textarea>
         </div>
         <hr>
 
         <p id="4">Prompt 4</p>
         <div class="input-group">
-          <textarea class="form-control" id="prompt4" placeholder="Enter Prompt 4" aria-label="With textarea"></textarea>
+          <textarea class="form-control" id="prompt4" placeholder="Enter Prompt 4"
+            aria-label="With textarea"></textarea>
         </div>
         <hr>
       </div>
@@ -207,12 +232,12 @@
       }
     }
     return savedAPI = null;
-      // return savedAPI = "No API key 🚫";
+    // return savedAPI = "No API key 🚫";
   }
 
 </script>
-  
-  
+
+
 
 
 
@@ -222,25 +247,25 @@
   let promptgiven = "";
 
   function PromptSelector(promptNumber) {
-    
-      // Set the value of input box based on the selected prompt
-      switch(promptNumber) {
-          case 1:
-          promptgiven = document.getElementById('prompt1').value;
-          return promptgiven;
-          case 2:
-          promptgiven = document.getElementById('prompt2').value;
-          return promptgiven;
-          case 3:
-          promptgiven = document.getElementById('prompt3').value;
-          return promptgiven;
-          case 4:
-          promptgiven = document.getElementById('prompt4').value;
-          return promptgiven;
-          default:
-          promptgiven = "";
-      }
-      return promptgiven; // Return the value of promptgiven
+
+    // Set the value of input box based on the selected prompt
+    switch (promptNumber) {
+      case 1:
+        promptgiven = document.getElementById('prompt1').value;
+        return promptgiven;
+      case 2:
+        promptgiven = document.getElementById('prompt2').value;
+        return promptgiven;
+      case 3:
+        promptgiven = document.getElementById('prompt3').value;
+        return promptgiven;
+      case 4:
+        promptgiven = document.getElementById('prompt4').value;
+        return promptgiven;
+      default:
+        promptgiven = "";
+    }
+    return promptgiven; // Return the value of promptgiven
   }
 
   function PromptSelectorData() {
@@ -263,7 +288,7 @@
 
     // Save JSON string in cookies with SameSite=None and Secure attributes
     document.cookie = "prompts=" + promptsJSON + ";path=/;SameSite=None;Secure";
-      }
+  }
 
 
   function loadSavedPrompts() {
@@ -272,7 +297,7 @@
     var promptsJSON;
 
     // Find the prompts cookie
-    cookiesArray.forEach(function(cookie) {
+    cookiesArray.forEach(function (cookie) {
       var parts = cookie.split('=');
       if (parts[0].trim() === 'prompts') {
         promptsJSON = parts[1];
@@ -299,7 +324,7 @@
     }
 
     var reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onload = function (event) {
       try {
         var jsonData = JSON.parse(event.target.result);
         savePrompts(jsonData);
@@ -411,7 +436,8 @@
       console.error('Error fetching modals:', error);
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script type="importmap">
     {
@@ -435,51 +461,51 @@
   const genAI = new GoogleGenerativeAI(API_KEY);
 
   async function generateStory(prompt, modelx) {
-      let model;
-      if (modelx) {
-          const generationConfig = {}; // Define your generation config here
-          model = genAI.getGenerativeModel({ model: "gemini-pro" }, generationConfig);
-      } else {
-          console.log("not here");
-          model = genAI.getGenerativeModel({ model: "gemini-pro" });
-      }
+    let model;
+    if (modelx) {
+      const generationConfig = {}; // Define your generation config here
+      model = genAI.getGenerativeModel({ model: "gemini-pro" }, generationConfig);
+    } else {
+      console.log("not here");
+      model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    }
 
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      const text = response.text();
-      return text;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    return text;
   }
 
   document.getElementById("message-form").addEventListener("submit", async (event) => {
-      event.preventDefault(); // Prevent form submission
+    event.preventDefault(); // Prevent form submission
 
-      const promptinput = document.getElementById("chat-input").value;
-      const prompt = promptgiven + " " + promptinput;
-      console.log(prompt);
-      const sliderValue = document.getElementById("customRange2").value; // Get the value of the slider
-      console.log(sliderValue);
+    const promptinput = document.getElementById("chat-input").value;
+    const prompt = promptgiven + " " + promptinput;
+    console.log(prompt);
+    const sliderValue = document.getElementById("customRange2").value; // Get the value of the slider
+    console.log(sliderValue);
 
-      const modelx = {
-          stopSequences: ["red"],
-          maxOutputTokens: 10,
-          temperature: sliderValue,
-          topP: 0.1,
-          topK: 16,
-      };
+    const modelx = {
+      stopSequences: ["red"],
+      maxOutputTokens: 10,
+      temperature: sliderValue,
+      topP: 0.1,
+      topK: 16,
+    };
 
-      // Show loading indicator
-      document.getElementById("loading-indicator").style.display = 'block';
-      const resultText = await generateStory(prompt, modelx); // Pass slider value to generateStory function
-      console.log(resultText);
-      // Hide loading indicator
-      document.getElementById("loading-indicator").style.display = 'none';
-      // Display the result within the accordion container
-      const resultContainer = document.getElementById("result_latest");
-      accordionExample.style.display = 'block';
-      // Convert Markdown to HTML
-      const htmlResult = marked.parse(resultText);
-      // Update the content of resultContainer with HTML
-      resultContainer.innerHTML = htmlResult;
+    // Show loading indicator
+    document.getElementById("loading-indicator").style.display = 'block';
+    const resultText = await generateStory(prompt, modelx); // Pass slider value to generateStory function
+    console.log(resultText);
+    // Hide loading indicator
+    document.getElementById("loading-indicator").style.display = 'none';
+    // Display the result within the accordion container
+    const resultContainer = document.getElementById("result_latest");
+    accordionExample.style.display = 'block';
+    // Convert Markdown to HTML
+    const htmlResult = marked.parse(resultText);
+    // Update the content of resultContainer with HTML
+    resultContainer.innerHTML = htmlResult;
   });
 </script>
 <script>
@@ -498,4 +524,5 @@
     toastBootstrap.show();
   }
 </script>
+
 </html>
