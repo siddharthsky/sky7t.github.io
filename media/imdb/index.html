@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🍿 IMDB</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style >
+    .movie-poster {
+  width: 150px;
+  height: auto;
+  margin-top: 10px; /* Add margin-top */
+
+  .card-body {
+  margin-top: 10px;
+}
+}
+
+
+</style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="container mb-3 text-center">
+    <div class="container-fluid mb-3 text-center">
+      <h1>🍿IMDB</h1>
+      <h5>Search movie</h5>
+    </div>
+    <div class="dropdown-center mb-3">
+
+      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">API ⚙️</button>
+      <ul class="dropdown-menu mb-2 text-center">
+        <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
+            title="Save API key to cookies">Add</button></li>
+        <!-- <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()"
+            target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li> -->
+        <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
+            data-bs-toggle="tooltip"
+            title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show
+            saved key</button></li>
+        <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
+            data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
+      </ul>
+    
+    </div>
+
+
+
+
+    
+
+  <div class="container mb-3 text-center">
+    <form id="message-form" class="row g-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="movie-input" placeholder="Search IMDb...">
+        <button class="btn btn-primary" type="submit" id="send-btn">Search</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container" id="apialerts" style="display: none;">
+    <div class="alert alert-warning" role="alert">
+      API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
+        target="_blank" class="alert-link">API key</a> to use Google Gemini.
+    </div>
+  </div>
+
+  <div class="movie-container text-center mb-3">
+   
+      <!-- Dynamic content will be inserted here -->
+
+  </div>
+
+    <!-- Pagination -->
+    <nav id="pagination" style="display: none;">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#" id="prevBtn">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="nextBtn">Next</a></li>
+        </ul>
+    </nav>
+  
+  
+  <div id="footer"></div>
+  <div id="modals"></div>
+</body>
+
+
+
+<script>
+  function openModal() {
+    // Open the modal
+    var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
+    myModal.show();
+  }
+  function saveApiKey() {
+    var apiKey = document.getElementById('apiKeyInput').value;
+    document.cookie = "savedAPIomdb=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+    document.getElementById("apiKeyInput").value = "";
+    showSavedApiKey()
+    var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
+    myModal.hide();
+    // Reload the page
+    location.reload();
+  }
+  function showSavedApiKey() {
+    var savedApiKey = getSavedApiKeyFromCookies();
+    document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
+    var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
+    myModal.show();
+  }
+  function getSavedApiKeyFromCookies() {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].trim();
+      if (cookie.startsWith("savedAPIomdb=")) {
+        var savedAPI = cookie.substring("savedAPIomdb=".length);
+        return savedAPI;
+      }
+    }
+    return savedAPI = null;
+    // return savedAPI = "No API key 🚫";
+  }
+
+</script>
+
+
+
+
+
+
+
+<script>
+  function showConfirmationModal() {
+    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+    confirmationModal.show();
+  }
+  function clearApiKey() {
+    document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
+    myModal.show();
+    // Reload the page
+    location.reload();
+  }
+</script>
+
+
+
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+</script>
+
+
+
+<script src='../../src/components/navspace.js'></script>
+
+
+<script>
+  fetch('../../src/components/nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+      displayRandomVariation();
+    })
+    .catch(error => {
+      console.error('Error fetching navbar:', error);
+    });
+</script>
+<script>
+  fetch('../../src/components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error fetching footer:', error);
+    });
+  fetch('../../src/components/modal-gem.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('modals').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error fetching modals:', error);
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("message-form");
+  const chatContainer = document.querySelector(".movie-container");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const apiKey = getSavedApiKeyFromCookies(); // Get the saved API key
+    const searchText = document.getElementById("movie-input").value; // Get the search text
+
+    if (searchText && apiKey) {
+        const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
+        const apiUrl =  `http://www.omdbapi.com/?s=${searchText}&apikey=${apiKey}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data.Response === "True") {
+            displayMovies(data.Search);
+            document.getElementById('pagination').style.display = 'block';
+          } else {
+            alert("No movies found!");
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching movie data:", error);
+          alert("Error fetching movie data. Please try again.");
+        });
+    } else {
+      alert("Please enter the search text and save the API key.");
+    }
+  });
+});
+
+// Function to display movies
+function displayMovies(movies) {
+  const chatContainer = document.querySelector(".movie-container");
+  chatContainer.innerHTML = ""; // Clear previous content
+
+  let row = '<div class="row">'; // Start a new row
+  
+  movies.forEach((movie, index) => {
+    if (index > 0 && index % 3 === 0) {
+      // Close the current row and start a new one for every three movies
+      row += '</div><div class="row">';
+    }
+
+    const movieElement = `
+      <div class="col-md-4 mb-3">
+
+
+        <div class="card border-success" style="height: 22rem;">
+            <div class="card-body text-success">
+            <a href="https://www.imdb.com/title/${movie.imdbID}/parentalguide" target="_blank">
+                <img src="${movie.Poster}" alt="${movie.Title}" style="width: 175px; height: 259px; class="movie-poster"">
+            </a>
+            </div>  
+           <div class="card-footer border-success" style="font-size: 14px; font-weight: bold;">${movie.Title}</div>
+        </div>
+      </div>
+    `;
+
+    row += movieElement;
+  });
+
+  row += '</div>'; // Close the last row
+  chatContainer.insertAdjacentHTML("beforeend", row);
+}
+
+
+
+
+</script>
+
+
+<script>
+    let page = 1; // Initialize page number
+  
+    // Function to fetch movie data based on page number
+    // Function to fetch movie data based on page number
+    // Function to fetch movie data based on page number
+    function fetchMovies(apiUrl, page) {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+        if (data.Response === "True") {
+            displayMovies(data.Search);
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
+        } else {
+            alert("No movies found!");
+        }
+        })
+        .catch(error => {
+        console.error("Error fetching movie data:", error);
+        alert("Error fetching movie data. Please try again.");
+        });
+    }
+
+  
+    // Function to handle Next button click
+    document.getElementById("nextBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      page++;
+      const apiKey = getSavedApiKeyFromCookies();
+      const searchText = document.getElementById("movie-input").value;
+      const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+      fetchMovies(apiUrl);
+    });
+  
+    // Function to handle Previous button click
+    document.getElementById("prevBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      if (page > 1) {
+        page--;
+        const apiKey = getSavedApiKeyFromCookies();
+        const searchText = document.getElementById("movie-input").value;
+        const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        fetchMovies(apiUrl);
+      }
+    });
+  
+    // Initial form submission remains unchanged
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("message-form");
+      const chatContainer = document.querySelector(".movie-container");
+  
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        page = 1; // Reset page number on new search
+        const apiKey = getSavedApiKeyFromCookies();
+        const searchText = document.getElementById("movie-input").value;
+        const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        fetchMovies(apiUrl);
+      });
+    });
+  
+    // Remaining functions and scripts remain unchanged
+  </script>
+</html>
+
