@@ -74,6 +74,15 @@
       <!-- Dynamic content will be inserted here -->
 
   </div>
+
+    <!-- Pagination -->
+    <nav id="pagination" style="display: none;">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#" id="prevBtn">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#" id="nextBtn">Next</a></li>
+        </ul>
+    </nav>
+  
   
   <div id="footer"></div>
   <div id="modals"></div>
@@ -204,6 +213,7 @@
         .then(data => {
           if (data.Response === "True") {
             displayMovies(data.Search);
+            document.getElementById('pagination').style.display = 'block';
           } else {
             alert("No movies found!");
           }
@@ -257,5 +267,70 @@ function displayMovies(movies) {
 
 
 </script>
+
+
+<script>
+    let page = 1; // Initialize page number
+  
+    // Function to fetch movie data based on page number
+    // Function to fetch movie data based on page number
+    // Function to fetch movie data based on page number
+    function fetchMovies(apiUrl, page) {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+        if (data.Response === "True") {
+            displayMovies(data.Search);
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
+        } else {
+            alert("No movies found!");
+        }
+        })
+        .catch(error => {
+        console.error("Error fetching movie data:", error);
+        alert("Error fetching movie data. Please try again.");
+        });
+    }
+
+  
+    // Function to handle Next button click
+    document.getElementById("nextBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      page++;
+      const apiKey = getSavedApiKeyFromCookies();
+      const searchText = document.getElementById("movie-input").value;
+      const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+      fetchMovies(apiUrl);
+    });
+  
+    // Function to handle Previous button click
+    document.getElementById("prevBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      if (page > 1) {
+        page--;
+        const apiKey = getSavedApiKeyFromCookies();
+        const searchText = document.getElementById("movie-input").value;
+        const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        fetchMovies(apiUrl);
+      }
+    });
+  
+    // Initial form submission remains unchanged
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("message-form");
+      const chatContainer = document.querySelector(".movie-container");
+  
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        page = 1; // Reset page number on new search
+        const apiKey = getSavedApiKeyFromCookies();
+        const searchText = document.getElementById("movie-input").value;
+        const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        fetchMovies(apiUrl);
+      });
+    });
+  
+    // Remaining functions and scripts remain unchanged
+  </script>
 </html>
 
