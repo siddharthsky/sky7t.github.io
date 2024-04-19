@@ -22,5 +22,11 @@
         "description": "Google Gemini LLM with chat.",
         "ico": "🦜",
         "url": "/tools/geminichat"
+    },
+    "tool5": {
+        "name": "IMDb Searcher",
+        "description": "Search movies and webseries",
+        "ico": "🍿",
+        "url": "/media/imdb"
     }
 }
