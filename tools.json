@@ -1,0 +1,26 @@
+{
+    "tool1": {
+        "name": "InstaText",
+        "description": "Whatsapp Utility, For sending message to an unsaved phone number.",
+        "ico": "❇️",
+        "url": "/tools/wa"
+    },
+    "tool2": {
+        "name": "LiniFy",
+        "description": "For formatting Linkedin post text.",
+        "ico": "💼",
+        "url": "/tools/linify"
+    },
+    "tool3": {
+        "name": "CustGemini",
+        "description": "A Personalized Google Gemini LLM with Guided Prompts",
+        "ico": "🧿",
+        "url": "/tools/gemini"
+    },
+    "tool4": {
+        "name": "CustGeminiChat",
+        "description": "Google Gemini LLM with chat.",
+        "ico": "🦜",
+        "url": "/tools/geminichat"
+    }
+}
