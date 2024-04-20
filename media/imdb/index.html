@@ -206,7 +206,7 @@
 
     if (searchText && apiKey) {
         const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
-        const apiUrl =  `http://www.omdbapi.com/?s=${searchText}&apikey=${apiKey}`;
+        const apiUrl =  `https://www.omdbapi.com/?s=${searchText}&apikey=${apiKey}`;
 
       fetch(apiUrl)
         .then(response => response.json())
@@ -299,7 +299,7 @@ function displayMovies(movies) {
       page++;
       const apiKey = getSavedApiKeyFromCookies();
       const searchText = document.getElementById("movie-input").value;
-      const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+      const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
       fetchMovies(apiUrl);
     });
   
@@ -310,7 +310,7 @@ function displayMovies(movies) {
         page--;
         const apiKey = getSavedApiKeyFromCookies();
         const searchText = document.getElementById("movie-input").value;
-        const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
         fetchMovies(apiUrl);
       }
     });
@@ -325,7 +325,7 @@ function displayMovies(movies) {
         page = 1; // Reset page number on new search
         const apiKey = getSavedApiKeyFromCookies();
         const searchText = document.getElementById("movie-input").value;
-        const apiUrl = `http://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
         fetchMovies(apiUrl);
       });
     });
