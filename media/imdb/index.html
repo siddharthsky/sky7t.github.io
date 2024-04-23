@@ -24,25 +24,23 @@
   <div id="navbar"></div>
   <div class="container mb-3 text-center">
     <div class="container-fluid mb-3 text-center">
-      <h1>🍿IMDB</h1>
+      <h1>🍿IMDb</h1>
       <h5>Search movie</h5>
     </div>
     <div class="dropdown-center mb-3">
 
-      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+      <!-- <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
         aria-expanded="false">API ⚙️</button>
-      <ul class="dropdown-menu mb-2 text-center">
-        <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
-            title="Save API key to cookies">Add</button></li>
-        <!-- <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()"
-            target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li> -->
-        <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
+      <ul class="dropdown-menu mb-2 text-center"> -->
+        <!-- <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
+            title="Save API key to cookies">Add</button></li> -->
+        <!-- <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
             data-bs-toggle="tooltip"
             title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show
             saved key</button></li>
         <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
             data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
-      </ul>
+      </ul> -->
     </div>
 
   <div class="container mb-3 text-center">
@@ -54,12 +52,12 @@
     </form>
   </div>
 
-  <div class="container" id="apialerts" style="display: none;">
+  <!-- <div class="container" id="apialerts" style="display: none;">
     <div class="alert alert-warning" role="alert">
       API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
         target="_blank" class="alert-link">API key</a> to use IMDb Search.
     </div>
-  </div>
+  </div> -->
 
   <div class="movie-container text-center mb-3">
    
@@ -83,33 +81,34 @@
 
 
 <script>
-  function openModal() {
-    // Open the modal
-    var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
-    myModal.show();
-  }
-  function saveApiKey() {
-    var apiKey = document.getElementById('apiKeyInput').value;
-    document.cookie = "savedAPIomdb=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-    document.getElementById("apiKeyInput").value = "";
-    showSavedApiKey()
-    var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
-    myModal.hide();
-    // Reload the page
-    location.reload();
-  }
-  function showSavedApiKey() {
-    var savedApiKey = getSavedApiKeyFromCookies();
-    document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
-    var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
-    myModal.show();
-  }
+  // function openModal() {
+  //   // Open the modal
+  //   var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
+  //   myModal.show();
+  // }
+  // function saveApiKey() {
+  //   var apiKey = document.getElementById('apiKeyInput').value;
+  //   document.cookie = "savedAPIomdb=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+  //   document.getElementById("apiKeyInput").value = "";
+  //   showSavedApiKey()
+  //   var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
+  //   myModal.hide();
+  //   // Reload the page
+  //   location.reload();
+  // }
+  // function showSavedApiKey() {
+  //   var savedApiKey = getSavedApiKeyFromCookies();
+  //   document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
+  //   var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
+  //   myModal.show();
+  // }
   function getSavedApiKeyFromCookies() {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
       var cookie = cookies[i].trim();
       if (cookie.startsWith("savedAPIomdb=")) {
-        var savedAPI = cookie.substring("savedAPIomdb=".length);
+        //var savedAPI = cookie.substring("savedAPIomdb=".length);
+        var savedAPI = "9004dd77"
         return savedAPI;
       }
     }
