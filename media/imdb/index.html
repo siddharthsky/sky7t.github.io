@@ -17,8 +17,6 @@
   margin-top: 10px;
 }
 }
-
-
 </style>
 </head>
 
@@ -45,13 +43,7 @@
         <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
             data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
       </ul>
-    
     </div>
-
-
-
-
-    
 
   <div class="container mb-3 text-center">
     <form id="message-form" class="row g-3">
@@ -65,7 +57,7 @@
   <div class="container" id="apialerts" style="display: none;">
     <div class="alert alert-warning" role="alert">
       API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
-        target="_blank" class="alert-link">API key</a> to use Google Gemini.
+        target="_blank" class="alert-link">API key</a> to use IMDb Search.
     </div>
   </div>
 
@@ -74,7 +66,7 @@
       <!-- Dynamic content will be inserted here -->
 
   </div>
-
+  
     <!-- Pagination -->
     <nav id="pagination" style="display: none;">
       <ul class="pagination justify-content-center">
@@ -122,13 +114,9 @@
       }
     }
     return savedAPI = null;
-    // return savedAPI = "No API key 🚫";
   }
 
 </script>
-
-
-
 
 
 
@@ -251,6 +239,9 @@ function displayMovies(movies) {
                 <img src="${movie.Poster}" alt="${movie.Title}" style="width: 175px; height: 259px; class="movie-poster"">
             </a>
             </div>  
+            <div class="bg-transparent" style="font-size: 14px; font-weight: bold; position: absolute; top: 0; right: 0; padding: 5px;">
+              ${movie.Year}
+           </div>
            <div class="card-footer border-success" style="font-size: 14px; font-weight: bold;">${movie.Title}</div>
         </div>
       </div>
@@ -272,8 +263,6 @@ function displayMovies(movies) {
 <script>
     let page = 1; // Initialize page number
   
-    // Function to fetch movie data based on page number
-    // Function to fetch movie data based on page number
     // Function to fetch movie data based on page number
     function fetchMovies(apiUrl, page) {
     fetch(apiUrl)
@@ -330,7 +319,7 @@ function displayMovies(movies) {
       });
     });
   
-    // Remaining functions and scripts remain unchanged
+
   </script>
 </html>
 
