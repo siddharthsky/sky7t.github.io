@@ -24,84 +24,51 @@
   <div id="navbar"></div>
   <div class="container mb-3 text-center">
     <div class="container-fluid mb-3 text-center">
-      <h1>🍿IMDb</h1>
+      <h1><a href="/media/imdb/index.html" style="text-decoration: none; color: inherit;">🍿IMDB</a></h1>
       <h5>Search movie</h5>
     </div>
     <div class="dropdown-center mb-3">
-
-      <!-- <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-        aria-expanded="false">API ⚙️</button>
-      <ul class="dropdown-menu mb-2 text-center"> -->
-        <!-- <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
-            title="Save API key to cookies">Add</button></li> -->
-        <!-- <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
-            data-bs-toggle="tooltip"
-            title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show
-            saved key</button></li>
-        <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
-            data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
-      </ul> -->
+      
     </div>
-
-  <div class="container mb-3 text-center">
-    <form id="message-form" class="row g-3">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="movie-input" placeholder="Search IMDb...">
-        <button class="btn btn-primary" type="submit" id="send-btn">Search</button>
-      </div>
-    </form>
-  </div>
-
-  <!-- <div class="container" id="apialerts" style="display: none;">
-    <div class="alert alert-warning" role="alert">
-      API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
-        target="_blank" class="alert-link">API key</a> to use IMDb Search.
-    </div>
-  </div> -->
-
-  <div class="movie-container text-center mb-3">
-   
-      <!-- Dynamic content will be inserted here -->
-
-  </div>
   
+    <div class="container mb-3 text-center">
+      <form id="message-form" class="row g-3">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="movie-input" placeholder="Search IMDb...">
+          <button class="btn btn-primary" type="submit" id="send-btn">Search</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="container" id="apialerts" style="display: none;">
+      <div class="alert alert-warning" role="alert">
+        No movies found!
+      </div>
+    </div>
+  
+    <div class="movie-container text-center mb-3">
+     
+        <!-- Dynamic content will be inserted here -->
+  
+    </div>
+    
     <!-- Pagination -->
     <nav id="pagination" style="display: none;">
       <ul class="pagination justify-content-center">
         <li class="page-item"><a class="page-link" href="#" id="prevBtn">Previous</a></li>
         <li class="page-item"><a class="page-link" href="#" id="nextBtn">Next</a></li>
-        </ul>
+      </ul>
     </nav>
-  
-  
-  <div id="footer"></div>
-  <div id="modals"></div>
+    
+    <div id="footer"></div>
+    <div id="modals"></div>
+  </div>
 </body>
 
 
 
+
 <script>
-  // function openModal() {
-  //   // Open the modal
-  //   var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
-  //   myModal.show();
-  // }
-  // function saveApiKey() {
-  //   var apiKey = document.getElementById('apiKeyInput').value;
-  //   document.cookie = "savedAPIomdb=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-  //   document.getElementById("apiKeyInput").value = "";
-  //   showSavedApiKey()
-  //   var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
-  //   myModal.hide();
-  //   // Reload the page
-  //   location.reload();
-  // }
-  // function showSavedApiKey() {
-  //   var savedApiKey = getSavedApiKeyFromCookies();
-  //   document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
-  //   var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
-  //   myModal.show();
-  // }
   function getSavedApiKeyFromCookies() {
     var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
@@ -120,19 +87,6 @@
 
 
 
-<script>
-  function showConfirmationModal() {
-    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-    confirmationModal.show();
-  }
-  function clearApiKey() {
-    document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
-    myModal.show();
-    // Reload the page
-    location.reload();
-  }
-</script>
 
 
 
@@ -176,11 +130,38 @@
     });
 </script>
 
+<script>
+  function alertZ(text) {
+    // Find the apialerts div element
+    var apialertsDiv = document.getElementById("apialerts");
+  
+    // Update the content with the provided text
+    apialertsDiv.innerHTML = '<div class="alert alert-warning" role="alert">' + text + '</div>';
+  
+    // Change the display style to block
+    apialertsDiv.style.display = "block";
+  }
+
+  </script>
+
+<script>
+  function alertZreset() {
+    // Find the apialerts div element
+    var apialertsDiv = document.getElementById("apialerts");
+
+    // Change the display style to none
+    apialertsDiv.style.display = "none";
+  }
+  </script>
+  
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
+  alertZreset()
    document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("message-form");
   const chatContainer = document.querySelector(".movie-container");
@@ -202,15 +183,15 @@
             displayMovies(data.Search);
             document.getElementById('pagination').style.display = 'block';
           } else {
-            alert("No movies found!");
+            alertZ("No movies found!");
           }
         })
         .catch(error => {
           console.error("Error fetching movie data:", error);
-          alert("Error fetching movie data. Please try again.");
+          alertZ("Error fetching movie data. Please try again.");
         });
     } else {
-      alert("Please enter the search text and save the API key.");
+      alertZ("Please enter the search text and save the API key.");
     }
   });
 });
@@ -220,6 +201,7 @@ let apiKey;
 
 // Function to fetch and display movies or series
 function displayMovies(movies) {
+  alertZreset()
   const chatContainer = document.querySelector(".movie-container");
   chatContainer.innerHTML = ""; // Clear previous content
 
@@ -261,6 +243,7 @@ function displayMovies(movies) {
 
 // Function to fetch and display seasons for a series
 function displaySeasons(imdbID) {
+  alertZreset()
   fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`)
     .then(response => response.json())
     .then(data => {
@@ -282,7 +265,7 @@ function displaySeasons(imdbID) {
     })
     .catch(error => {
       console.error("Error fetching series data:", error);
-      alert("Error fetching series data. Please try again.");
+      alertZ("Error fetching series data. Please try again.");
     });
 }
 
@@ -290,6 +273,7 @@ function displaySeasons(imdbID) {
 // Function to fetch and display episodes for a specific season
 // Function to fetch and display episodes for a specific season
 function displayEpisodes(imdbID, seasonNumber) {
+  alertZreset()
   fetch(`https://www.omdbapi.com/?i=${imdbID}&Season=${seasonNumber}&apikey=${apiKey}`)
     .then(response => response.json())
     .then(data => {
@@ -348,7 +332,7 @@ function displayEpisodes(imdbID, seasonNumber) {
     })
     .catch(error => {
       console.error("Error fetching episodes:", error);
-      alert("Error fetching episodes. Please try again.");
+      alertZ("Error fetching episodes. Please try again.");
     });
 }
 
@@ -386,12 +370,12 @@ document.querySelector('.movie-container').addEventListener('click', function(ev
           displayMovies(data.Search);
           document.getElementById('pagination').style.display = 'block';
         } else {
-          alert("No movies found!");
+          alertZ("No movies found!");
         }
       })
       .catch(error => {
         console.error("Error fetching movie data:", error);
-        alert("Error fetching movie data. Please try again.");
+        alertZ("Error fetching movie data. Please try again.");
       });
   }
 });
@@ -414,15 +398,15 @@ document.getElementById("message-form").addEventListener("submit", function(even
           displayMovies(data.Search);
           document.getElementById('pagination').style.display = 'block';
         } else {
-          alert("No movies found!");
+          alertZ("No movies found!");
         }
       })
       .catch(error => {
         console.error("Error fetching movie data:", error);
-        alert("Error fetching movie data. Please try again.");
+        alertZ("Error fetching movie data. Please try again.");
       });
   } else {
-    alert("Please enter the search text and save the API key.");
+    alertZ("Please enter the search text and save the API key.");
   }
 });
 
@@ -438,6 +422,7 @@ document.getElementById("message-form").addEventListener("submit", function(even
 
 
 <script>
+  alertZreset()
     let page = 1; // Initialize page number
   
     // Function to fetch movie data based on page number
@@ -449,12 +434,12 @@ document.getElementById("message-form").addEventListener("submit", function(even
             displayMovies(data.Search);
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
         } else {
-            alert("No movies found!");
+          alertZ("No movies found!");
         }
         })
         .catch(error => {
         console.error("Error fetching movie data:", error);
-        alert("Error fetching movie data. Please try again.");
+        alertZ("Error fetching movie data. Please try again.");
         });
     }
 
