@@ -217,42 +217,220 @@
 });
 
 // Function to display movies
+let apiKey;
+
+// Function to fetch and display movies or series
 function displayMovies(movies) {
   const chatContainer = document.querySelector(".movie-container");
   chatContainer.innerHTML = ""; // Clear previous content
 
   let row = '<div class="row">'; // Start a new row
-  
+
   movies.forEach((movie, index) => {
     if (index > 0 && index % 3 === 0) {
       // Close the current row and start a new one for every three movies
       row += '</div><div class="row">';
     }
 
-    const movieElement = `
+    let movieElement = `
       <div class="col-md-4 mb-3">
-
-
         <div class="card border-success" style="height: 22rem;">
-            <div class="card-body text-success">
+          <div class="card-body text-success">
             <a href="https://www.imdb.com/title/${movie.imdbID}/parentalguide" target="_blank">
-                <img src="${movie.Poster}" alt="${movie.Title}" style="width: 175px; height: 259px; class="movie-poster"">
+              <img src="${movie.Poster}" alt="${movie.Title}" style="width: 175px; height: 259px;" class="movie-poster">
             </a>
-            </div>  
             <div class="bg-transparent" style="font-size: 14px; font-weight: bold; position: absolute; top: 0; right: 0; padding: 5px;">
               ${movie.Year}
-           </div>
-           <div class="card-footer border-success" style="font-size: 14px; font-weight: bold;">${movie.Title}</div>
+            </div>
+          </div>
+          <div class="card-footer border-success" style="font-size: 14px; font-weight: bold;">
+            ${movie.Title} - ${movie.Type}
+            ${movie.Type === 'series' ? `<button class="btn btn-primary btn-sm float-end" onclick="displaySeasons('${movie.imdbID}')">Seasons</button>` : ''}
+          </div>
         </div>
       </div>
     `;
+
+
 
     row += movieElement;
   });
 
   row += '</div>'; // Close the last row
-  chatContainer.insertAdjacentHTML("beforeend", row);
+  chatContainer.innerHTML = row;
 }
+
+// Function to fetch and display seasons for a series
+function displaySeasons(imdbID) {
+  fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      const seasons = data.totalSeasons;
+      let seasonButtons = '';
+
+      for (let i = 1; i <= seasons; i++) {
+        seasonButtons += `
+          <button class="btn btn-primary season-btn" data-imdbID="${imdbID}" data-season="${i}">Season ${i}</button>
+        `;
+      }
+
+      // Add back button with spacing
+      seasonButtons += `
+        <button class="btn btn-secondary back-btn ">Back</button>
+      `;
+
+      document.querySelector('.movie-container').innerHTML = seasonButtons;
+    })
+    .catch(error => {
+      console.error("Error fetching series data:", error);
+      alert("Error fetching series data. Please try again.");
+    });
+}
+
+
+// Function to fetch and display episodes for a specific season
+// Function to fetch and display episodes for a specific season
+function displayEpisodes(imdbID, seasonNumber) {
+  fetch(`https://www.omdbapi.com/?i=${imdbID}&Season=${seasonNumber}&apikey=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      const episodes = data.Episodes;
+      let episodePromises = []; // Array to store episode fetch promises
+
+      episodes.forEach(episode => {
+        const promise = fetch(`https://www.omdbapi.com/?i=${episode.imdbID}&apikey=${apiKey}`)
+          .then(response => response.json())
+          .then(episodeData => episodeData);
+        
+        episodePromises.push(promise);
+      });
+
+      // Wait for all episode fetch promises to complete
+      return Promise.all(episodePromises);
+    })
+    .then(episodesData => {
+      let episodeCards = `
+        <div class="text-center mb-3">
+          <button class="btn btn-primary" onclick="displaySeasons('${imdbID}')">Back to Seasons</button>
+        </div>
+        <div class="row">`; // Start a new row for episodes
+
+      episodesData.forEach(episodeData => {
+        episodeCards += `
+          <div class="col-md-4 mb-3">
+            <div class="card border-success" style="height: 22rem;">
+              <div class="card-body text-success">
+                <a href="https://www.imdb.com/title/${episodeData.imdbID}/parentalguide" target="_blank">
+                  <img src="${episodeData.Poster}" alt="${episodeData.Title}" style="width: 260px; height: 259px;" class="movie-poster">
+                </a>
+                <div class="bg-transparent" style="font-size: 14px; font-weight: bold; position: absolute; top: 0; right: 0; padding: 5px;">
+                  Episode ${episodeData.Episode}
+                </div>
+              </div>
+              <div class="card-footer border-success" style="font-size: 14px; font-weight: bold;">${episodeData.Title} - Rated [${episodeData.Rated}]</div>
+            </div>
+          </div>
+        `;
+
+        // Check if three episodes have been added to the row
+        if ((episodesData.indexOf(episodeData) + 1) % 3 === 0) {
+          episodeCards += '</div><div class="row">'; // Close the current row and start a new one
+        }
+      });
+
+      episodeCards += `
+        </div>
+        <div class="text-center mt-3">
+          <button class="btn btn-primary" onclick="displaySeasons('${imdbID}')">Back to Seasons</button>
+        </div>
+      `; // Close the last row and add back button at the bottom
+
+      document.querySelector('.movie-container').innerHTML = episodeCards;
+    })
+    .catch(error => {
+      console.error("Error fetching episodes:", error);
+      alert("Error fetching episodes. Please try again.");
+    });
+}
+
+
+
+
+
+// Event listener for movie-container
+document.querySelector('.movie-container').addEventListener('click', function(event) {
+  const target = event.target;
+
+  // Check if the clicked item is a series
+  if (target.closest('.card-footer') && target.closest('.card-footer').textContent.includes('series')) {
+    const imdbID = target.closest('.card').querySelector('a').href.split('/')[4]; // Extract IMDb ID from the anchor link
+    displaySeasons(imdbID);
+  }
+  
+  // Check if the clicked item is a season button
+  if (target.classList.contains('season-btn')) {
+    const imdbID = target.getAttribute('data-imdbID');
+    const seasonNumber = target.getAttribute('data-season');
+    displayEpisodes(imdbID, seasonNumber);
+  }
+
+  // Check if the clicked item is a back button
+  if (target.classList.contains('back-btn')) {
+    const searchText = document.getElementById("movie-input").value; // Get the search text
+    const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
+    const apiUrl = `https://www.omdbapi.com/?s=${encodedSearchText}&apikey=${apiKey}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        if (data.Response === "True") {
+          displayMovies(data.Search);
+          document.getElementById('pagination').style.display = 'block';
+        } else {
+          alert("No movies found!");
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching movie data:", error);
+        alert("Error fetching movie data. Please try again.");
+      });
+  }
+});
+
+// Function to handle form submission
+document.getElementById("message-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  apiKey = getSavedApiKeyFromCookies(); // Get the saved API key
+  const searchText = document.getElementById("movie-input").value; // Get the search text
+
+  if (searchText && apiKey) {
+    const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
+    const apiUrl = `https://www.omdbapi.com/?s=${encodedSearchText}&apikey=${apiKey}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        if (data.Response === "True") {
+          displayMovies(data.Search);
+          document.getElementById('pagination').style.display = 'block';
+        } else {
+          alert("No movies found!");
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching movie data:", error);
+        alert("Error fetching movie data. Please try again.");
+      });
+  } else {
+    alert("Please enter the search text and save the API key.");
+  }
+});
+
+
+
+
+
 
 
 
