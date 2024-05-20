@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +11,40 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: rainbow 5s ease infinite;
+        }
+
+        .rainbow-link {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: normal;
+            transition: color 0.3s ease;
+        }
+
+        .rainbow-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 400% 100%;
+            animation: rainbow 5s ease infinite;
+            transition: width 0.3s ease;
+        }
+
+        .rainbow-link:hover::after {
+            width: 100%;
+        }
+
+        .rainbow-link:hover {
+            color: #fff;
+        }
+
+        /* Make the "by" text transparent/faded to 60% */
+        .by-text {
+            opacity: 0.6;
         }
 
         @keyframes rainbow {
@@ -24,17 +60,11 @@
         }
     </style>
 </head>
-
 <body>
 
-<footer class="my-5 pt-5 text-muted text-center text-small rainbow-text">     
-    <p class="mb-1 rainbow-text">© 2024 SiddharthSky⚡</p>     
-    <ul class="list-inline">       
-        <li class="list-inline-item"><a href="https://github.com/siddharthsky" class="rainbow-text">GitHub</a></li>       
-        <!-- <li class="list-inline-item"><a href="#">Terms</a></li>       
-        <li class="list-inline-item"><a href="#">Support</a></li> -->     
-    </ul> 
+<footer class="my-5 pt-5 text-muted text-center text-small">  
+    <p class="mb-1 by-text">@ <a href="https://github.com/siddharthsky" class="rainbow-text rainbow-link">SiddharthSky⚡</a></p>     
 </footer>
 
 </body>
-
+</html>
