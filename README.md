@@ -12,7 +12,7 @@ https://sky7t.github.io/tools/wa
 ## 💼 Linify: For formatting Linkedin post text.
 https://sky7t.github.io/tools/linify
 
-## 💼 IMDb Parental Guide Search: An interactive web app for searching movies and TV series, providing direct access to parental guide details. 
+## 🍿 IMDb Parental Guide Search: An interactive web app for searching movies and TV series, providing direct access to parental guide details. 
 https://sky7t.github.io/media/imdb
 
 
