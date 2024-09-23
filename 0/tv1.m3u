@@ -6,9 +6,9 @@ http://localhost:5001/live/612.m3u8
 #EXTINF:-1 tvg-id=617 tvg-name="TV9 Marathi" tvg-logo="http://localhost:5001/jtvimage/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="News" group-title="Marathi", TV9 Marathi
 http://localhost:5001/live/617.m3u8
 #EXTINF:-1 tvg-id=445 tvg-name="Zee Marathi" tvg-logo="http://localhost:5001/jtvimage/Zee_Marathi.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Zee Marathi
-http://localhost:5001/live/445.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeemarathi1/default/master.m3u8
 #EXTINF:-1 tvg-id=1360 tvg-name="Zee Marathi HD" tvg-logo="http://localhost:5001/jtvimage/Zee_Marathi_HD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Zee Marathi HD
-http://localhost:5001/live/1360.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeemarathihd1/default/master.m3u8
 #EXTINF:-1 tvg-id=1326 tvg-name="Colors Marathi" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_SD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Colors Marathi
 http://localhost:5001/live/1326.m3u8
 #EXTINF:-1 tvg-id=755 tvg-name="Colors Marathi HD" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_HD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Colors Marathi HD
@@ -18,9 +18,9 @@ https://dai.google.com/linear/hls/event/I2phC6tgTDuJngxw9gJgPw/master.m3u8
 #EXTINF:-1 tvg-id=414 tvg-name="Zee Yuva" tvg-logo="http://localhost:5001/jtvimage/Zee_Yuva.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Zee Yuva
 http://localhost:5001/live/414.m3u8
 #EXTINF:-1 tvg-id=153 tvg-name="Zee Talkies" tvg-logo="http://localhost:5001/jtvimage/Zee_Talkies.png" tvg-language="Marathi" tvg-type="Movies" group-title="Marathi", Zee Talkies
-http://localhost:5001/live/153.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetalkies1/default/master.m3u8
 #EXTINF:-1 tvg-id=1358 tvg-name="Zee Talkies HD " tvg-logo="http://localhost:5001/jtvimage/Zee_Talkies_HD.png" tvg-language="Marathi" tvg-type="Movies" group-title="Marathi", Zee Talkies HD 
-http://localhost:5001/live/1358.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeetalkieshd1/default/master.m3u8
 #EXTINF:-1 tvg-id=738 tvg-name="Fakt Marathi" tvg-logo="http://localhost:5001/jtvimage/Fakt_Marathi.png" tvg-language="Marathi" tvg-type="Movies" group-title="Marathi", Fakt Marathi
 http://localhost:5001/live/738.m3u8
 #EXTINF:-1 tvg-id=2758 tvg-name="Zee Chitramandir" tvg-logo="http://localhost:5001/jtvimage/Zee_Chitramandir.png" tvg-language="Marathi" tvg-type="Movies" group-title="Marathi", Zee Chitramandir
@@ -94,9 +94,9 @@ http://localhost:5001/live/1319.m3u8
 
 
 #EXTINF:-1 tvg-id=484 tvg-name="Zee Cinema" tvg-logo="http://localhost:5001/jtvimage/Zee_Cinema.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Zee Cinema
-http://localhost:5001/live/484.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeecinema1/default/master.m3u8
 #EXTINF:-1 tvg-id=165 tvg-name="Zee Cinema HD" tvg-logo="http://localhost:5001/jtvimage/Zee_Cinema_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Zee Cinema HD
-http://localhost:5001/live/165.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeecinemahd1/default/master.m3u8
 #EXTINF:-1 tvg-id=289 tvg-name="Sony Max" tvg-logo="http://localhost:5001/jtvimage/Sony_Max_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Sony Max
 https://dai.google.com/linear/hls/event/Oc1isQAET3WaNPoABfScmg/master.m3u8
 #EXTINF:-1 tvg-id=476 tvg-name="Sony Max HD" tvg-logo="http://localhost:5001/jtvimage/Sony_Max_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Sony Max HD
@@ -104,9 +104,9 @@ https://dai.google.com/linear/hls/event/UcjHNJmCQ1WRlGKlZm73QA/master.m3u8
 #EXTINF:-1 tvg-id=483 tvg-name="Sony MAX2" tvg-logo="http://localhost:5001/jtvimage/Sony_MAX2.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Sony MAX2
 https://dai.google.com/linear/hls/event/MdQ5Zy-PSraOccXu8jflCg/master.m3u8
 #EXTINF:-1 tvg-id=1839 tvg-name="And Pictures" tvg-logo="http://localhost:5001/jtvimage/And_Pictures.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", And Pictures
-http://localhost:5001/live/1839.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Andpictures1/default/master.m3u8
 #EXTINF:-1 tvg-id=185 tvg-name="And Pictures HD" tvg-logo="http://localhost:5001/jtvimage/And_Pictures_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", And Pictures HD
-http://localhost:5001/live/185.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Andpictureshd1/default/master.m3u8
 #EXTINF:-1 tvg-id=482 tvg-name="Colors Cineplex" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Colors Cineplex
 http://localhost:5001/live/482.m3u8
 #EXTINF:-1 tvg-id=1477 tvg-name="Colors Cineplex HD" tvg-logo="http://localhost:5001/jtvimage/Color_Cineplex_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Colors Cineplex HD
@@ -116,13 +116,13 @@ http://localhost:5001/live/1450.m3u8
 #EXTINF:-1 tvg-id=1763 tvg-name="Colors Cineplex Bollywood" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Colors Cineplex Bollywood
 http://localhost:5001/live/1763.m3u8
 #EXTINF:-1 tvg-id=487 tvg-name="Zee Bollywood" tvg-logo="http://localhost:5001/jtvimage/Zee_Classic.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Zee Bollywood
-http://localhost:5001/live/487.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeebollywood1/default/master.m3u8
 #EXTINF:-1 tvg-id=488 tvg-name="Zee Action" tvg-logo="http://localhost:5001/jtvimage/Zee_Action.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Zee Action
-http://localhost:5001/live/488.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeeaction1/default/master.m3u8
 #EXTINF:-1 tvg-id=1691 tvg-name="Zee Classic" tvg-logo="http://localhost:5001/jtvimage/Zee_Classic_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Zee Classic
 http://localhost:5001/live/1691.m3u8
 #EXTINF:-1 tvg-id=415 tvg-name="Zee Anmol Cinema" tvg-logo="http://localhost:5001/jtvimage/Zee_Anmol_Cinema.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", Zee Anmol Cinema
-http://localhost:5001/live/415.m3u8
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Zeeanmolcinema1/default/master.m3u8
 #EXTINF:-1 tvg-id=182 tvg-name="B4U Movies" tvg-logo="http://localhost:5001/jtvimage/B4U_Movies.png" tvg-language="Hindi" tvg-type="Movies" group-title="Movies", B4U Movies
 http://localhost:5001/live/182.m3u8
 #EXTINF:-1 tvg-id=1349 tvg-name="And Prive HD" tvg-logo="http://localhost:5001/jtvimage/And_Prive_HD.png" tvg-language="English" tvg-type="Movies" group-title="Movies", And Prive HD
