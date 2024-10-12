@@ -1,139 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta tags for character set and viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Title and Bootstrap CSS -->
   <title>❇️ InstaText</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
   
-<!-- Navbar placeholder -->
 <div id="navbar"></div>
 
-<!-- Main content container -->
 <div class="container mb-3 text-center">
+  <h1>❇️ InstaText</h1>
+  <h5>Send WhatsApp message without saving the phone number.</h5>
   
-  <!-- Title and description -->
-  <div class="container-fluid mb-3 text-center">
-    <h1>❇️InstaText</h1>
-    <h5>Send WhatsApp message without saving the phone number.</h5>
-  </div>
-  
-  <!-- Phone number input with country code -->
-  <div class="container-fluid mb-3" id="defaultwa" style="display: block;">
+  <div class="container-fluid mb-3" id="phoneInputContainer">
     <div class="input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">+91</span>
-      <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
-    </div>
-  </div>
-  
-  <!-- Phone number input without country code -->
-  <div class="container-fluid mb-3" id="ccdefaultwa" style="display: none;">
-    <div class="input-group flex-nowrap">
-      <input type="text" class="form-control" id="phoneNumberInputcc" placeholder="Enter phone number w/ country code without +">
+      <span class="input-group-text" id="countryCode">+91</span>
+      <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
     </div>
   </div>
 
-  <!-- Buttons for actions -->
-  <div class="container-fluid mb-3 text-center" id="defaultwabutton" style="display: block;">
+  <div class="container-fluid mb-3" id="ccInputContainer" style="display: none;">
+    <div class="input-group flex-nowrap">
+      <input type="tel" class="form-control" id="phoneNumberInputcc" placeholder="Enter phone number w/ country code without +">
+    </div>
+  </div>
+
+  <div class="container-fluid mb-3 text-center" id="buttonContainer">
     <button type="button" class="btn btn-success" id="WAButton">WhatsApp</button>
     <button type="button" class="btn btn-outline-danger" id="clearButton">Clear</button>
     <button type="button" class="btn btn-outline-secondary" id="settingsCC">⚙️ Country Code</button>
   </div>
-  
-  <!-- Buttons for actions without country code -->
-  <div class="container-fluid mb-3 text-center" id="ccdefaultwabutton" style="display: none;">
-    <button type="button" class="btn btn-success" id="WAButton2">WhatsApp</button>
-    <button type="button" class="btn btn-outline-primary" id="clearButtoncc">🔃 Refresh</button>
-  </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-<!-- JavaScript code for functionality -->
 <script>
-  // Variables for DOM elements
   const phoneNumberInput = document.getElementById('phoneNumber');
   const phoneNumberInputcc = document.getElementById('phoneNumberInputcc'); 
   const WAButton = document.getElementById('WAButton');
-  const WAButton2 = document.getElementById('WAButton2'); 
   const clearButton = document.getElementById('clearButton');
-  const clearButtoncc = document.getElementById('clearButtoncc');
   const settingsCC = document.getElementById('settingsCC');
+  const phoneInputContainer = document.getElementById('phoneInputContainer');
+  const ccInputContainer = document.getElementById('ccInputContainer');
 
-  // Clear button for default phone number input
   clearButton.addEventListener('click', () => {
     phoneNumberInput.value = '';
+    phoneNumberInputcc.value = '';
   });
 
-  // Clear button for phone number input with country code
-  clearButtoncc.addEventListener('click', () => {
-    location.reload();
-  });
-
-  // Toggle between phone number inputs with and without country code
   settingsCC.addEventListener('click', () => {
-    defaultwa.style.display = defaultwa.style.display === 'block' ? 'none' : 'block';
-    defaultwabutton.style.display = defaultwabutton.style.display === 'block' ? 'none' : 'block';
-    ccdefaultwa.style.display = ccdefaultwa.style.display === 'none' ? 'block' : 'none'; 
-    ccdefaultwabutton.style.display = ccdefaultwabutton.style.display === 'none' ? 'block' : 'none'; 
-    phoneNumberInput.value = '';
+    const isDefault = phoneInputContainer.style.display !== 'none';
+    phoneInputContainer.style.display = isDefault ? 'none' : 'block';
+    ccInputContainer.style.display = isDefault ? 'block' : 'none';
   });
 
-  // WhatsApp button action for default phone number input
-  WAButton.addEventListener('click', () => {
-    const phoneNumber = phoneNumberInput.value;
+  const sendWhatsAppMessage = (phoneNumber) => {
     if (!phoneNumber) {
       alert('Please enter a phone number.');
       return;
     }
     const formattedNumber = encodeURIComponent(phoneNumber);
-    window.location.href = `https://wa.me/91${formattedNumber}`;
-  });
+    window.location.href = `https://wa.me/${formattedNumber.startsWith('+') ? '' : '91'}${formattedNumber}`;
+  };
 
-  // WhatsApp button action for phone number input with country code
-  WAButton2.addEventListener('click', () => { 
-    const phoneNumbercc = phoneNumberInputcc.value;
-    if (!phoneNumbercc) {
-      alert('Please enter a phone number.');
-      return;
-    }
-    const formattedNumber = encodeURIComponent(phoneNumbercc);
-    window.location.href = `https://wa.me/${formattedNumber}`;
-  });
+  WAButton.addEventListener('click', () => sendWhatsAppMessage(phoneNumberInput.value));
+  document.getElementById('WAButton2').addEventListener('click', () => sendWhatsAppMessage(phoneNumberInputcc.value));
+
+  // Fetch navbar and footer
+  const fetchComponent = (url, elementId) => {
+    fetch(url)
+      .then(response => response.text())
+      .then(data => document.getElementById(elementId).innerHTML = data)
+      .catch(error => console.error(`Error fetching ${elementId}:`, error));
+  };
+
+  fetchComponent('../../src/components/nav.html', 'navbar');
+  fetchComponent('../../src/components/footer.html', 'footer');
 </script>
 
-<!-- Footer placeholder -->
 <div id="footer"></div>
-
-<!-- External scripts for navbar and footer -->
-<script src='../../src/components/navspace.js'></script>
-<script>
-  // Fetch and display navbar
-  fetch('../../src/components/nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-      displayRandomVariation();
-    })
-    .catch(error => {
-      console.error('Error fetching navbar:', error);
-    });
-
-  // Fetch and display footer
-  fetch('../../src/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching footer:', error);
-    });
-</script>
-
+</body>
 </html>
