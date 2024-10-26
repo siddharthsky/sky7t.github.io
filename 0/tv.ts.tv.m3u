@@ -34,8 +34,6 @@ http://localhost:5001/live/1452.m3u8
 http://localhost:5001/live/695.m3u8
 #EXTINF:-1 tvg-id="ts217" tvg-name="Sangeet Marathi" tvg-logo="http://localhost:5001/jtvimage/Sangeet_Marathi.png" tvg-language="Marathi" tvg-type="Music" group-title="Marathi", Sangeet Marathi
 http://localhost:5001/live/735.m3u8
-#EXTINF:-1 tvg-id=736 tvg-name="Maiboli" tvg-logo="http://192.168.1.21:5008/jtvimage/Maiboli.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Entertainment", Maiboli
-http://localhost:5001/live/736.m3u8
 #EXTINF:-1 tvg-id="441" tvg-name="9x Jhakaas" tvg-logo="http://localhost:5001/jtvimage/9x_Jhakaas.png" tvg-language="Marathi" tvg-type="Music" group-title="Marathi", 9x Jhakaas
 http://localhost:5001/live/441.m3u8
 #EXTINF:-1 tvg-id="ts546" tvg-name="Saam Tv" tvg-logo="http://localhost:5001/jtvimage/Saam_Tv.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Saam Tv
@@ -51,11 +49,28 @@ http://localhost:5001/live/442.m3u8
 #EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://192.168.1.21:5008/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="News" group-title="News", NDTV Marathi
 http://localhost:5001/live/3095.m3u8
 
-
-
-
-
-
+#EXTINF:-1 tvg-id=1159 tvg-name="Tulja Bhavani" tvg-logo="http://192.168.1.21:5008/jtvimage/Tulja_Bhavani.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Tulja Bhavani
+http://localhost:5001/live/1159.m3u8
+#EXTINF:-1 tvg-id=1223 tvg-name="Dagdusheth Ganpati - Pune" tvg-logo="http://192.168.1.21:5008/jtvimage/Dagdusheth_Pune.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Dagdusheth Ganpati - Pune
+http://localhost:5001/live/1223.m3u8
+#EXTINF:-1 tvg-id=1420 tvg-name="Ashtavinayak Ranjangaon" tvg-logo="http://192.168.1.21:5008/jtvimage/Ashtavinayak_Ranjangaon.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Ashtavinayak Ranjangaon
+http://localhost:5001/live/1420.m3u8
+#EXTINF:-1 tvg-id=1412 tvg-name="Shani Shingnapur" tvg-logo="http://192.168.1.21:5008/jtvimage/Shani_Shingnapur.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Shani Shingnapur
+http://localhost:5001/live/1412.m3u8
+#EXTINF:-1 tvg-id=1419 tvg-name="Iskon Girgaon" tvg-logo="http://192.168.1.21:5008/jtvimage/Iskon_Girgaon.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Iskon Girgaon
+http://localhost:5001/live/1419.m3u8
+#EXTINF:-1 tvg-id=1422 tvg-name="Mahalaxmi Mumbai" tvg-logo="http://192.168.1.21:5008/jtvimage/Mahalaxmi_Mumbai.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Mahalaxmi Mumbai
+http://localhost:5001/live/1422.m3u8
+#EXTINF:-1 tvg-id=1423 tvg-name="Babulnaath Mumbai" tvg-logo="http://192.168.1.21:5008/jtvimage/Babulnaath_Mumbai.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Babulnaath Mumbai
+http://localhost:5001/live/1423.m3u8
+#EXTINF:-1 tvg-id=1424 tvg-name="Mumbadevi Mumbai" tvg-logo="http://192.168.1.21:5008/jtvimage/Mumbadevi_Mumbai.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Mumbadevi Mumbai
+http://localhost:5001/live/1424.m3u8
+#EXTINF:-1 tvg-id=1705 tvg-name="Shri Hingulambika Devi Temple" tvg-logo="http://192.168.1.21:5008/jtvimage/Shri_Hingulambika_Devi_Temple.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Shri Hingulambika Devi Temple
+http://localhost:5001/live/1705.m3u8
+#EXTINF:-1 tvg-id=1706 tvg-name="Shri Mangal Dev Grah Temple" tvg-logo="http://192.168.1.21:5008/jtvimage/Shri_Mangal_Dev_Grah_Temple.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Shri Mangal Dev Grah Temple
+http://localhost:5001/live/1706.m3u8
+#EXTINF:-1 tvg-id=1933 tvg-name="Shri Trimbakeshwar Devasthan Trust" tvg-logo="http://192.168.1.21:5008/jtvimage/Shri_Trimbakeshwar_Devasthan.png" tvg-language="Marathi" tvg-type="M_Devotional" group-title="M_Devotional", Shri Trimbakeshwar Devasthan Trust
+http://localhost:5001/live/1933.m3u8
 
 
 #EXTINF:-1 tvg-id="ts63" tvg-name="Zee TV HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV_HD.png" group-title="Entertainment", Zee TV HD
