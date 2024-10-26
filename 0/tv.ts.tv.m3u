@@ -1,6 +1,7 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
 
 
+
 #EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://localhost:5001/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="News" group-title="Marathi", ABP Majha
 http://localhost:5001/live/612.m3u8
 #EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="http://localhost:5001/jtvimage/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="News" group-title="Marathi", TV9 Marathi
@@ -173,6 +174,104 @@ http://localhost:5001/live/1079.m3u8
 #EXTINF: 1 tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Animax.png" group-title="Kids", Animax
 http://localhost:5001/live/2258.m3u8
 
+#EXTINF:-1 tvg-name="Jio Events HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Jio_Events.png" group-title="Infotainment", Jio Events HD
+http://localhost:5001/live/871.m3u8
+#EXTINF:-1 tvg-name="History TV18 SD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/History_TV18_SD.png" group-title="Infotainment", History TV18 SD
+http://localhost:5001/live/1471.m3u8
+#EXTINF:-1 tvg-name="History TV18 HD Hindi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/History_18_Hindi.png" group-title="Infotainment", History TV18 HD Hindi
+http://localhost:5001/live/578.m3u8
+#EXTINF:-1 tvg-id="ts616" tvg-name="History TV18 HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/History_HD.png" group-title="Infotainment", History TV18 HD
+http://localhost:5001/live/146.m3u8
+#EXTINF:-1 tvg-id="ts228" tvg-name="Discovery Turbo" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Discovery_Turbo.png" group-title="Infotainment", Discovery Turbo
+http://localhost:5001/live/541.m3u8
+#EXTINF:-1 tvg-id="ts113" tvg-name="Discovery Science" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Discovery_Science.png" group-title="Infotainment", Discovery Science
+http://localhost:5001/live/568.m3u8
+#EXTINF:-1 tvg-id="ts341" tvg-name="Discovery HD World" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Discovery_HD_World.png" group-title="Infotainment", Discovery HD World
+http://localhost:5001/live/463.m3u8
+#EXTINF:-1 tvg-name="Discovery Channel Hindi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Discovery_Channel_Hindi.png" group-title="Infotainment", Discovery Channel Hindi
+http://localhost:5001/live/575.m3u8
+#EXTINF:-1 tvg-id="ts219" tvg-name="Discovery Channel" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Discovery.png" group-title="Infotainment", Discovery Channel
+http://localhost:5001/live/242.m3u8
+#EXTINF:-1 tvg-id="ts130" tvg-name="Animal Planet" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Animal_Planet_Hindi.png" group-title="Infotainment", Animal Planet
+http://localhost:5001/live/566.m3u8
+#EXTINF:-1 tvg-id="ts287" tvg-name="Animal Planet HD World" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Animal_Planet_HD.png" group-title="Infotainment", Animal Planet HD World
+http://localhost:5001/live/286.m3u8
+#EXTINF:-1 tvg-name="Wild Earth" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Wild_Earth.png" group-title="Infotainment", Wild Earth
+http://localhost:5001/live/2437.m3u8
+#EXTINF:-1 tvg-id="ts158" tvg-name="SONY BBC Earth" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_Earth_SD.png" group-title="Infotainment", SONY BBC Earth
+http://localhost:5001/live/823.m3u8
+#EXTINF:-1 tvg-id="ts460" tvg-name="SONY BBC Earth HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_Earth_HD.png" group-title="Infotainment", SONY BBC Earth HD
+http://localhost:5001/live/821.m3u8
+#EXTINF:-1 tvg-id="ts460" tvg-name="SONY BBC Earth HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_Earth_HD_English.png" group-title="Infotainment", SONY BBC Earth HD
+https://dai.google.com/linear/hls/event/6bVWYIKGS0CIa-cOpZZJPQ/master.m3u8
+
+
+#EXTINF:-1 tvg-id="173" tvg-name="Aaj Tak" tvg-logo="http://localhost:5001/jtvimage/Aaj_Tak.png" tvg-language="Hindi" tvg-type="News" group-title="News", Aaj Tak
+http://localhost:5001/live/173.m3u8
+#EXTINF:-1 tvg-id=177 tvg-name="ABP News India" tvg-logo="http://localhost:5001/jtvimage/ABP_News_India.png" tvg-language="Hindi" tvg-type="News" group-title="News", ABP News India
+http://localhost:5001/live/177.m3u8
+#EXTINF:-1 tvg-id="ts259" tvg-name="Zee News" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_News.png" group-title="News", Zee News
+http://localhost:5001/live/504.m3u8
+#EXTINF:-1 tvg-id="ts179" tvg-name="NDTV India" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png" group-title="News", NDTV India
+http://localhost:5001/live/258.m3u8
+#EXTINF:-1 tvg-id="ts706" tvg-name="TV9 Bharatvarsh" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png" group-title="News", TV9 Bharatvarsh
+http://localhost:5001/live/1251.m3u8
+#EXTINF:-1 tvg-id=231 tvg-name="News 18 India" tvg-logo="http://localhost:5001/jtvimage/IBN_7.png" tvg-language="Hindi" tvg-type="News" group-title="News", News 18 India
+http://localhost:5001/live/231.m3u8
+#EXTINF:-1 tvg-id=235 tvg-name="India TV" tvg-logo="http://localhost:5001/jtvimage/India_TV.png" tvg-language="Hindi" tvg-type="News" group-title="News", India TV
+http://localhost:5001/live/235.m3u8
+#EXTINF:-1 tvg-id=255 tvg-name="NDTV 24x7" tvg-logo="http://localhost:5001/jtvimage/NDTV_24x7.png" tvg-language="English" tvg-type="News" group-title="News", NDTV 24x7
+http://localhost:5001/live/255.m3u8
+#EXTINF:-1 tvg-id=493 tvg-name="India Today" tvg-logo="http://localhost:5001/jtvimage/India_Today.png" tvg-language="English" tvg-type="News" group-title="News", India Today
+http://localhost:5001/live/493.m3u8
+#EXTINF:-1 tvg-id=499 tvg-name="News Nation" tvg-logo="http://localhost:5001/jtvimage/News_Nation.png" tvg-language="Hindi" tvg-type="News" group-title="News", News Nation
+http://localhost:5001/live/499.m3u8
+#EXTINF:-1 tvg-id=501 tvg-name="News 24" tvg-logo="http://localhost:5001/jtvimage/News_24.png" tvg-language="Hindi" tvg-type="News" group-title="News", News 24
+http://localhost:5001/live/501.m3u8
+#EXTINF:-1 tvg-id=502 tvg-name="Good News Today" tvg-logo="http://localhost:5001/jtvimage/Tez.png" tvg-language="Hindi" tvg-type="News" group-title="News", Good News Today
+http://localhost:5001/live/502.m3u8
+#EXTINF:-1 tvg-id=520 tvg-name="Sansad TV HD" tvg-logo="http://localhost:5001/jtvimage/DD_Rajyasabha.png" tvg-language="Hindi" tvg-type="News" group-title="News", Sansad TV HD
+http://localhost:5001/live/520.m3u8
+#EXTINF:-1 tvg-id=522 tvg-name="Sansad TV" tvg-logo="http://localhost:5001/jtvimage/Loksabha_TV.png" tvg-language="Hindi" tvg-type="News" group-title="News", Sansad TV
+http://localhost:5001/live/522.m3u8
+#EXTINF:-1 tvg-id="ts976" tvg-name="NHK World Japan" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NHK_World_Japan.png" group-title="News", NHK World Japan
+http://localhost:5001/live/1405.m3u8
+#EXTINF:-1 tvg-id=496 tvg-name="dw" tvg-logo="http://localhost:5001/jtvimage/dw.png" tvg-language="English" tvg-type="News" group-title="News", dw
+http://localhost:5001/live/496.m3u8
+#EXTINF:-1 tvg-name="CNN NEWS 18" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png" group-title="News", CNN NEWS 18
+http://localhost:5001/live/492.m3u8
+#EXTINF:-1 tvg-id=383 tvg-name="Times NOW" tvg-logo="http://localhost:5001/jtvimage/Times_NOW.png" tvg-language="English" tvg-type="News" group-title="News", Times NOW
+http://localhost:5001/live/383.m3u8
+#EXTINF:-1 tvg-id=491 tvg-name="Mirror Now" tvg-logo="http://localhost:5001/jtvimage/Mirror_Now.png" tvg-language="English" tvg-type="News" group-title="News", Mirror Now
+http://localhost:5001/live/491.m3u8
+#EXTINF:-1 tvg-id=412 tvg-name="Wion" tvg-logo="http://localhost:5001/jtvimage/Wion.png" tvg-language="English" tvg-type="News" group-title="News", Wion
+http://localhost:5001/live/412.m3u8
+#EXTINF:-1 tvg-id=193 tvg-name="CNN" tvg-logo="http://localhost:5001/jtvimage/CNN.png" tvg-language="English" tvg-type="News" group-title="News", CNN
+http://localhost:5001/live/193.m3u8
+
+
+
+#EXTINF:-1 tvg-id="ts539" tvg-name="VH1 HD" tvg-logo="http://localhost:5001/jtvimage/VH1_HD.png" tvg-language="English" tvg-type="Music" group-title="Music", VH1 HD
+http://localhost:5001/live/1320.m3u8
+#EXTINF:-1 tvg-id="ts498" tvg-name="VH1" tvg-logo="http://localhost:5001/jtvimage/VH1.png" tvg-language="English" tvg-type="Music" group-title="Music", VH1
+http://localhost:5001/live/1378.m3u8
+
+
+
+#EXTINF:-1 tvg-id="ts236" tvg-name="MTV Beats SD" tvg-logo="http://localhost:5001/jtvimage/MTV_Beats_SD.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", MTV Beats SD
+http://localhost:5001/live/1400.m3u8
+#EXTINF:-1 tvg-id="ts17" tvg-name="Mastiii" tvg-logo="http://localhost:5001/jtvimage/Mastiii.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", Mastiii
+http://localhost:5001/live/584.m3u8
+#EXTINF:-1 tvg-id="ts139" tvg-name="9XM" tvg-logo="http://localhost:5001/jtvimage/9XM.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", 9XM
+http://localhost:5001/live/587.m3u8
+#EXTINF:-1 tvg-id="ts224" tvg-name="E 24" tvg-logo="http://localhost:5001/jtvimage/E_24.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", E 24
+http://localhost:5001/live/591.m3u8
+#EXTINF:-1 tvg-id="ts96" tvg-name="ZOOM" tvg-logo="http://localhost:5001/jtvimage/Zoom.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", ZOOM
+http://localhost:5001/live/592.m3u8
+#EXTINF:-1 tvg-id=2036 tvg-name="Dil Se" tvg-logo="http://localhost:5001/jtvimage/Dil_Se.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", Dil Se
+http://localhost:5001/live/2036.m3u8
+#EXTINF:-1 tvg-id=1249 tvg-name="Kadak Hits" tvg-logo="http://localhost:5001/jtvimage/Kadak_Hits.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", Kadak Hits
+http://localhost:5001/live/1249.m3u8
 #EXTINF:-1 tvg-id="ts103" tvg-name="MTV" tvg-logo="http://localhost:5001/jtvimage/MTV.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", MTV
 http://localhost:5001/live/248.m3u8
 #EXTINF:-1 tvg-id="ts39" tvg-name="9X Jalwa" tvg-logo="http://localhost:5001/jtvimage/9X_Jalwa.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", 9X Jalwa
