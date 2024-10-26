@@ -29,7 +29,7 @@ http://localhost:5001/live/2758.m3u8
 #EXTINF:-1 tvg-id="ts1221" tvg-name="Sun Marathi" tvg-logo="http://localhost:5001/jtvimage/Sun_Marathi.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", Sun Marathi
 http://localhost:5001/live/2424.m3u8
 #EXTINF:-1 tvg-id=1452 tvg-name="Shemaroo MarathiBana" tvg-logo="http://192.168.1.91:5001/jtvimage/Shemaroo_MarathiBana.png" tvg-language="Marathi" tvg-type="Movies" group-title="Movies", Shemaroo MarathiBana
-http://192.168.1.91:5001/live/1452.m3u8
+http://localhost:5001/live/1452.m3u8
 #EXTINF:-1 tvg-id="ts336" tvg-name="DD Sahayadri" tvg-logo="http://localhost:5001/jtvimage/DD_Sahayadri.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Marathi", DD Sahayadri
 http://localhost:5001/live/695.m3u8
 #EXTINF:-1 tvg-id="ts217" tvg-name="Sangeet Marathi" tvg-logo="http://localhost:5001/jtvimage/Sangeet_Marathi.png" tvg-language="Marathi" tvg-type="Music" group-title="Marathi", Sangeet Marathi
