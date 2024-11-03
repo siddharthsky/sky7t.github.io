@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="http://tobalan.github.io/epg.xml.gz"
+#EXTM3U x-tvg-url="https://tobalan.github.io/epg.xml.gz"
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
 
 #EXTINF:-1 tvg-id=612 tvg-name="ABP Majha" tvg-logo="http://localhost:5001/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="News" group-title="Marathi", ABP Majha
