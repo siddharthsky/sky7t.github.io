@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update M3U File</title>
+    <script>
+        async function updateM3U() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const ip = urlParams.get('ip');
+            if (!ip) return;
+            
+            try {
+                let response = await fetch('play_02.25.m3u');
+                if (!response.ok) return;
+                
+                let m3uContent = await response.text();
+                let updatedContent = m3uContent.replace(/localhost:5350/g, ip);
+                
+                let blob = new Blob([updatedContent], { type: 'audio/x-mpegurl' });
+                let link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'updated_play.m3u';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {}
+        }
+        updateM3U();
+    </script>
+</head>
+<body></body>
+</html>
