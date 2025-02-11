@@ -9,14 +9,22 @@
             const urlParams = new URLSearchParams(window.location.search);
             const ip = urlParams.get('ip');
             if (!ip) return;
-            
+
             try {
                 let response = await fetch('play_02.25.m3u');
                 if (!response.ok) return;
-                
+
                 let m3uContent = await response.text();
+
+                // Replace 'localhost:5350' with 'ip'
                 let updatedContent = m3uContent.replace(/localhost:5350/g, ip);
-                
+
+                // Extract only the base IP (removing any port)
+                let baseIp = ip.split(':')[0];
+
+                // Replace standalone 'localhost' with base IP
+                updatedContent = updatedContent.replace(/localhost/g, baseIp);
+
                 let blob = new Blob([updatedContent], { type: 'audio/x-mpegurl' });
                 let link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
@@ -24,7 +32,9 @@
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-            } catch (error) {}
+            } catch (error) {
+                console.error("Error updating M3U file:", error);
+            }
         }
         updateM3U();
     </script>
