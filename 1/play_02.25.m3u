@@ -35,8 +35,6 @@ http://localhost:5350/live/190.m3u8
 http://localhost:5350/live/193.m3u8
 #EXTINF:-1 tvg-id=196 tvg-name="Colors Gujarati" tvg-logo="http://localhost:5350/jtvimage/Colors_Gujarati.png" tvg-language="Gujarati" tvg-type="Entertainment" group-title="Entertainment", Colors Gujarati
 http://localhost:5350/live/196.m3u8
-#EXTINF:-1 tvg-id=198 tvg-name="Colors Oriya" tvg-logo="http://localhost:5350/jtvimage/Colors_Oriya.png" tvg-language="Odia" tvg-type="Entertainment" group-title="Entertainment", Colors Oriya
-http://localhost:5350/live/198.m3u8
 #EXTINF:-1 tvg-id=202 tvg-name="DD National" tvg-logo="http://localhost:5350/jtvimage/DD_National.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", DD National
 http://localhost:5350/live/202.m3u8
 #EXTINF:-1 tvg-id=203 tvg-name="DD News" tvg-logo="http://localhost:5350/jtvimage/DD_News.png" tvg-language="Hindi" tvg-type="News" group-title="News", DD News
@@ -557,8 +555,6 @@ http://localhost:5350/live/744.m3u8
 http://localhost:5350/live/747.m3u8
 #EXTINF:-1 tvg-id=748 tvg-name="Raj Musix" tvg-logo="http://localhost:5350/jtvimage/Raj_Musix.png" tvg-language="Tamil" tvg-type="Music" group-title="Music", Raj Musix
 http://localhost:5350/live/748.m3u8
-#EXTINF:-1 tvg-id=753 tvg-name="MTV Beats HD" tvg-logo="http://localhost:5350/jtvimage/MTV_Beats_HD.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", MTV Beats HD
-http://localhost:5350/live/753.m3u8
 #EXTINF:-1 tvg-id=755 tvg-name="Colors Marathi HD" tvg-logo="http://localhost:5350/jtvimage/Colors_Marathi_HD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Entertainment", Colors Marathi HD
 http://localhost:5350/live/755.m3u8
 #EXTINF:-1 tvg-id=756 tvg-name="Colors Bengali HD" tvg-logo="http://localhost:5350/jtvimage/Colors_Bengali_HD.png" tvg-language="Bengali" tvg-type="Entertainment" group-title="Entertainment", Colors Bengali HD
@@ -727,6 +723,8 @@ http://localhost:5350/live/885.m3u8
 http://localhost:5350/live/886.m3u8
 #EXTINF:-1 tvg-id=887 tvg-name="Vedant Ras Swar Shree" tvg-logo="http://localhost:5350/jtvimage/Swar_Shree.png" tvg-language="Hindi" tvg-type="Devotional" group-title="Devotional", Vedant Ras Swar Shree
 http://localhost:5350/live/887.m3u8
+#EXTINF:-1 tvg-id=889 tvg-name="Jio Sports HD" tvg-logo="http://localhost:5350/jtvimage/Jio_Sports.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Jio Sports HD
+http://localhost:5350/live/889.m3u8
 #EXTINF:-1 tvg-id=891 tvg-name="Sony Ten 2 HD" tvg-logo="http://localhost:5350/jtvimage/Ten2_HD.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Sony Ten 2 HD
 http://localhost:5350/live/891.m3u8
 #EXTINF:-1 tvg-id=892 tvg-name="Sony Ten 3 HD Hindi" tvg-logo="http://localhost:5350/jtvimage/Ten3_HD.png" tvg-language="Hindi" tvg-type="Sports" group-title="Sports", Sony Ten 3 HD Hindi
@@ -755,7 +753,7 @@ http://localhost:5350/live/904.m3u8
 http://localhost:5350/live/906.m3u8
 #EXTINF:-1 tvg-id=907 tvg-name="GoodNews Channel" tvg-logo="http://localhost:5350/jtvimage/GoodNews_Channel.png" tvg-language="English" tvg-type="News" group-title="News", GoodNews Channel
 http://localhost:5350/live/907.m3u8
-#EXTINF:-1 tvg-id=908 tvg-name="Indradhanu" tvg-logo="http://localhost:5350/jtvimage/Indradhanu.png" tvg-language="Assamese" tvg-type="Movies" group-title="Movies", Indradhanu
+#EXTINF:-1 tvg-id=908 tvg-name="Newslive Bangla" tvg-logo="http://localhost:5350/jtvimage/Indradhanu.png" tvg-language="Bengali" tvg-type="News" group-title="News", Newslive Bangla
 http://localhost:5350/live/908.m3u8
 #EXTINF:-1 tvg-id=910 tvg-name="Media One TV" tvg-logo="http://localhost:5350/jtvimage/Media_One_TV.png" tvg-language="Malayalam" tvg-type="News" group-title="News", Media One TV
 http://localhost:5350/live/910.m3u8
@@ -839,8 +837,6 @@ http://localhost:5350/live/975.m3u8
 http://localhost:5350/live/977.m3u8
 #EXTINF:-1 tvg-id=978 tvg-name="TEST1 HD" tvg-logo="http://localhost:5350/jtvimage/TEST1_HD.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", TEST1 HD
 http://localhost:5350/live/978.m3u8
-#EXTINF:-1 tvg-id=979 tvg-name="TEST2 HD" tvg-logo="http://localhost:5350/jtvimage/TEST2_HD.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", TEST2 HD
-http://localhost:5350/live/979.m3u8
 #EXTINF:-1 tvg-id=980 tvg-name="Swayam Prabha 01" tvg-logo="http://localhost:5350/jtvimage/Swayam_Prabha_01.png" tvg-language="English" tvg-type="Educational" group-title="Educational", Swayam Prabha 01
 http://localhost:5350/live/980.m3u8
 #EXTINF:-1 tvg-id=981 tvg-name="Swayam Prabha 02" tvg-logo="http://localhost:5350/jtvimage/Swayam_Prabha_02.png" tvg-language="English" tvg-type="Educational" group-title="Educational", Swayam Prabha 02
@@ -943,8 +939,8 @@ http://localhost:5350/live/1145.m3u8
 http://localhost:5350/live/1146.m3u8
 #EXTINF:-1 tvg-id=1148 tvg-name="TEST8 HD" tvg-logo="http://localhost:5350/jtvimage/TEST8_HD.png" tvg-language="English" tvg-type="Shopping" group-title="Shopping", TEST8 HD
 http://localhost:5350/live/1148.m3u8
-#EXTINF:-1 tvg-id=1157 tvg-name="Comedy Central HD" tvg-logo="http://localhost:5350/jtvimage/Comedy_Central_HD.png" tvg-language="English" tvg-type="Entertainment" group-title="Entertainment", Comedy Central HD
-http://localhost:5350/live/1157.m3u8
+#EXTINF:-1 tvg-id=1151 tvg-name="Rangamanch" tvg-logo="http://localhost:5350/jtvimage/Rangamanch.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Entertainment", Rangamanch
+http://localhost:5350/live/1151.m3u8
 #EXTINF:-1 tvg-id=1158 tvg-name="Colors Infinity HD" tvg-logo="http://localhost:5350/jtvimage/Colors_Infinity_HD.png" tvg-language="English" tvg-type="Entertainment" group-title="Entertainment", Colors Infinity HD
 http://localhost:5350/live/1158.m3u8
 #EXTINF:-1 tvg-id=1159 tvg-name="Tulja Bhavani" tvg-logo="http://localhost:5350/jtvimage/Tulja_Bhavani.png" tvg-language="Marathi" tvg-type="Devotional" group-title="Devotional", Tulja Bhavani
@@ -971,8 +967,6 @@ http://localhost:5350/live/1185.m3u8
 http://localhost:5350/live/1186.m3u8
 #EXTINF:-1 tvg-id=1187 tvg-name="Valam TV" tvg-logo="http://localhost:5350/jtvimage/Valambhakti.png" tvg-language="Gujarati" tvg-type="Devotional" group-title="Devotional", Valam TV
 http://localhost:5350/live/1187.m3u8
-#EXTINF:-1 tvg-id=1188 tvg-name="PTC DHOL TV" tvg-logo="http://localhost:5350/jtvimage/PTC_DHOL_TV.png" tvg-language="Punjabi" tvg-type="Music" group-title="Music", PTC DHOL TV
-http://localhost:5350/live/1188.m3u8
 #EXTINF:-1 tvg-id=1189 tvg-name="PTC Music" tvg-logo="http://localhost:5350/jtvimage/PTC_Music.png" tvg-language="Punjabi" tvg-type="Music" group-title="Music", PTC Music
 http://localhost:5350/live/1189.m3u8
 #EXTINF:-1 tvg-id=1190 tvg-name="PTC Punjabi Gold " tvg-logo="http://localhost:5350/jtvimage/PTC_Punjabi_Gold.png" tvg-language="Punjabi" tvg-type="Movies" group-title="Movies", PTC Punjabi Gold 
@@ -983,8 +977,6 @@ http://localhost:5350/live/1191.m3u8
 http://localhost:5350/live/1192.m3u8
 #EXTINF:-1 tvg-id=1193 tvg-name="Hare Krsna Music" tvg-logo="http://localhost:5350/jtvimage/Hare_Krsna_music.png" tvg-language="Hindi" tvg-type="Devotional" group-title="Devotional", Hare Krsna Music
 http://localhost:5350/live/1193.m3u8
-#EXTINF:-1 tvg-id=1201 tvg-name="Sadhguru Television HD" tvg-logo="http://localhost:5350/jtvimage/Sadhguru_Television.png" tvg-language="English" tvg-type="Devotional" group-title="Devotional", Sadhguru Television HD
-http://localhost:5350/live/1201.m3u8
 #EXTINF:-1 tvg-id=1205 tvg-name="ABP Ganga" tvg-logo="http://localhost:5350/jtvimage/ABP_Ganga.png" tvg-language="Hindi" tvg-type="News" group-title="News", ABP Ganga
 http://localhost:5350/live/1205.m3u8
 #EXTINF:-1 tvg-id=1209 tvg-name="Kalaignar TV" tvg-logo="http://localhost:5350/jtvimage/Kalaignar_TV.png" tvg-language="Tamil" tvg-type="Entertainment" group-title="Entertainment", Kalaignar TV
@@ -1001,8 +993,6 @@ http://localhost:5350/live/1219.m3u8
 http://localhost:5350/live/1220.m3u8
 #EXTINF:-1 tvg-id=1221 tvg-name="Rajyoga TV Kannada" tvg-logo="http://localhost:5350/jtvimage/Rajyoga_Malayalam.png" tvg-language="Kannada" tvg-type="Devotional" group-title="Devotional", Rajyoga TV Kannada
 http://localhost:5350/live/1221.m3u8
-#EXTINF:-1 tvg-id=1222 tvg-name="Mandir Shri Govinddevji-Jaipur" tvg-logo="http://localhost:5350/jtvimage/GovindDevji_Jaipur.png" tvg-language="Hindi" tvg-type="Devotional" group-title="Devotional", Mandir Shri Govinddevji-Jaipur
-http://localhost:5350/live/1222.m3u8
 #EXTINF:-1 tvg-id=1223 tvg-name="Dagdusheth Ganpati - Pune" tvg-logo="http://localhost:5350/jtvimage/Dagdusheth_Pune.png" tvg-language="Marathi" tvg-type="Devotional" group-title="Devotional", Dagdusheth Ganpati - Pune
 http://localhost:5350/live/1223.m3u8
 #EXTINF:-1 tvg-id=1224 tvg-name="Nimbark TV" tvg-logo="http://localhost:5350/jtvimage/Nimbark.png" tvg-language="Hindi" tvg-type="Devotional" group-title="Devotional", Nimbark TV
@@ -1085,16 +1075,12 @@ http://localhost:5350/live/1295.m3u8
 http://localhost:5350/live/1296.m3u8
 #EXTINF:-1 tvg-id=1315 tvg-name="HHDL" tvg-logo="http://localhost:5350/jtvimage/HHDL.png" tvg-language="English" tvg-type="Devotional" group-title="Devotional", HHDL
 http://localhost:5350/live/1315.m3u8
-#EXTINF:-1 tvg-id=1320 tvg-name="VH1 HD" tvg-logo="http://localhost:5350/jtvimage/VH1_HD.png" tvg-language="English" tvg-type="Music" group-title="Music", VH1 HD
-http://localhost:5350/live/1320.m3u8
 #EXTINF:-1 tvg-id=1324 tvg-name="Colors Gujarati Cinema" tvg-logo="http://localhost:5350/jtvimage/Colors_Gujarati_Cinema.png" tvg-language="Gujarati" tvg-type="Movies" group-title="Movies", Colors Gujarati Cinema
 http://localhost:5350/live/1324.m3u8
 #EXTINF:-1 tvg-id=1325 tvg-name="Colors Infinity SD" tvg-logo="http://localhost:5350/jtvimage/Colors_Infinity_SD.png" tvg-language="English" tvg-type="Entertainment" group-title="Entertainment", Colors Infinity SD
 http://localhost:5350/live/1325.m3u8
 #EXTINF:-1 tvg-id=1326 tvg-name="Colors Marathi SD" tvg-logo="http://localhost:5350/jtvimage/Colors_Marathi_SD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="Entertainment", Colors Marathi SD
 http://localhost:5350/live/1326.m3u8
-#EXTINF:-1 tvg-id=1327 tvg-name="Comedy Central SD" tvg-logo="http://localhost:5350/jtvimage/Comedy_Central_SD.png" tvg-language="English" tvg-type="Entertainment" group-title="Entertainment", Comedy Central SD
-http://localhost:5350/live/1327.m3u8
 #EXTINF:-1 tvg-id=1328 tvg-name="DD Arunprabha" tvg-logo="http://localhost:5350/jtvimage/DD_Arunprabha.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", DD Arunprabha
 http://localhost:5350/live/1328.m3u8
 #EXTINF:-1 tvg-id=1329 tvg-name="DD Gyandarshan" tvg-logo="http://localhost:5350/jtvimage/DD_Gyandarshan.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", DD Gyandarshan
@@ -1125,8 +1111,6 @@ http://localhost:5350/live/1369.m3u8
 http://localhost:5350/live/1370.m3u8
 #EXTINF:-1 tvg-id=1371 tvg-name="Colors Tamil" tvg-logo="http://localhost:5350/jtvimage/Colors_Tamil.png" tvg-language="Tamil" tvg-type="Entertainment" group-title="Entertainment", Colors Tamil
 http://localhost:5350/live/1371.m3u8
-#EXTINF:-1 tvg-id=1378 tvg-name="VH1" tvg-logo="http://localhost:5350/jtvimage/VH1.png" tvg-language="English" tvg-type="Music" group-title="Music", VH1
-http://localhost:5350/live/1378.m3u8
 #EXTINF:-1 tvg-id=1388 tvg-name="Goodness" tvg-logo="http://localhost:5350/jtvimage/Goodness_TV.png" tvg-language="Malayalam" tvg-type="Devotional" group-title="Devotional", Goodness
 http://localhost:5350/live/1388.m3u8
 #EXTINF:-1 tvg-id=1393 tvg-name="Sony Wah" tvg-logo="http://localhost:5350/jtvimage/Sony_Wah.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", Sony Wah
@@ -1135,8 +1119,6 @@ http://localhost:5350/live/1393.m3u8
 http://localhost:5350/live/1394.m3u8
 #EXTINF:-1 tvg-id=1396 tvg-name="Set SD" tvg-logo="http://localhost:5350/jtvimage/Sony_SD.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", Set SD
 http://localhost:5350/live/1396.m3u8
-#EXTINF:-1 tvg-id=1400 tvg-name="MTV Beats SD" tvg-logo="http://localhost:5350/jtvimage/MTV_Beats_SD.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", MTV Beats SD
-http://localhost:5350/live/1400.m3u8
 #EXTINF:-1 tvg-id=1401 tvg-name="Romedy Now" tvg-logo="http://localhost:5350/jtvimage/Romedy_Now_HD.png" tvg-language="English" tvg-type="Movies" group-title="Movies", Romedy Now
 http://localhost:5350/live/1401.m3u8
 #EXTINF:-1 tvg-id=1403 tvg-name="Republic Bharat" tvg-logo="http://localhost:5350/jtvimage/Republic_Bharat.png" tvg-language="Hindi" tvg-type="News" group-title="News", Republic Bharat
@@ -1517,8 +1499,6 @@ http://localhost:5350/live/1920.m3u8
 http://localhost:5350/live/1925.m3u8
 #EXTINF:-1 tvg-id=1926 tvg-name="Sanskriti 24x7" tvg-logo="http://localhost:5350/jtvimage/Sanskriti_24x7.png" tvg-language="Hindi" tvg-type="Devotional" group-title="Devotional", Sanskriti 24x7
 http://localhost:5350/live/1926.m3u8
-#EXTINF:-1 tvg-id=1933 tvg-name="Shri Trimbakeshwar Devasthan Trust" tvg-logo="http://localhost:5350/jtvimage/Shri_Trimbakeshwar_Devasthan.png" tvg-language="Marathi" tvg-type="Devotional" group-title="Devotional", Shri Trimbakeshwar Devasthan Trust
-http://localhost:5350/live/1933.m3u8
 #EXTINF:-1 tvg-id=1954 tvg-name="News Tamil 24x7" tvg-logo="http://localhost:5350/jtvimage/News_Tamil_24x7.png" tvg-language="Tamil" tvg-type="News" group-title="News", News Tamil 24x7
 http://localhost:5350/live/1954.m3u8
 #EXTINF:-1 tvg-id=1955 tvg-name="Foodxp" tvg-logo="http://localhost:5350/jtvimage/Food_XP.png" tvg-language="Hindi" tvg-type="Lifestyle" group-title="Lifestyle", Foodxp
@@ -1553,11 +1533,11 @@ http://localhost:5350/live/1973.m3u8
 http://localhost:5350/live/1974.m3u8
 #EXTINF:-1 tvg-id=1975 tvg-name="PMC Telugu" tvg-logo="http://localhost:5350/jtvimage/PMC_Telugu.png" tvg-language="Telugu" tvg-type="Devotional" group-title="Devotional", PMC Telugu
 http://localhost:5350/live/1975.m3u8
-#EXTINF:-1 tvg-id=1984 tvg-name="Sports18 1 HD" tvg-logo="http://localhost:5350/jtvimage/Sports18_1_HD.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Sports18 1 HD
+#EXTINF:-1 tvg-id=1984 tvg-name="Star Sports 2 Hindi HD" tvg-logo="http://localhost:5350/jtvimage/Sports18_1_HD.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Star Sports 2 Hindi HD
 http://localhost:5350/live/1984.m3u8
-#EXTINF:-1 tvg-id=1985 tvg-name="Sports18 1" tvg-logo="http://localhost:5350/jtvimage/Sports18_1_SD.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Sports18 1
+#EXTINF:-1 tvg-id=1985 tvg-name="Star Sports 2 Hindi" tvg-logo="http://localhost:5350/jtvimage/Sports18_1_SD.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Star Sports 2 Hindi
 http://localhost:5350/live/1985.m3u8
-#EXTINF:-1 tvg-id=1998 tvg-name="Sports18 Khel" tvg-logo="http://localhost:5350/jtvimage/Sports18_Khel.png" tvg-language="Hindi" tvg-type="Sports" group-title="Sports", Sports18 Khel
+#EXTINF:-1 tvg-id=1998 tvg-name="Star Sports Khel" tvg-logo="http://localhost:5350/jtvimage/Sports18_Khel.png" tvg-language="Hindi" tvg-type="Sports" group-title="Sports", Star Sports Khel
 http://localhost:5350/live/1998.m3u8
 #EXTINF:-1 tvg-id=1999 tvg-name="Raftaar Media" tvg-logo="http://localhost:5350/jtvimage/Raftaar_Media.png" tvg-language="Hindi" tvg-type="News" group-title="News", Raftaar Media
 http://localhost:5350/live/1999.m3u8
@@ -1797,9 +1777,9 @@ http://localhost:5350/live/2817.m3u8
 http://localhost:5350/live/2827.m3u8
 #EXTINF:-1 tvg-id=2851 tvg-name="IN24 Live" tvg-logo="http://localhost:5350/jtvimage/IN24_Live.png" tvg-language="Hindi" tvg-type="News" group-title="News", IN24 Live
 http://localhost:5350/live/2851.m3u8
-#EXTINF:-1 tvg-id=2852 tvg-name="Sports18 2" tvg-logo="http://localhost:5350/jtvimage/Sports18_2.png" tvg-language="Hindi" tvg-type="Sports" group-title="Sports", Sports18 2
+#EXTINF:-1 tvg-id=2852 tvg-name="Star Sports 2 Telugu" tvg-logo="http://localhost:5350/jtvimage/Sports18_2.png" tvg-language="Hindi" tvg-type="Sports" group-title="Sports", Star Sports 2 Telugu
 http://localhost:5350/live/2852.m3u8
-#EXTINF:-1 tvg-id=2853 tvg-name="Sports18 3" tvg-logo="http://localhost:5350/jtvimage/Sports18_3.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Sports18 3
+#EXTINF:-1 tvg-id=2853 tvg-name="Star Sports 2 Tamil" tvg-logo="http://localhost:5350/jtvimage/Sports18_3.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Star Sports 2 Tamil
 http://localhost:5350/live/2853.m3u8
 #EXTINF:-1 tvg-id=2854 tvg-name="KCM" tvg-logo="http://localhost:5350/jtvimage/KCM.png" tvg-language="English" tvg-type="Entertainment" group-title="Entertainment", KCM
 http://localhost:5350/live/2854.m3u8
@@ -2095,6 +2075,10 @@ http://localhost:5350/live/3164.m3u8
 http://localhost:5350/live/3166.m3u8
 #EXTINF:-1 tvg-id=3167 tvg-name="Lok manch Marathi" tvg-logo="http://localhost:5350/jtvimage/Lok_manch_Marathi.png" tvg-language="Marathi" tvg-type="News" group-title="News", Lok manch Marathi
 http://localhost:5350/live/3167.m3u8
+#EXTINF:-1 tvg-id=3168 tvg-name="Sky India Tv" tvg-logo="http://localhost:5350/jtvimage/Sky_India_Tv.png" tvg-language="Hindi" tvg-type="News" group-title="News", Sky India Tv
+http://localhost:5350/live/3168.m3u8
+#EXTINF:-1 tvg-id=3169 tvg-name="Million Dollar Listing" tvg-logo="http://localhost:5350/jtvimage/Million_Dollar_Listing.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", Million Dollar Listing
+http://localhost:5350/live/3169.m3u8
 #EXTINF:-1 tvg-id=3170 tvg-name="News 24 Tass" tvg-logo="http://localhost:5350/jtvimage/News_24_Tass.png" tvg-language="Marathi" tvg-type="News" group-title="News", News 24 Tass
 http://localhost:5350/live/3170.m3u8
 #EXTINF:-1 tvg-id=3171 tvg-name="Khabar 70" tvg-logo="http://localhost:5350/jtvimage/Khabar_70.png" tvg-language="Hindi" tvg-type="News" group-title="News", Khabar 70
@@ -2141,6 +2125,8 @@ http://localhost:5350/live/3191.m3u8
 http://localhost:5350/live/3192.m3u8
 #EXTINF:-1 tvg-id=3194 tvg-name="T TV" tvg-logo="http://localhost:5350/jtvimage/T_TV.png" tvg-language="Urdu" tvg-type="News" group-title="News", T TV
 http://localhost:5350/live/3194.m3u8
+#EXTINF:-1 tvg-id=3197 tvg-name="Patnagar Network News" tvg-logo="http://localhost:5350/jtvimage/Patnagar_News_Network.png" tvg-language="Gujarati" tvg-type="News" group-title="News", Patnagar Network News
+http://localhost:5350/live/3197.m3u8
 #EXTINF:-1 tvg-id=3202 tvg-name="KTV Gujarati" tvg-logo="http://localhost:5350/jtvimage/KTV_Gujarati.png" tvg-language="Gujarati" tvg-type="News" group-title="News", KTV Gujarati
 http://localhost:5350/live/3202.m3u8
 #EXTINF:-1 tvg-id=3203 tvg-name="Nation Khabar" tvg-logo="http://localhost:5350/jtvimage/Nation_Khabar.png" tvg-language="Hindi" tvg-type="News" group-title="News", Nation Khabar
@@ -2167,16 +2153,40 @@ http://localhost:5350/live/3220.m3u8
 http://localhost:5350/live/3221.m3u8
 #EXTINF:-1 tvg-id=3222 tvg-name="Shark Tank India Season 04" tvg-logo="http://localhost:5350/jtvimage/Shark_Tank_India_Season4.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", Shark Tank India Season 04
 http://localhost:5350/live/3222.m3u8
-#EXTINF:-1 tvg-id=3223 tvg-name="Shark Tank India S4 Now Streaming" tvg-logo="http://localhost:5350/jtvimage/Shark_Tank_Ind_S4_Live.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="Entertainment", Shark Tank India S4 Now Streaming
-http://localhost:5350/live/3223.m3u8
-#EXTINF:-1 tvg-id=3224 tvg-name="Zee Kumbh" tvg-logo="http://localhost:5350/jtvimage/Maha_Kumbh.png" tvg-language="Hindi" tvg-type="News" group-title="News", Zee Kumbh
-http://localhost:5350/live/3224.m3u8
 #EXTINF:-1 tvg-id=3226 tvg-name="R Hindustan Tv News" tvg-logo="http://localhost:5350/jtvimage/Rhindustan_TV.png" tvg-language="Hindi" tvg-type="News" group-title="News", R Hindustan Tv News
 http://localhost:5350/live/3226.m3u8
 #EXTINF:-1 tvg-id=3227 tvg-name="Today India News" tvg-logo="http://localhost:5350/jtvimage/Today_India_News.png" tvg-language="Hindi" tvg-type="News" group-title="News", Today India News
 http://localhost:5350/live/3227.m3u8
-
-
+#EXTINF:-1 tvg-id=3230 tvg-name="Apex News India" tvg-logo="http://localhost:5350/jtvimage/Apex_News_India.png" tvg-language="Hindi" tvg-type="News" group-title="News", Apex News India
+http://localhost:5350/live/3230.m3u8
+#EXTINF:-1 tvg-id=3231 tvg-name="Apex Entertainment" tvg-logo="http://localhost:5350/jtvimage/Apex_Entertainment.png" tvg-language="Bhojpuri" tvg-type="Entertainment" group-title="Entertainment", Apex Entertainment
+http://localhost:5350/live/3231.m3u8
+#EXTINF:-1 tvg-id=3232 tvg-name="Sadhguru Television Dolby" tvg-logo="http://localhost:5350/jtvimage/Sadhguru_Television_HD_Dolby.png" tvg-language="English" tvg-type="Devotional" group-title="Devotional", Sadhguru Television Dolby
+http://localhost:5350/live/3232.m3u8
+#EXTINF:-1 tvg-id=3234 tvg-name="Chanakya News Jharkhand" tvg-logo="http://localhost:5350/jtvimage/Chanakya_News_Jharkhand.png" tvg-language="Hindi" tvg-type="News" group-title="News", Chanakya News Jharkhand
+http://localhost:5350/live/3234.m3u8
+#EXTINF:-1 tvg-id=3235 tvg-name="Chanakya News UPUK" tvg-logo="http://localhost:5350/jtvimage/Chanakya_News_UPUK.png" tvg-language="Hindi" tvg-type="News" group-title="News", Chanakya News UPUK
+http://localhost:5350/live/3235.m3u8
+#EXTINF:-1 tvg-id=3236 tvg-name="Bhakti Dhara" tvg-logo="http://localhost:5350/jtvimage/Bhakti_Dhara.png" tvg-language="Hindi" tvg-type="News" group-title="News", Bhakti Dhara
+http://localhost:5350/live/3236.m3u8
+#EXTINF:-1 tvg-id=3237 tvg-name="Namma Bangalore" tvg-logo="http://localhost:5350/jtvimage/Namma_Bangalore.png" tvg-language="Kannada" tvg-type="Entertainment" group-title="Entertainment", Namma Bangalore
+http://localhost:5350/live/3237.m3u8
+#EXTINF:-1 tvg-id=3238 tvg-name="Yoga for Beginners" tvg-logo="http://localhost:5350/jtvimage/Yoga_for_Beginners.png" tvg-language="English" tvg-type="Entertainment" group-title="Entertainment", Yoga for Beginners
+http://localhost:5350/live/3238.m3u8
+#EXTINF:-1 tvg-id=3239 tvg-name="Mahaa Bhakthi" tvg-logo="http://localhost:5350/jtvimage/Mahaa_Bhakthi.png" tvg-language="Telugu" tvg-type="Devotional" group-title="Devotional", Mahaa Bhakthi
+http://localhost:5350/live/3239.m3u8
+#EXTINF:-1 tvg-id=3240 tvg-name="News X World" tvg-logo="http://localhost:5350/jtvimage/News_X_World.png" tvg-language="English" tvg-type="News" group-title="News", News X World
+http://localhost:5350/live/3240.m3u8
+#EXTINF:-1 tvg-id=3241 tvg-name="Nation 27" tvg-logo="http://localhost:5350/jtvimage/Nation_27.png" tvg-language="Hindi" tvg-type="News" group-title="News", Nation 27
+http://localhost:5350/live/3241.m3u8
+#EXTINF:-1 tvg-id=3242 tvg-name="BHP News" tvg-logo="http://localhost:5350/jtvimage/BHP_News.png" tvg-language="Hindi" tvg-type="News" group-title="News", BHP News
+http://localhost:5350/live/3242.m3u8
+#EXTINF:-1 tvg-id=3243 tvg-name="Pickleball Now" tvg-logo="http://localhost:5350/jtvimage/Pickleball_Now.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Pickleball Now
+http://localhost:5350/live/3243.m3u8
+#EXTINF:-1 tvg-id=3244 tvg-name="Sanatan Bharat" tvg-logo="http://localhost:5350/jtvimage/Sanatan_Bharat.png" tvg-language="Hindi" tvg-type="Devotional" group-title="Devotional", Sanatan Bharat
+http://localhost:5350/live/3244.m3u8
+#EXTINF:-1 tvg-id=3245 tvg-name="Cricket Blockbusters 24x7" tvg-logo="http://localhost:5350/jtvimage/Cricket_Blockbusters.png" tvg-language="English" tvg-type="Sports" group-title="Sports", Cricket Blockbusters 24x7
+http://localhost:5350/live/3245.m3u8
 
 
 
