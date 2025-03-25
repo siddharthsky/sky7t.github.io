@@ -8,11 +8,16 @@
         async function updateM3U() {
             const urlParams = new URLSearchParams(window.location.search);
             const ip = urlParams.get('ip');
-            if (!ip) return;
+            if (!ip) {
+                console.error("No IP provided in URL parameters");
+                return;
+            }
 
             try {
                 let response = await fetch('play_02.25.m3u');
-                if (!response.ok) return;
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
                 let m3uContent = await response.text();
 
@@ -25,19 +30,35 @@
                 // Replace standalone 'localhost' with base IP
                 updatedContent = updatedContent.replace(/localhost/g, baseIp);
 
+                // Create blob with updated content
                 let blob = new Blob([updatedContent], { type: 'audio/x-mpegurl' });
+
+                // Create a download link
                 let link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
                 link.download = 'updated_play.m3u';
+
+                // Append link to body, click it, and remove it
                 document.body.appendChild(link);
                 link.click();
-                document.body.removeChild(link);
+                
+                // Use setTimeout to ensure the download starts before removing the link
+                setTimeout(() => {
+                    document.body.removeChild(link);
+                    // Revoke the blob URL to free up memory
+                    URL.revokeObjectURL(link.href);
+                }, 100);
+
             } catch (error) {
                 console.error("Error updating M3U file:", error);
             }
         }
-        updateM3U();
+
+        // Wait for the DOM to be fully loaded before executing
+        document.addEventListener('DOMContentLoaded', updateM3U);
     </script>
 </head>
-<body></body>
+<body>
+    <p>If the download doesn't start automatically, <a href="#" onclick="updateM3U(); return false;">click here</a>.</p>
+</body>
 </html>
