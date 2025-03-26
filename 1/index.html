@@ -17,7 +17,7 @@
             }
 
             try {
-                let m3uFile = isZee ? 'zee5.m3u' : 'play_03.27.m3u';
+                let m3uFile = isZee ? 'zee_playlist.m3u' : 'play_03.27.m3u';
                 let response = await fetch(m3uFile);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
