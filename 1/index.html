@@ -8,59 +8,64 @@
         async function updateM3U() {
             const urlParams = new URLSearchParams(window.location.search);
             const ip = urlParams.get('ip');
-                    if (!ip) {
-            console.error("No IP provided in URL parameters");
-            return;
-        }
+            const isZee = urlParams.get('zee') === 'true';
+            const statusElement = document.getElementById('status');
 
-        try {
-            let m3uFile = isZee ? 'zee5.m3u' : 'play_03.27.m3u';
-            let response = await fetch(m3uFile);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            if (!ip) {
+                statusElement.textContent = "Error: No IP provided in URL parameters";
+                return;
             }
 
-            let m3uContent = await response.text();
+            try {
+                let m3uFile = isZee ? 'zee5.m3u' : 'play_03.27.m3u';
+                let response = await fetch(m3uFile);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-            // Replace 'localhost:5350' with 'ip'
-            let updatedContent = m3uContent.replace(/localhost:5350/g, ip);
+                let m3uContent = await response.text();
 
-            // Extract only the base IP (removing any port)
-            let baseIp = ip.split(':');
+                // Replace 'localhost:5350' with 'ip'
+                let updatedContent = m3uContent.replace(/localhost:5350/g, ip);
 
-            // Replace standalone 'localhost' with base IP
-            updatedContent = updatedContent.replace(/localhost/g, baseIp);
+                // Extract only the base IP (removing any port)
+                let baseIp = ip.split(':')[0];
 
-            // Create blob with updated content
-            let blob = new Blob([updatedContent], { type: 'audio/x-mpegurl' });
+                // Replace standalone 'localhost' with base IP
+                updatedContent = updatedContent.replace(/\blocalhost\b/g, baseIp);
 
-            // Create a download link
-            let link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = isZee ? 'updated_zee.m3u' : 'updated_play.m3u';
+                // Create blob with updated content
+                let blob = new Blob([updatedContent], { type: 'audio/x-mpegurl' });
 
-            // Append link to body, click it, and remove it
-            document.body.appendChild(link);
-            link.click();
-            
-            // Use setTimeout to ensure the download starts before removing the link
-            setTimeout(() => {
-                document.body.removeChild(link);
-                // Revoke the blob URL to free up memory
-                URL.revokeObjectURL(link.href);
-            }, 100);
+                // Create a download link
+                let link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = isZee ? 'updated_zee.m3u' : 'updated_play.m3u';
 
-        } catch (error) {
-            console.error("Error updating M3U file:", error);
+                // Append link to body, click it, and remove it
+                document.body.appendChild(link);
+                link.click();
+                
+                // Use setTimeout to ensure the download starts before removing the link
+                setTimeout(() => {
+                    document.body.removeChild(link);
+                    // Revoke the blob URL to free up memory
+                    URL.revokeObjectURL(link.href);
+                }, 100);
+
+                statusElement.textContent = "Download started successfully!";
+            } catch (error) {
+                console.error("Error updating M3U file:", error);
+                statusElement.textContent = "Error: " + error.message;
+            }
         }
-    }
 
-    // Wait for the DOM to be fully loaded before executing
-    document.addEventListener('DOMContentLoaded', updateM3U);
-</script>
-
+        // Wait for the DOM to be fully loaded before executing
+        document.addEventListener('DOMContentLoaded', updateM3U);
+    </script>
 </head>
 <body>
     <p>If the download doesn't start automatically, <a href="#" onclick="updateM3U(); return false;">click here</a>.</p>
+    <p id="status"></p>
 </body>
 </html>
