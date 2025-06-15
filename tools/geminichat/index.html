@@ -1,306 +1,409 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>🦜 CustomGemini Chat</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
+  <title>🦜 CustGemini Chat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
+    body { background: #f4f6fb; }
+    .main-layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .chat-card {
+      flex: 1 1 540px;
+      max-width: 540px;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .side-card {
+      width: 320px;
+      min-width: 240px;
+      max-width: 360px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .chat-header {
+      border-bottom: 1px solid #e7eaf3;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      background: #f9fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     .chat-container {
-      max-height: calc(100vh - 300px);
-      /* Adjust as needed */
+      padding: 1.5rem;
+      min-height: 320px;
+      max-height: 500px;
       overflow-y: auto;
-      /* Enable vertical scrolling */
-      margin-bottom: 10px;
-      /* margin-right: 10px; */
+      flex: 1 1 auto;
+    }
+    .message {
+      display: flex;
+      margin-bottom: 1.2rem;
+    }
+    .message.user .bubble {
+      margin-left: auto;
+      background: #e3f0ff;
+      color: #1959a8;
+      border-bottom-right-radius: 0;
+    }
+    .message.ai .bubble {
+      margin-right: auto;
+      background: #f3f3f3;
+      color: #222;
+      border-bottom-left-radius: 0;
+    }
+    .bubble {
+      padding: 0.7rem 1.1rem;
+      border-radius: 1.2rem;
+      max-width: 80%;
+      font-size: 1rem;
+      word-break: break-word;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    .chat-footer {
+      border-top: 1px solid #e7eaf3;
+      padding: 1rem 1.5rem;
+      background: #f9fafc;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .main-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        margin-top: 0;
+      }
+      .side-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 0 0 18px 18px;
+      }
+      .chat-card {
+        max-width: 100vw;
+        border-radius: 18px 18px 0 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .chat-card, .side-card { border-radius: 0; }
+      .chat-container { padding: 1rem; }
+      .chat-footer, .chat-header { padding: 0.7rem 1rem; }
+      .side-card { padding: 1rem; }
     }
   </style>
-
 </head>
-
-
-
 <body>
-  <div id="navbar"></div>
-  <div class="container mb-3 text-center">
-    <div class="container-fluid mb-3 text-center">
-      <h1>🦜CustomGemini Chat</h1>
-      <h5>Google Gemini Pro LLM with Chat Interface</h5>
-    </div>
-    <div class="dropdown-center mb-3">
-      <button class="btn btn-outline-primary" type="button" onclick="location.href='/tools/gemini'"
-        data-bs-toggle="tooltip" title="Back to 🧿CustomGemini">
-        ↩️
+<div id="navbar"></div>
+
+<div class="main-layout">
+  <div class="chat-card" id="mainCard">
+    <div class="chat-header">
+      <span>
+        🦜 Gemini Chat
+        <span class="badge bg-primary ms-2" id="modelStatus">Gemini 1.5 Pro</span>
+      </span>
+      <button class="btn btn-outline-danger btn-sm ms-2" id="clearChatBtn" title="Clear Chat">
+        <i class="bi bi-trash"></i>
       </button>
-      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-        aria-expanded="false">API ⚙️</button>
-      <ul class="dropdown-menu mb-2 text-center">
-        <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
-            title="Save API key to cookies">Add</button></li>
-        <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()"
-            target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li>
-        <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
-            data-bs-toggle="tooltip"
-            title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show
-            saved key</button></li>
-        <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
-            data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
-      </ul>
     </div>
+    <div class="chat-container" id="chatContainer" aria-live="polite"></div>
+    <form class="chat-footer" id="messageForm" autocomplete="off">
+      <input type="text" class="form-control" id="chatInput" placeholder="Type your message..." aria-label="Type your message" required autofocus>
+      <button class="btn btn-primary" type="submit" id="sendBtn">Send</button>
+    </form>
   </div>
-  <div class="container" id="apialerts" style="display: none;">
-    <div class="alert alert-warning" role="alert">
-      API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
-        target="_blank" class="alert-link">API key</a> to use Google Gemini.
+  <div class="side-card" id="sideCard">
+    <div>
+      <label for="temperatureSlider" class="form-label mb-1">Creativity: <span id="tempValue">0.5</span></label>
+      <input type="range" class="form-range" min="0" max="1" step="0.05" value="0.5" id="temperatureSlider">
     </div>
-  </div>
-
-
-
-  <div class="container fixed-up p-3">
-    <div class="chat-container mb-4" id="chat-container"></div>
-  </div>
-
-  <div class="fixed-bottom bg-light p-3">
-    <div class="container">
-      <form id="message-form" class="row g-3">
-        <div class="input-group">
-          <input type="text" id="message-input" class="form-control" placeholder="Type your message...">
-          <button id="send-btn" type="submit" class="btn btn-primary">Send</button>
-        </div>
-      </form>
+    <div>
+      <label for="modelSelect" class="form-label">Model</label>
+      <select class="form-select mb-2" id="modelSelect">
+        <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+        <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+        <option value="gemini-2.0-flash-lite">Gemini 2.0 Flash-Lite</option>
+      </select>
     </div>
+    <div>
+      <label for="apiKeyInput" class="form-label">Gemini API Key</label>
+      <input type="password" class="form-control mb-2" id="apiKeyInput" placeholder="Enter your Gemini API key">
+      <div id="savedApiKeyDisplay" class="mb-2 small text-success"></div>
+      <button class="btn btn-success btn-sm" id="saveAllSettingsBtn" type="button">Save Settings</button>
+    </div>
+    <div class="form-check form-switch mb-2">
+        <input class="form-check-input" type="checkbox" id="toggleNotice" unchecked>
+        <label class="form-check-label" for="toggleNotice">Additional Information</label>
+      </div>
+    <div id="noticeContainer">
+      <div class="alert alert-info small mt-2" role="alert">
+        <strong>Note:</strong> Chat history is used for context. Each message is processed with the full conversation.
+      </div>
+      <div class="alert alert-info small mt-2" role="alert">
+        <strong>Note:</strong> Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.
+      </div>
+    </div>
+      <div class="mb-3 d-flex justify-content-end align-items-start flex-column">
+    <button 
+      class="btn btn-warning btn-sm shadow-sm d-flex align-items-center mb-1" 
+      id="proModelBtn" 
+      type="button"
+      aria-label="Try CustGemini with custom prompts"
+      data-bs-toggle="tooltip"
+      data-bs-placement="left"
+      title="Unlock advanced customization and prompt management with CustGemini!"
+    >
+      <i class="bi bi-stars me-2"></i> 
+      Try CustGemini with Custom Prompts
+    </button>
+    <small class="text-muted ms-1">
+      Advanced prompt customization and enhanced Gemini features.
+    </small>
   </div>
-
-
   </div>
+</div>
 
+<div class="toast align-items-center text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body" id="toastMsg">Copied to clipboard!</div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
 
+<div id="footer"></div>
 
-  <div id="modals"></div>
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src='../../src/components/navspace.js'></script>
-<script>
-  fetch('../../src/components/nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-      displayRandomVariation();
-    })
-    .catch(error => {
-      console.error('Error fetching navbar:', error);
-    });
-
-</script>
-<script>
-  fetch('../gemini/components/modal.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('modals').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching modals:', error);
-    });
-</script>
-
-<!-- Bootstrap JS and any other required scripts -->
 <script type="importmap">
-        {
-        "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-        }
-        }
-    </script>
-
+  {
+    "imports": {
+      "@google/generative-ai": "https://esm.run/@google/generative-ai"
+    }
+  }
+</script>
 <script type="module">
   import { GoogleGenerativeAI } from "@google/generative-ai";
-  // Fetch your API_KEY
-  var savedApiKey = getSavedApiKeyFromCookies();
-  const API_KEY = savedApiKey;
 
-  if (!API_KEY) {
-    apialerts.style.display = 'block';
-  } else {
-    apialerts.style.display = 'none';
+
+  let chatHistory = [];
+  let API_KEY = getSavedApiKeyFromCookies() || "";
+  let MODEL = getSavedModelFromCookies() || "gemini-2.0-flash-lite";
+  let isLoading = false;
+
+
+  const chatContainer = document.getElementById("chatContainer");
+  const messageForm = document.getElementById("messageForm");
+  const chatInput = document.getElementById("chatInput");
+  const sendBtn = document.getElementById("sendBtn");
+  const temperatureSlider = document.getElementById("temperatureSlider");
+  const tempValue = document.getElementById("tempValue");
+  const clearChatBtn = document.getElementById("clearChatBtn");
+  const liveToast = new bootstrap.Toast(document.getElementById('liveToast'));
+  const toastMsg = document.getElementById('toastMsg');
+  const apiKeyInput = document.getElementById('apiKeyInput');
+  const savedApiKeyDisplay = document.getElementById('savedApiKeyDisplay');
+  const modelSelect = document.getElementById('modelSelect');
+  const modelStatus = document.getElementById('modelStatus');
+  const toggleNotice = document.getElementById('toggleNotice');
+  const noticeContainer = document.getElementById('noticeContainer');
+
+  function getSavedApiKeyFromCookies() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      if (cookie.trim().startsWith("savedAPI=")) {
+        return cookie.trim().substring("savedAPI=".length);
+      }
+    }
+    return "";
+  }
+  function saveApiKey(key) {
+    document.cookie = "savedAPI=" + key + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+    API_KEY = key;
+    savedApiKeyDisplay.textContent = "API Key saved!";
+  }
+  function getSavedModelFromCookies() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      if (cookie.trim().startsWith("savedModel=")) {
+        return cookie.trim().substring("savedModel=".length);
+      }
+    }
+    return "gemini-2.0-flash-lite";
+  }
+  function saveModel(model) {
+    document.cookie = "savedModel=" + model + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+    MODEL = model;
+    updateModelStatus();
+  }
+  function updateModelStatus() {
+    modelStatus.textContent = modelSelect.options[modelSelect.selectedIndex].text;
+    modelStatus.className = "badge bg-primary ms-2";
+  }
+  function showToast(message) {
+    toastMsg.textContent = message;
+    liveToast.show();
+  }
+  function setLoading(state) {
+    isLoading = state;
+    chatInput.disabled = state;
+    sendBtn.disabled = state;
+    if (!state) chatInput.focus();
   }
 
-  const genAI = new GoogleGenerativeAI(API_KEY);
+  async function sendMessage(userMsg) {
+    chatHistory.push({ role: "user", content: userMsg });
+    renderChat();
+    chatInput.value = "";
+    setLoading(true);
+    chatHistory.push({ role: "ai", content: "<span class='text-muted'><i class='bi bi-three-dots'></i> Gemini is thinking...</span>" });
+    renderChat();
 
-  async function run() {
-    let chatHistory = [{
-      role: "user",
-      parts: [{ text: "Hi" }],
-    }, {
-      role: "model",
-      parts: [{ text: "Great to meet you. What would you like to know?" }],
-    }]; // Initialize chat history
+    const temperature = parseFloat(temperatureSlider.value);
 
-    const chatContainer = document.getElementById('chat-container');
-    const messageForm = document.getElementById('message-form');
-    const messageInput = document.getElementById('message-input');
-
-    messageForm.addEventListener('submit', async (event) => {
-      event.preventDefault(); // Prevent form submission
-
-      const userMessage = messageInput.value.trim();
-      if (userMessage === '') return;
-
-      appendMessage(userMessage, 'user');
-      // Update chat history
-
-      // Show loading indicator
-      appendLoadingIndicator();
-
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    try {
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      const model = genAI.getGenerativeModel({ model: MODEL }, { temperature });
+      const geminiHistory = chatHistory
+        .filter(m => m.role === "user" || m.role === "ai")
+        .map(m => ({
+          role: m.role === "user" ? "user" : "model",
+          parts: [{ text: m.content.replace(/<[^>]+>/g, '') }]
+        }));
 
       const chat = model.startChat({
-        history: chatHistory,
-        generationConfig: {
-          maxOutputTokens: 100,
-        },
+        history: geminiHistory,
+        generationConfig: { maxOutputTokens: 512 }
       });
-      console.log(chatHistory)
-      console.log("User:" + userMessage);
-      const result = await chat.sendMessageStream(userMessage);
 
-
-      //const result = await model.generateContentStream(userMessage);
-      const response = await result.response;
-      let text = '';
+      const result = await chat.sendMessageStream(userMsg);
+      let text = "";
       for await (const chunk of result.stream) {
-        const chunkText = chunk.text();
-        console.log(chunkText);
-        text += chunkText;
+        text += chunk.text();
       }
+      chatHistory.pop(); 
+      chatHistory.push({ role: "ai", content: text });
+      renderChat();
+    } catch (err) {
+      chatHistory.pop(); 
+      chatHistory.push({ role: "ai", content: "<span class='text-danger'>Error: " + (err.message || "Failed to get response") + "</span>" });
+      renderChat();
+    }
+    setLoading(false);
+  }
 
-      // Convert Markdown to HTML
-      const htmlResult = marked.parse(text);
-
-      // Hide loading indicator
-      removeLoadingIndicator();
-
-      // Append the HTML result to the chat container
-      appendMessage(htmlResult, 'model');
-
-      // Clear input field after sending
-      messageInput.value = '';
-    });
-
-    function appendMessage(message, role) {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('mb-3');
-      if (role === 'user') {
-        messageDiv.innerHTML = `<div class="text-end" style="margin-right: 10px;"><span class="badge bg-primary">You</span>: ${message}</div>`;
+  function renderChat() {
+    chatContainer.innerHTML = "";
+    const frag = document.createDocumentFragment();
+    chatHistory.forEach(msg => {
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "message " + (msg.role === "user" ? "user" : "ai");
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      if (msg.role === "ai") {
+        bubble.innerHTML = marked.parse(msg.content);
       } else {
-        messageDiv.innerHTML = `<div><span class="badge bg-secondary">Bot</span>: ${message}</div>`;
+        bubble.textContent = msg.content;
       }
-      chatContainer.appendChild(messageDiv);
-
-      // Scroll to the bottom
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-
-    function appendLoadingIndicator() {
-      const loadingDiv = document.createElement('div');
-      loadingDiv.classList.add('text-center', 'text-muted');
-      loadingDiv.textContent = 'Loading...';
-      chatContainer.appendChild(loadingDiv);
-    }
-
-    function removeLoadingIndicator() {
-      const loadingDiv = chatContainer.querySelector('.text-muted');
-      if (loadingDiv) {
-        loadingDiv.remove();
-      }
-    }
-    function updateChatHistory(role, message) {
-      chatHistory.push({
-        role: role,
-        parts: [{ text: message }]
-      });
-
-      console.log(chatHistory);
-    }
-
+      msgDiv.appendChild(bubble);
+      frag.appendChild(msgDiv);
+    });
+    chatContainer.appendChild(frag);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
   }
 
+  messageForm.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!API_KEY) {
+      showToast("Please set your Gemini API Key in Settings.");
+      return;
+    }
+    const userMsg = chatInput.value.trim();
+    if (!userMsg || isLoading) return;
+    sendMessage(userMsg);
+  });
+  
+  chatInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      messageForm.requestSubmit();
+    }
+  });
 
-  run();
+  temperatureSlider.addEventListener("input", () => {
+    tempValue.textContent = temperatureSlider.value;
+  });
+
+  clearChatBtn.addEventListener("click", () => {
+    chatHistory = [];
+    renderChat();
+    showToast("Chat cleared.");
+    chatInput.focus();
+  });
+
+  modelSelect.addEventListener("change", () => {
+    saveModel(modelSelect.value);
+    showToast("Model saved.");
+    updateModelStatus();
+  });
+
+  saveAllSettingsBtn.addEventListener("click", () => {
+    saveApiKey(apiKeyInput.value.trim());
+    saveModel(modelSelect.value);
+    showToast("Settings saved!");
+  });
+
+
+  toggleNotice.addEventListener('change', function() {
+    noticeContainer.style.display = this.checked ? '' : 'none';
+  });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    API_KEY = getSavedApiKeyFromCookies() || "";
+    MODEL = getSavedModelFromCookies() || "gemini-2.0-flash-lite";
+    modelSelect.value = MODEL;
+    updateModelStatus();
+    apiKeyInput.value = API_KEY;
+    renderChat();
+    chatInput.focus();
+    noticeContainer.style.display = toggleNotice.checked ? '' : 'none';
+  });
+
+  document.getElementById('proModelBtn').addEventListener('click', function() {
+  window.location.href = '/tools/gemini/';
+  });
+
 </script>
-
 <script>
-  function openModal() {
-    // Open the modal
-    var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
-    myModal.show();
-  }
-  function saveApiKey() {
-    var apiKey = document.getElementById('apiKeyInput').value;
-    document.cookie = "savedAPI=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-    document.getElementById("apiKeyInput").value = "";
-    showSavedApiKey()
-    var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
-    myModal.hide();
-    // Reload the page
-    location.reload();
-  }
-  function showSavedApiKey() {
-    var savedApiKey = getSavedApiKeyFromCookies();
-    document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
-    var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
-    myModal.show();
-  }
-  function getSavedApiKeyFromCookies() {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].trim();
-      if (cookie.startsWith("savedAPI=")) {
-        var savedAPI = cookie.substring("savedAPI=".length);
-        return savedAPI;
-      }
-    }
-    return savedAPI = null;
-    // return savedAPI = "No API key 🚫";
-  }
-
+  fetch('../../src/components/nav.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(()=>{});
+  fetch('../../src/components/footer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('footer').innerHTML = html)
+    .catch(()=>{});
 </script>
-
-
-<script>
-  function showConfirmationModal() {
-    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-    confirmationModal.show();
-  }
-  function clearApiKey() {
-    document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
-    myModal.show();
-    // Reload the page
-    location.reload();
-  }
-</script>
-
+</body>
 </html>
