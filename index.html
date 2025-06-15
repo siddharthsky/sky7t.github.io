@@ -5,52 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>⚡Sky7t</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <div class="mb-3" id="navbar"></div>
 </head>
 <body>
 
+<div class="mb-3" id="navbar"></div>
+
 <div class="container text-center mb-3">
   <div id="toolsRow" class="row">
-    <!-- Dynamic content will be inserted here -->
   </div>
 </div>
 
 <div id="footer"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 <script src='../../src/components/navspace.js'></script>
 <script>
-  fetch('../../src/components/nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-      displayRandomVariation();
-    })
-    .catch(error => {
-      console.error('Error fetching navbar:', error);
-    });
+  document.addEventListener('DOMContentLoaded', () => {
 
-  fetch('../../src/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching footer:', error);
-    });
+    const loadComponent = async (componentPath, elementId) => {
+      try {
+        const response = await fetch(componentPath);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.text();
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.innerHTML = data;
+        } else {
+          console.error(`Error: Element with ID '${elementId}' not found.`);
+        }
+      } catch (error) {
+        console.error(`Error fetching component from ${componentPath}:`, error);
+      }
+    };
 
-  // Fetch tools data from tools.json
-  fetch('tools.json')
-    .then(response => response.json())
-    .then(toolsData => {
-      const toolsRow = document.getElementById('toolsRow');
-      let htmlContent = '';
+    const loadTools = async () => {
+      try {
+        const response = await fetch('tools.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const toolsData = await response.json();
+        const toolsRow = document.getElementById('toolsRow');
+        
+        if (!toolsRow) {
+            console.error('Error: Element with ID "toolsRow" not found.');
+            return;
+        }
 
-      Object.values(toolsData).forEach(tool => {
-        htmlContent += `
+        let htmlContent = '';
+        Object.values(toolsData).forEach(tool => {
+          htmlContent += `
             <div class="col-md-4 mb-3">
               <div class="card" style="height: 10rem;">
-                <a href="${tool.url}" class="card-link" style="text-decoration: none;" data-toggle="tooltip" title="${tool.description}">
+                <a href="${tool.url}" class="card-link stretched-link" style="text-decoration: none;" data-bs-toggle="tooltip" title="${tool.description}">
                   <div style="font-size: 90px; line-height: 100px;">${tool.ico}</div>
                 </a>
                 <div class="card-body">
@@ -59,17 +69,34 @@
               </div>
             </div>
           `;
-      });
-      toolsRow.innerHTML = htmlContent;
-    })
-    .catch(error => {
-      console.error('Error fetching tools data:', error);
-    });
+        });
+        toolsRow.innerHTML = htmlContent;
+        
+        initializeTooltips();
 
-    // Initialize tooltips
-    $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-          });
+      } catch (error) {
+        console.error('Error fetching tools data:', error);
+      }
+    };
+    
+
+    const initializeTooltips = () => {
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    };
+
+    const initializePage = async () => {
+        await loadComponent('../../src/components/nav.html', 'navbar');
+        await loadComponent('../../src/components/footer.html', 'footer');
+        await loadTools();
+        
+        if (typeof displayRandomVariation === 'function') {
+            displayRandomVariation();
+        }
+    };
+
+    initializePage();
+  });
 </script>
 </body>
 </html>
