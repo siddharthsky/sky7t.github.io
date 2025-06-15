@@ -1,528 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>🧿 CustomGemini</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f4f6fb; }
+    .main-layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .chat-card {
+      flex: 1 1 540px;
+      max-width: 540px;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .side-card {
+      width: 320px;
+      min-width: 240px;
+      max-width: 360px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .chat-header {
+      border-bottom: 1px solid #e7eaf3;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      background: #f9fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .chat-container {
+      padding: 1.5rem;
+      min-height: 320px;
+      max-height: 500px;
+      overflow-y: auto;
+      flex: 1 1 auto;
+    }
+    .message {
+      display: flex;
+      margin-bottom: 1.2rem;
+    }
+    .message.user .bubble {
+      margin-left: auto;
+      background: #e3f0ff;
+      color: #1959a8;
+      border-bottom-right-radius: 0;
+    }
+    .message.ai .bubble {
+      margin-right: auto;
+      background: #f3f3f3;
+      color: #222;
+      border-bottom-left-radius: 0;
+    }
+    .bubble {
+      padding: 0.7rem 1.1rem;
+      border-radius: 1.2rem;
+      max-width: 80%;
+      font-size: 1rem;
+      word-break: break-word;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    .chat-footer {
+      border-top: 1px solid #e7eaf3;
+      padding: 1rem 1.5rem;
+      background: #f9fafc;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+    @media (max-width: 900px) {
+      .main-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        margin-top: 0;
+      }
+      .side-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 0 0 18px 18px;
+      }
+      .chat-card {
+        max-width: 100vw;
+        border-radius: 18px 18px 0 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .chat-card, .side-card { border-radius: 0; }
+      .chat-container { padding: 1rem; }
+      .chat-footer, .chat-header { padding: 0.7rem 1rem; }
+      .side-card { padding: 1rem; }
+    }
+  </style>
 </head>
-
 <body>
-  <div id="navbar"></div>
-  <div class="container mb-3 text-center">
-    <div class="container-fluid mb-3 text-center">
-      <h1>🧿CustomGemini</h1>
-      <h5>Customized Google Gemini Pro LLM</h5>
+<div id="navbar"></div>
+
+<div class="main-layout">
+  <div class="chat-card" id="mainCard">
+    <div class="chat-header">
+      <span>🧿 CustGemini <span class="badge bg-primary ms-2" id="modelStatus">Gemini 1.5 Pro</span></span>
     </div>
-    <div class="dropdown-center mb-3">
-      <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-        aria-expanded="false" aria-controls="collapseExample1">
-        Model 🔧
-      </button>
-
-      <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
-        aria-expanded="false" aria-controls="collapseExample2">
-        Prompt 🛠️
-      </button>
-
-      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-        aria-expanded="false">API ⚙️</button>
-      <ul class="dropdown-menu mb-2 text-center">
-        <li><button type="button" class="btn btn-outline-primary mb-2" onclick="openModal()" data-bs-toggle="tooltip"
-            title="Save API key to cookies">Add</button></li>
-        <li><a href="https://aistudio.google.com/app/apikey" class="btn btn-outline-info mb-2" onclick="getKeys()"
-            target="_blank" data-bs-toggle="tooltip" title="Get API keys from google">Get Keys</a></li>
-        <li><button type="button" class="btn btn-outline-success mb-2" onclick="showSavedApiKey()"
-            data-bs-toggle="tooltip"
-            title="Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.">Show
-            saved key</button></li>
-        <li><button type="button" class="btn btn-outline-danger mb-2" onclick="showConfirmationModal()"
-            data-bs-toggle="tooltip" title="Clear API key from cookies">Clear</button></li>
-      </ul>
-      <button class="btn btn-outline-primary" type="button" onclick="location.href='/tools/geminichat'"
-        data-bs-toggle="tooltip" title="Chat Conversation">
-        Chat 🦜
-      </button>
-    </div>
-
-
-
-
-    <div class="collapse mb-2" id="collapseExample1">
-      <div class="card card-body">
-        <label for="customRange2" class="form-label">Model Temperature [0-1]</label>
-        <input type="range" class="form-range" min="0" max="1" step="0.2" id="customRange2">
-      </div>
-    </div>
-
-
-
-    <div class="collapse mb-2" id="collapseExample2">
-      <!-- <div class="card card-body"> -->
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
-          onclick="PromptSelector(1)">
-        <label class="form-check-label" for="inlineRadio1">Prompt 1</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
-          onclick="PromptSelector(2)">
-        <label class="form-check-label" for="inlineRadio2">Prompt 2</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"
-          onclick="PromptSelector(3)">
-        <label class="form-check-label" for="inlineRadio3">Prompt 3</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"
-          onclick="PromptSelector(4)">
-        <label class="form-check-label" for="inlineRadio3">Prompt 4</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <button type="button" class="btn btn-outline-primary mb-2" onclick="PromptPromise()">⚙️</button>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container mb-3 text-center">
-    <form id="message-form" class="row g-3">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="chat-input" placeholder="Type your message...">
-        <button class="btn btn-primary" type="submit" id="send-btn">Send</button>
-      </div>
+    <div class="chat-container" id="chatContainer" aria-live="polite"></div>
+    <form class="chat-footer" id="messageForm" autocomplete="off">
+      <input type="text" class="form-control" id="chatInput" placeholder="Type your message..." aria-label="Type your message" required autofocus>
+      <button class="btn btn-primary" type="submit" id="sendBtn">Send</button>
     </form>
   </div>
 
-  <div class="container" id="apialerts" style="display: none;">
-    <div class="alert alert-warning" role="alert">
-      API key is not provided. Please enter or check your <a href="https://aistudio.google.com/app/apikey"
-        target="_blank" class="alert-link">API key</a> to use Google Gemini.
+  <div class="side-card" id="sideCard">
+    <div>
+      <label for="temperatureSlider" class="form-label mb-1">Creativity: <span id="tempValue">0.5</span></label>
+      <input type="range" class="form-range" min="0" max="1" step="0.05" value="0.5" id="temperatureSlider">
     </div>
-  </div>
+    <div>
+      <label for="promptSelect" class="form-label mb-1">Select Prompt</label>
+      <select class="form-select mb-2" id="promptSelect">
+        <option value="0">Prompt 1</option>
+        <option value="1">Prompt 2</option>
+        <option value="2">Prompt 3</option>
+        <option value="3">Prompt 4</option>
+      </select>
+      <button class="btn btn-outline-secondary btn-sm mb-2" id="editPromptsBtn" type="button">
+        Edit Prompts
+      </button>
+    </div>
+    <div>
+      <label for="modelSelect" class="form-label">Model</label>
+      <select class="form-select mb-2" id="modelSelect">
+        <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+        <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+        <option value="gemini-2.0-flash-lite">Gemini 2.0 Flash-Lite</option>
+      </select>
+    </div>
+    <div>
+      <label for="apiKeyInput" class="form-label">Gemini API Key</label>
+      <input type="password" class="form-control mb-2" id="apiKeyInput" placeholder="Enter your Gemini API key">
+      <div id="savedApiKeyDisplay" class="mb-2 small text-success"></div>
+      <button class="btn btn-success btn-sm" id="saveAllSettingsBtn" type="button">Save Settings</button>
+    </div>
 
-  <div class="chat-container"></div>
-  <!-- Loading indicator using Bootstrap -->
-  <div class="container mb-2 text-center">
-    <div id="loading-indicator" style="display: none;">
-      <button class="btn btn-primary mb" type="button" disabled>
-        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-        <span role="status">Generating...</span>
+    <div class="form-check form-switch mb-2">
+        <input class="form-check-input" type="checkbox" id="toggleNotice" >
+        <label class="form-check-label" for="toggleNotice">Show Notices</label>
+      </div>
+
+    <div id="noticeContainer">
+      <div class="alert alert-info small mt-2" role="alert">
+        <strong>Note:</strong> This chat does not retain conversation history. Each message is processed independently with the selected prompt.
+      </div>
+      <div class="alert alert-info small mt-2" role="alert">
+        <strong>Note:</strong> Your API key is securely stored in your local browser's cookie and is never transmitted to the cloud.
+      </div>
+    </div>
+    <div class="mb-3 d-flex justify-content-end align-items-start flex-column">
+      <button 
+        class="btn btn-warning btn-sm shadow-sm d-flex align-items-center mb-1" 
+        id="proModelBtn" 
+        type="button"
+        aria-label="Try Gemini Chat"
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        title="Use Gemini Chat">
+        <i class="bi bi-stars me-2"></i> 
+        Try Gemini Chat
       </button>
     </div>
   </div>
-  <!-- Accordion -->
-  <div class="accordion container mb-4" id="accordionExample" style="display: none;">
-    <div class="accordion-item mb-2">
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-        <div class="accordion-body" id="result_latest"></div>
-      </div>
-    </div>
-    <div class="btn-group text-right mb-2" role="group" aria-label="Basic outlined example">
-      <button type="button" onclick="copyText()" id="liveToastBtn" class="btn btn-outline-primary"
-        data-bs-toggle="tooltip" title="Copy result">📋</button>
-    </div>
-  </div>
-  <div class="toast text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive"
-    aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body">
-        Result has been copied to clipboard.
-      </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-        aria-label="Close"></button>
-    </div>
-  </div>
-  </div>
-  <div id="footer"></div>
-  <div id="modals"></div>
-</body>
+</div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="PromptPromiseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="promptsModal" tabindex="-1" aria-labelledby="promptsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Prompts</h5>
+        <h5 class="modal-title" id="promptsModalLabel">Edit Prompts</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p id="1">Prompt 1</p>
-        <div class="input-group">
-          <textarea class="form-control" id="prompt1" placeholder="Enter Prompt 1"
-            aria-label="With textarea"></textarea>
-        </div>
-        <hr>
-        <p id="2">Prompt 2</p>
-        <div class="input-group">
-          <textarea class="form-control" id="prompt2" placeholder="Enter Prompt 2"
-            aria-label="With textarea"></textarea>
-        </div>
-        <hr>
-
-        <p id="3">Prompt 3</p>
-        <div class="input-group">
-          <textarea class="form-control" id="prompt3" placeholder="Enter Prompt 3"
-            aria-label="With textarea"></textarea>
-        </div>
-        <hr>
-
-        <p id="4">Prompt 4</p>
-        <div class="input-group">
-          <textarea class="form-control" id="prompt4" placeholder="Enter Prompt 4"
-            aria-label="With textarea"></textarea>
-        </div>
-        <hr>
+        <textarea class="form-control mb-2" id="prompt1" placeholder="Prompt 1"></textarea>
+        <textarea class="form-control mb-2" id="prompt2" placeholder="Prompt 2"></textarea>
+        <textarea class="form-control mb-2" id="prompt3" placeholder="Prompt 3"></textarea>
+        <textarea class="form-control mb-2" id="prompt4" placeholder="Prompt 4"></textarea>
       </div>
-
       <div class="modal-footer">
-        <input type="file" id="uploadFile" accept=".json">
-        <button type="button" class="btn btn-primary" onclick="uploadPrompts()">Upload</button>
-        <button type="button" class="btn btn-primary" onclick="downloadPrompts()">Download</button>
+        <button type="button" class="btn btn-success" id="savePromptsBtn">Save Prompts</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
+<button class="btn btn-primary rounded-circle fab" id="clearChatBtn" title="Clear Chat" aria-label="Clear Chat">
+  <i class="bi bi-trash"></i>
+</button>
 
+<div class="toast align-items-center text-bg-primary position-fixed bottom-0 end-0 p-3" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body" id="toastMsg">Copied to clipboard!</div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
 
+<div id="footer"></div>
 
-
-
-
-
-
-
-
-
-<script>
-  function openModal() {
-    // Open the modal
-    var myModal = new bootstrap.Modal(document.getElementById('saveApiKeyModal'));
-    myModal.show();
-  }
-  function saveApiKey() {
-    var apiKey = document.getElementById('apiKeyInput').value;
-    document.cookie = "savedAPI=" + apiKey + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-    document.getElementById("apiKeyInput").value = "";
-    showSavedApiKey()
-    var myModal = bootstrap.Modal.getInstance(document.getElementById('saveApiKeyModal'));
-    myModal.hide();
-    // Reload the page
-    location.reload();
-  }
-  function showSavedApiKey() {
-    var savedApiKey = getSavedApiKeyFromCookies();
-    document.getElementById('savedApiKeyDisplay').innerText = "Your API Key: " + savedApiKey;
-    var myModal = new bootstrap.Modal(document.getElementById('savedApiKeyModal'));
-    myModal.show();
-  }
-  function getSavedApiKeyFromCookies() {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].trim();
-      if (cookie.startsWith("savedAPI=")) {
-        var savedAPI = cookie.substring("savedAPI=".length);
-        return savedAPI;
-      }
-    }
-    return savedAPI = null;
-    // return savedAPI = "No API key 🚫";
-  }
-
-</script>
-
-
-
-
-
-
-<script>
-  // Declare promptgiven in the global scope
-  let promptgiven = "";
-
-  function PromptSelector(promptNumber) {
-
-    // Set the value of input box based on the selected prompt
-    switch (promptNumber) {
-      case 1:
-        promptgiven = document.getElementById('prompt1').value;
-        return promptgiven;
-      case 2:
-        promptgiven = document.getElementById('prompt2').value;
-        return promptgiven;
-      case 3:
-        promptgiven = document.getElementById('prompt3').value;
-        return promptgiven;
-      case 4:
-        promptgiven = document.getElementById('prompt4').value;
-        return promptgiven;
-      default:
-        promptgiven = "";
-    }
-    return promptgiven; // Return the value of promptgiven
-  }
-
-  function PromptSelectorData() {
-    var myModal = new bootstrap.Modal(document.getElementById('PromptPromiseModal'));
-    myModal.show();
-    loadSavedPrompts(); // Load saved prompts when modal is opened
-  }
-
-
-  function PromptPromise() {
-    var myModal = new bootstrap.Modal(document.getElementById('PromptPromiseModal'));
-    myModal.show();
-    loadSavedPrompts(); // Load saved prompts when modal is opened
-  }
-
-
-  function savePrompts(prompts) {
-    // Convert prompts object to JSON string
-    var promptsJSON = JSON.stringify(prompts);
-
-    // Save JSON string in cookies with SameSite=None and Secure attributes
-    document.cookie = "prompts=" + promptsJSON + ";path=/;SameSite=None;Secure";
-  }
-
-
-  function loadSavedPrompts() {
-    var allCookies = document.cookie;
-    var cookiesArray = allCookies.split(';');
-    var promptsJSON;
-
-    // Find the prompts cookie
-    cookiesArray.forEach(function (cookie) {
-      var parts = cookie.split('=');
-      if (parts[0].trim() === 'prompts') {
-        promptsJSON = parts[1];
-      }
-    });
-
-    // If prompts cookie is found, parse and set values in textarea elements
-    if (promptsJSON) {
-      var prompts = JSON.parse(promptsJSON);
-      document.getElementById('prompt1').value = prompts.prompt1;
-      document.getElementById('prompt2').value = prompts.prompt2;
-      document.getElementById('prompt3').value = prompts.prompt3;
-      document.getElementById('prompt4').value = prompts.prompt4;
-    }
-  }
-
-  function uploadPrompts() {
-    var fileInput = document.getElementById('uploadFile');
-    var file = fileInput.files[0];
-
-    if (!file) {
-      alert('Please select a file.');
-      return;
-    }
-
-    var reader = new FileReader();
-    reader.onload = function (event) {
-      try {
-        var jsonData = JSON.parse(event.target.result);
-        savePrompts(jsonData);
-        loadSavedPrompts(); // Refresh textarea with uploaded prompts
-        alert('Prompts uploaded successfully.');
-      } catch (error) {
-        alert('Error parsing JSON file: ' + error);
-      }
-    };
-
-    reader.readAsText(file);
-  }
-
-  function downloadPrompts() {
-    var prompts = {
-      prompt1: document.getElementById('prompt1').value,
-      prompt2: document.getElementById('prompt2').value,
-      prompt3: document.getElementById('prompt3').value,
-      prompt4: document.getElementById('prompt4').value
-    };
-
-    var promptsJSON = JSON.stringify(prompts);
-    var blob = new Blob([promptsJSON], { type: 'application/json' });
-    var url = URL.createObjectURL(blob);
-
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = 'prompts.json';
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
-  }
-
-  // Bind savePrompts function to modal close event
-  var myModal = document.getElementById('PromptPromiseModal');
-  myModal.addEventListener('hidden.bs.modal', function () {
-    var prompts = {
-      prompt1: document.getElementById('prompt1').value,
-      prompt2: document.getElementById('prompt2').value,
-      prompt3: document.getElementById('prompt3').value,
-      prompt4: document.getElementById('prompt4').value
-    };
-    savePrompts(prompts);
-    // Reload the page
-    location.reload();
-  });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-  function showConfirmationModal() {
-    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-    confirmationModal.show();
-  }
-  function clearApiKey() {
-    document.cookie = "savedAPI=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    var myModal = new bootstrap.Modal(document.getElementById('clearAPIdata'));
-    myModal.show();
-    // Reload the page
-    location.reload();
-  }
-</script>
-<script>
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-</script>
-<script src='../../src/components/navspace.js'></script>
-<script>
-  fetch('../../src/components/nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-      displayRandomVariation();
-    })
-    .catch(error => {
-      console.error('Error fetching navbar:', error);
-    });
-</script>
-<script>
-  fetch('../../src/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching footer:', error);
-    });
-</script>
-<script>
-  fetch('../gemini/components/modal.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('modals').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error fetching modals:', error);
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script type="importmap">
-    {
-      "imports": {
-        "@google/generative-ai": "https://esm.run/@google/generative-ai"
-      }
+  {
+    "imports": {
+      "@google/generative-ai": "https://esm.run/@google/generative-ai"
     }
+  }
 </script>
 <script type="module">
   import { GoogleGenerativeAI } from "@google/generative-ai";
 
-  var savedApiKey = getSavedApiKeyFromCookies();
-  const API_KEY = savedApiKey;
+  let chatHistory = [];
+  let prompts = ["", "", "", ""];
+  let promptgiven = "";
+  let selectedPromptIdx = 0;
+  let API_KEY = getSavedApiKeyFromCookies() || "";
+  let MODEL = getSavedModelFromCookies() || "gemini-2.0-flash-lite";
+  let isLoading = false;
 
-  if (!API_KEY) {
-    apialerts.style.display = 'block';
-  } else {
-    apialerts.style.display = 'none';
-  }
 
-  const genAI = new GoogleGenerativeAI(API_KEY);
+  const chatContainer = document.getElementById("chatContainer");
+  const messageForm = document.getElementById("messageForm");
+  const chatInput = document.getElementById("chatInput");
+  const sendBtn = document.getElementById("sendBtn");
+  const temperatureSlider = document.getElementById("temperatureSlider");
+  const tempValue = document.getElementById("tempValue");
+  const clearChatBtn = document.getElementById("clearChatBtn");
+  const liveToast = new bootstrap.Toast(document.getElementById('liveToast'));
+  const toastMsg = document.getElementById('toastMsg');
+  const apiKeyInput = document.getElementById('apiKeyInput');
+  const savedApiKeyDisplay = document.getElementById('savedApiKeyDisplay');
+  const modelSelect = document.getElementById('modelSelect');
+  const modelStatus = document.getElementById('modelStatus');
+  const promptSelect = document.getElementById('promptSelect');
+  const editPromptsBtn = document.getElementById('editPromptsBtn');
+  const promptsModal = new bootstrap.Modal(document.getElementById('promptsModal'));
+  const promptInputs = [
+    document.getElementById('prompt1'),
+    document.getElementById('prompt2'),
+    document.getElementById('prompt3'),
+    document.getElementById('prompt4')
+  ];
+  const savePromptsBtn = document.getElementById('savePromptsBtn');
+  const saveAllSettingsBtn = document.getElementById('saveAllSettingsBtn');
+  const toggleNotice = document.getElementById('toggleNotice');
+  const noticeContainer = document.getElementById('noticeContainer');
 
-  async function generateStory(prompt, modelx) {
-    let model;
-    if (modelx) {
-      const generationConfig = {}; // Define your generation config here
-      model = genAI.getGenerativeModel({ model: "gemini-pro" }, generationConfig);
-    } else {
-      console.log("not here");
-      model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+  function getSavedApiKeyFromCookies() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      if (cookie.trim().startsWith("savedAPI=")) {
+        return cookie.trim().substring("savedAPI=".length);
+      }
     }
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    return text;
+    return "";
+  }
+  function saveApiKey(key) {
+    document.cookie = "savedAPI=" + key + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+    API_KEY = key;
+    savedApiKeyDisplay.textContent = "API Key saved!";
+  }
+  function getSavedModelFromCookies() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      if (cookie.trim().startsWith("savedModel=")) {
+        return cookie.trim().substring("savedModel=".length);
+      }
+    }
+    return "gemini-2.0-flash-lite";
+  }
+  function saveModel(model) {
+    document.cookie = "savedModel=" + model + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+    MODEL = model;
+    updateModelStatus();
+  }
+  function updateModelStatus() {
+    modelStatus.textContent = modelSelect.options[modelSelect.selectedIndex].text;
+    modelStatus.className = "badge bg-primary ms-2";
+  }
+  function savePrompts() {
+    prompts = promptInputs.map(input => input.value);
+    document.cookie = "prompts=" + JSON.stringify(prompts) + ";path=/;SameSite=None;Secure";
+    updatePromptSelectOptions();
+  }
+  function loadPrompts() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      if (cookie.trim().startsWith("prompts=")) {
+        try {
+          prompts = JSON.parse(cookie.trim().substring("prompts=".length));
+          promptInputs.forEach((input, i) => input.value = prompts[i] || "");
+        } catch {}
+      }
+    }
+    updatePromptSelectOptions();
+  }
+  function updatePromptSelectOptions() {
+    for (let i = 0; i < 4; i++) {
+      let text = prompts[i] ? prompts[i].slice(0, 30).replace(/\n/g, ' ') : `Prompt ${i+1}`;
+      promptSelect.options[i].text = text || `Prompt ${i+1}`;
+    }
+  }
+  function saveSelectedPromptIdx(idx) {
+    document.cookie = "selectedPromptIdx=" + idx + "; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+  }
+  function loadSelectedPromptIdx() {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+      if (cookie.trim().startsWith("selectedPromptIdx=")) {
+        const val = parseInt(cookie.trim().substring("selectedPromptIdx=".length), 10);
+        return isNaN(val) ? 0 : val;
+      }
+    }
+    return 0;
+  }
+  function renderChat() {
+    chatContainer.innerHTML = "";
+    const frag = document.createDocumentFragment();
+    chatHistory.forEach(msg => {
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "message " + (msg.role === "user" ? "user" : "ai");
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      if (msg.role === "ai") {
+        bubble.innerHTML = marked.parse(msg.content);
+      } else {
+        bubble.textContent = msg.content;
+      }
+      msgDiv.appendChild(bubble);
+      frag.appendChild(msgDiv);
+    });
+    chatContainer.appendChild(frag);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+  function showToast(message) {
+    toastMsg.textContent = message;
+    liveToast.show();
+  }
+  function setLoading(state) {
+    isLoading = state;
+    chatInput.disabled = state;
+    sendBtn.disabled = state;
+    if (!state) chatInput.focus();
   }
 
-  document.getElementById("message-form").addEventListener("submit", async (event) => {
-    event.preventDefault(); // Prevent form submission
 
-    const promptinput = document.getElementById("chat-input").value;
-    const prompt = promptgiven + " " + promptinput;
-    console.log(prompt);
-    const sliderValue = document.getElementById("customRange2").value; // Get the value of the slider
-    console.log(sliderValue);
+  async function sendMessage(userMsg) {
+    chatHistory.push({ role: "user", content: userMsg });
+    renderChat();
+    chatInput.value = "";
+    setLoading(true);
+    chatHistory.push({ role: "ai", content: "<span class='text-muted'><i class='bi bi-three-dots'></i> Gemini is thinking...</span>" });
+    renderChat();
 
-    const modelx = {
-      stopSequences: ["red"],
-      maxOutputTokens: 10,
-      temperature: sliderValue,
-      topP: 0.1,
-      topK: 16,
-    };
+  
+    const prompt = (promptgiven ? promptgiven + " " : "") + userMsg;
+    const temperature = parseFloat(temperatureSlider.value);
 
-    // Show loading indicator
-    document.getElementById("loading-indicator").style.display = 'block';
-    const resultText = await generateStory(prompt, modelx); // Pass slider value to generateStory function
-    console.log(resultText);
-    // Hide loading indicator
-    document.getElementById("loading-indicator").style.display = 'none';
-    // Display the result within the accordion container
-    const resultContainer = document.getElementById("result_latest");
-    accordionExample.style.display = 'block';
-    // Convert Markdown to HTML
-    const htmlResult = marked.parse(resultText);
-    // Update the content of resultContainer with HTML
-    resultContainer.innerHTML = htmlResult;
+    try {
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      const model = genAI.getGenerativeModel({ model: MODEL }, { temperature });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = await response.text();
+      chatHistory.pop(); 
+      chatHistory.push({ role: "ai", content: text });
+      renderChat();
+    } catch (err) {
+      chatHistory.pop(); 
+      chatHistory.push({ role: "ai", content: "<span class='text-danger'>Error: " + (err.message || "Failed to get response") + "</span>" });
+      renderChat();
+    }
+    setLoading(false);
+  }
+
+  messageForm.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!API_KEY) {
+      showToast("Please set your Gemini API Key in Settings.");
+      return;
+    }
+    const userMsg = chatInput.value.trim();
+    if (!userMsg || isLoading) return;
+    sendMessage(userMsg);
   });
+
+  chatInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      messageForm.requestSubmit();
+    }
+  });
+
+  temperatureSlider.addEventListener("input", () => {
+    tempValue.textContent = temperatureSlider.value;
+  });
+  clearChatBtn.addEventListener("click", () => {
+    chatHistory = [];
+    renderChat();
+    showToast("Chat cleared.");
+    chatInput.focus();
+  });
+
+  modelSelect.addEventListener("change", () => {
+    saveModel(modelSelect.value); 
+    showToast("Model saved.");
+    updateModelStatus();
+  });
+
+  saveAllSettingsBtn.addEventListener("click", () => {
+    saveApiKey(apiKeyInput.value.trim());
+    saveModel(modelSelect.value);
+    showToast("Settings saved!");
+  });
+
+  editPromptsBtn.addEventListener("click", () => {
+    loadPrompts();
+    promptsModal.show();
+    setTimeout(() => promptInputs[0].focus(), 300);
+  });
+
+  savePromptsBtn.addEventListener("click", () => {
+    savePrompts();
+    promptsModal.hide();
+    promptgiven = prompts[selectedPromptIdx] || "";
+    showToast("Prompts saved!");
+  });
+
+  promptInputs.forEach((input, idx) => {
+    input.addEventListener("input", () => {
+      prompts[idx] = input.value;
+      if (selectedPromptIdx === idx) {
+        promptgiven = input.value;
+      }
+      updatePromptSelectOptions();
+    });
+  });
+
+  promptSelect.addEventListener("change", () => {
+    selectedPromptIdx = parseInt(promptSelect.value, 10);
+    promptgiven = prompts[selectedPromptIdx] || "";
+    saveSelectedPromptIdx(selectedPromptIdx);
+  });
+
+  toggleNotice.addEventListener('change', function() {
+    if (this.checked) {
+      noticeContainer.style.display = '';
+    } else {
+      noticeContainer.style.display = 'none';
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    API_KEY = getSavedApiKeyFromCookies() || "";
+    MODEL = getSavedModelFromCookies() || "gemini-2.0-flash-lite";
+    modelSelect.value = MODEL;
+    updateModelStatus();
+    loadPrompts();
+    selectedPromptIdx = loadSelectedPromptIdx();
+    promptSelect.value = selectedPromptIdx;
+    promptgiven = prompts[selectedPromptIdx] || "";
+    apiKeyInput.value = API_KEY;
+    renderChat();
+    chatInput.focus();
+    noticeContainer.style.display = toggleNotice.checked ? '' : 'none';
+  });
+
+   document.getElementById('proModelBtn').addEventListener('click', function() {
+    window.location.href = '/tools/geminichat/';
+    });
 </script>
 <script>
-  // Initialize the toast instance
-  const toastLiveExample = document.getElementById('liveToast');
-  const toastBootstrap = new bootstrap.Toast(toastLiveExample);
-  function copyText() {
-    var textToCopy = document.getElementById("result_latest").innerText;
-    var textarea = document.createElement("textarea");
-    textarea.value = textToCopy;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    // Show the toast
-    toastBootstrap.show();
-  }
+  fetch('../../src/components/nav.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('navbar').innerHTML = html)
+    .catch(()=>{});
+  fetch('../../src/components/footer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('footer').innerHTML = html)
+    .catch(()=>{});
 </script>
-
+</body>
 </html>
