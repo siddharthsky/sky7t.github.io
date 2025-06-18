@@ -18,7 +18,7 @@
         "url": "/tools/gemini"
     },
     "tool4": {
-        "name": "CustGeminiChat",
+        "name": "GeminiChat",
         "description": "Google Gemini LLM with chat.",
         "ico": "🦜",
         "url": "/tools/geminichat"
