@@ -88,7 +88,7 @@ http://localhost:5001/live/1293.m3u8
 http://localhost:5001/live/232.m3u8
 #EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="http://localhost:5001/jtvimage/Zee_24_Taas.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", Zee 24 Taas
 http://localhost:5001/live/442.m3u8
-#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://localhost:5008/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", NDTV Marathi
+#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://localhost:5001/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", NDTV Marathi
 http://localhost:5001/live/3095.m3u8
 
 
