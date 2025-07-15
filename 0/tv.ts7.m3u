@@ -52,17 +52,20 @@ http://localhost:5001/live/1763.m3u8
 #EXTINF:-1 tvg-id="ts32" tvg-name="SONY PIX HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pix_HD.png" tvg-language="English" tvg-type="Movies" group-title="  Marathi", SONY PIX HD
 https://dai.google.com/ssai/event/8FR5Q-WfRWCkbMq_GxZ77w/master.m3u8
 
-#EXTINF:-1 tvg-id="173" tvg-name="Aaj Tak" tvg-logo="http://localhost:5001/jtvimage/Aaj_Tak.png" tvg-language="Hindi" tvg-type="News" group-title=" Marathi", Aaj Tak
+#EXTINF:-1 tvg-id=2065 tvg-name="Saregama Music" tvg-logo="http://localhost:5001/jtvimage/Saregama_Music.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", Saregama Music
+http://localhost:5001/live/2065.m3u8
+
+#EXTINF:-1 tvg-id="173" tvg-name="Aaj Tak" tvg-logo="http://localhost:5001/jtvimage/Aaj_Tak.png" tvg-language="Hindi" tvg-type="News" group-title="  Marathi", Aaj Tak
 http://localhost:5001/live/173.m3u8
-#EXTINF:-1 tvg-id="ts706" tvg-name="TV9 Bharatvarsh" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png" group-title=" Marathi", TV9 Bharatvarsh
+#EXTINF:-1 tvg-id="ts706" tvg-name="TV9 Bharatvarsh" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png" group-title="  Marathi", TV9 Bharatvarsh
 http://localhost:5001/live/1251.m3u8
-#EXTINF:-1 tvg-id="ts179" tvg-name="NDTV India" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png" group-title=" Marathi", NDTV India
+#EXTINF:-1 tvg-id="ts179" tvg-name="NDTV India" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png" group-title="  Marathi", NDTV India
 http://localhost:5001/live/258.m3u8
-#EXTINF:-1 tvg-name="CNN NEWS 18" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png" group-title=" Marathi", CNN NEWS 18
+#EXTINF:-1 tvg-name="CNN NEWS 18" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png" group-title="  Marathi", CNN NEWS 18
 http://localhost:5001/live/492.m3u8
-#EXTINF:-1 tvg-id=255 tvg-name="NDTV 24x7" tvg-logo="http://localhost:5001/jtvimage/NDTV_24x7.png" tvg-language="English" tvg-type="News" group-title=" Marathi", NDTV 24x7
+#EXTINF:-1 tvg-id=255 tvg-name="NDTV 24x7" tvg-logo="http://localhost:5001/jtvimage/NDTV_24x7.png" tvg-language="English" tvg-type="News" group-title="  Marathi", NDTV 24x7
 http://localhost:5001/live/255.m3u8
-#EXTINF:-1 tvg-id=493 tvg-name="India Today" tvg-logo="http://localhost:5001/jtvimage/India_Today.png" tvg-language="English" tvg-type="News" group-title=" Marathi", India Today
+#EXTINF:-1 tvg-id=493 tvg-name="India Today" tvg-logo="http://localhost:5001/jtvimage/India_Today.png" tvg-language="English" tvg-type="News" group-title="  Marathi", India Today
 http://localhost:5001/live/493.m3u8
 
 
