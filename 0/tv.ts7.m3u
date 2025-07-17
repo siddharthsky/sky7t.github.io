@@ -52,11 +52,11 @@ http://localhost:5001/live/1763.m3u8
 #EXTINF:-1 tvg-id="ts32" tvg-name="SONY PIX HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pix_HD.png" tvg-language="English" tvg-type="Movies" group-title="  Marathi", SONY PIX HD
 https://dai.google.com/ssai/event/8FR5Q-WfRWCkbMq_GxZ77w/master.m3u8
 
-#EXTINF:-1 tvg-id="ts139" tvg-name="9XM" tvg-logo="http://localhost:5001/jtvimage/9XM.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", 9XM
+#EXTINF:-1 tvg-id="ts139" tvg-name="9XM" tvg-logo="http://localhost:5001/jtvimage/9XM.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", 9XM
 http://localhost:5001/live/587.m3u8
-#EXTINF:-1 tvg-id=2753 tvg-name="YRF Music" tvg-logo="http://192.168.1.70:5001/jtvimage/YRF_Music.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", YRF Music
-http://192.168.1.70:5001/live/2753.m3u8
-#EXTINF:-1 tvg-id="ts39" tvg-name="9X Jalwa" tvg-logo="http://localhost:5001/jtvimage/9X_Jalwa.png" tvg-language="Hindi" tvg-type="Music" group-title="Music", 9X Jalwa
+#EXTINF:-1 tvg-id=2753 tvg-name="YRF Music" tvg-logo="http://localhost:5001/jtvimage/YRF_Music.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", YRF Music
+http://localhost:5001/live/2753.m3u8
+#EXTINF:-1 tvg-id="ts39" tvg-name="9X Jalwa" tvg-logo="http://localhost:5001/jtvimage/9X_Jalwa.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", 9X Jalwa
 http://localhost:5001/live/440.m3u8
 #EXTINF:-1 tvg-id=2065 tvg-name="Saregama Music" tvg-logo="http://localhost:5001/jtvimage/Saregama_Music.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", Saregama Music
 http://localhost:5001/live/2065.m3u8
