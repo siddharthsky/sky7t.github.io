@@ -62,8 +62,11 @@ http://localhost:5001/live/440.m3u8
 http://localhost:5001/live/2065.m3u8
 
 
-#EXTINF:-1 tvg-id="173" tvg-name="Aaj Tak" tvg-logo="http://localhost:5001/jtvimage/Aaj_Tak.png" tvg-language="Hindi" tvg-type="News" group-title="  Marathi", Aaj Tak
-http://localhost:5001/live/173.m3u8
+
+#EXTINF:-1 tvg-id=177 tvg-name="ABP News India" tvg-logo="http://localhost:5001/jtvimage/ABP_News_India.png" tvg-language="Hindi" tvg-type="News" group-title="  Marathi", ABP News India
+http://localhost:5001/live/177.m3u8
+#EXTINF:-1 tvg-id="ts259" tvg-name="Zee News" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_News.png" group-title="  Marathi", Zee News
+http://localhost:5001/live/504.m3u8
 #EXTINF:-1 tvg-id="ts706" tvg-name="TV9 Bharatvarsh" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png" group-title="  Marathi", TV9 Bharatvarsh
 http://localhost:5001/live/1251.m3u8
 #EXTINF:-1 tvg-id="ts179" tvg-name="NDTV India" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png" group-title="  Marathi", NDTV India
