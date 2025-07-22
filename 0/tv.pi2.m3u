@@ -1,6 +1,55 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
 
 
+#EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://192.168.1.101:5001/jtvimage/ABP_Majha.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", ABP Majha
+http://192.168.1.101:5001/live/612.m3u8
+#EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/TV9_Maharashtra.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", TV9 Marathi
+http://192.168.1.101:5001/live/617.m3u8
+#EXTINF:-1 tvg-id="ts251" tvg-name="Zee Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Zee Marathi
+http://192.168.1.101:5111?id=0-9-9z5383486
+#EXTINF:-1 tvg-id="ts501" tvg-name="Zee Marathi HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi_HD.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Zee Marathi HD
+http://192.168.1.101:5111?id=0-9-zeemarathi
+#EXTINF:-1 tvg-id="ts134" tvg-name="Colors Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Colors_Marathi_SD.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Colors Marathi
+http://192.168.1.101:5001/live/1326.m3u8
+#EXTINF:-1 tvg-id="ts308" tvg-name="Colors Marathi HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Colors_Marathi_HD.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Colors Marathi HD
+http://192.168.1.101:5001/live/755.m3u8
+#EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Sony Marathi
+https://dai.google.com/ssai/event/-_w3Jbq3QoW-mFCM2YIzxA/master.m3u8
+#EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi Alt" tvg-logo="http://192.168.1.101:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Sony Marathi Alt
+http://192.168.1.101:5001/live/1146.m3u8
+#EXTINF:-1 tvg-id="ts248" tvg-name="Zee Yuva" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Yuva.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Zee Yuva
+http://192.168.1.101:5111?id=0-9-zeeyuva
+#EXTINF:-1 tvg-id="ts249" tvg-name="Zee Talkies" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Talkies.png" tvg-language="All ✨" tvg-type="Movies" group-title="Marathi", Zee Talkies
+http://192.168.1.101:5111?id=0-9-9z5383489
+#EXTINF:-1 tvg-id="ts515" tvg-name="Zee Talkies HD " tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Talkies_HD.png" tvg-language="All ✨" tvg-type="Movies" group-title="Marathi", Zee Talkies HD 
+http://192.168.1.101:5111?id=0-9-zeetalkies
+#EXTINF:-1 tvg-id="ts192" tvg-name="Fakt Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Fakt_Marathi.png" tvg-language="All ✨" tvg-type="Movies" group-title="Marathi", Fakt Marathi
+http://192.168.1.101:5001/live/738.m3u8
+#EXTINF:-1 tvg-id="2758" tvg-name="Zee Chitramandir" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Chitramandir.png" tvg-language="All ✨" tvg-type="Movies" group-title="Marathi", Zee Chitramandir
+http://192.168.1.101:5111?id=0-9-394
+#EXTINF:-1 tvg-id="ts1221" tvg-name="Sun Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Sun_Marathi.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Sun Marathi
+http://192.168.1.101:5001/live/2424.m3u8
+#EXTINF:-1 tvg-id=1452 tvg-name="Shemaroo MarathiBana" tvg-logo="http://192.168.1.91:5001/jtvimage/Shemaroo_MarathiBana.png" tvg-language="All ✨" tvg-type="Movies" group-title="Marathi", Shemaroo MarathiBana
+http://192.168.1.101:5001/live/1452.m3u8
+#EXTINF:-1 tvg-id="ts336" tvg-name="DD Sahayadri" tvg-logo="http://192.168.1.101:5001/jtvimage/DD_Sahayadri.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", DD Sahayadri
+http://192.168.1.101:5001/live/695.m3u8
+#EXTINF:-1 tvg-id="ts217" tvg-name="Sangeet Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Sangeet_Marathi.png" tvg-language="All ✨" tvg-type="Music" group-title="Marathi", Sangeet Marathi
+http://192.168.1.101:5001/live/735.m3u8
+#EXTINF:-1 tvg-id="441" tvg-name="9x Jhakaas" tvg-logo="http://192.168.1.101:5001/jtvimage/9x_Jhakaas.png" tvg-language="All ✨" tvg-type="Music" group-title="Marathi", 9x Jhakaas
+http://192.168.1.101:5001/live/441.m3u8
+#EXTINF:-1 tvg-id="ts546" tvg-name="Saam Tv" tvg-logo="http://192.168.1.101:5001/jtvimage/Saam_Tv.png" tvg-language="All ✨" tvg-type="Entertainment" group-title="Marathi", Saam Tv
+http://192.168.1.101:5001/live/691.m3u8
+#EXTINF:-1 tvg-id="ts1102" tvg-name="Pudhari News" tvg-logo="http://192.168.1.101:5001/jtvimage/Pudhari_News.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", Pudhari News
+http://192.168.1.101:5001/live/2935.m3u8
+#EXTINF:-1 tvg-id="ts826" tvg-name="Lokshahi News" tvg-logo="http://192.168.1.101:5001/jtvimage/Lokshahi_News.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", Lokshahi News
+http://192.168.1.101:5001/live/1293.m3u8
+#EXTINF:-1 tvg-id="ts140" tvg-name="News18 Lokmat" tvg-logo="http://192.168.1.101:5001/jtvimage/IBN_Lokmat.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", News18 Lokmat
+http://192.168.1.101:5001/live/232.m3u8
+#EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_24_Taas.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", Zee 24 Taas
+http://192.168.1.101:5001/live/442.m3u8
+#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://192.168.1.21:5008/jtvimage/NDTV_Marathi.png" tvg-language="All ✨" tvg-type="News" group-title="Marathi", NDTV Marathi
+http://192.168.1.101:5001/live/3095.m3u8
+
 
 #EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://192.168.1.101:5001/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="News" group-title="Marathi", ABP Majha
 http://192.168.1.101:5001/live/612.m3u8
