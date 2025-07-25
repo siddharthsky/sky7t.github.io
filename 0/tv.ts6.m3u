@@ -19,10 +19,74 @@ http://localhost:5001/live/2424.m3u8
 http://localhost:5001/live/1452.m3u8
 #EXTINF:-1 tvg-id="ts336" tvg-name="DD Sahayadri" tvg-logo="http://localhost:5001/jtvimage/DD_Sahayadri.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", DD Sahayadri
 http://localhost:5001/live/695.m3u8
-#EXTINF:-1 tvg-id="ts217" tvg-name="Sangeet Marathi" tvg-logo="http://localhost:5001/jtvimage/Sangeet_Marathi.png" tvg-language="Marathi" tvg-type="Music" group-title="  Marathi", Sangeet Marathi
-http://localhost:5001/live/735.m3u8
-#EXTINF:-1 tvg-id="441" tvg-name="9x Jhakaas" tvg-logo="http://localhost:5001/jtvimage/9x_Jhakaas.png" tvg-language="Marathi" tvg-type="Music" group-title="  Marathi", 9x Jhakaas
-http://localhost:5001/live/441.m3u8
+
+
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+
+#EXTINF:-1 tvg-id="ts15" tvg-name="SET HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HD.png" group-title="  Marathi", SET HD
+https://dai.google.com/ssai/event/HgaB-u6rSpGx3mo4Xu3sLw/master.m3u8 
+#EXTINF:-1 tvg-id="ts48" tvg-name="SONY SAB HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_SAB_HD.png" group-title="  Marathi", SONY SAB HD
+https://dai.google.com/ssai/event/UI4QFJ_uRk6aLxIcADqa_A/master.m3u8
+#EXTINF:-1 tvg-id="ts56" tvg-name="Sony Wah" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Wah.png" group-title="  Marathi", Sony Wah
+https://dai.google.com/ssai/event/H_ZvXWqHRGKpHcdDE5RcDA/master.m3u8
+#EXTINF:-1 tvg-id="ts554" tvg-name="Sony Pal" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pal.png" group-title="  Marathi", Sony Pal
+https://dai.google.com/ssai/event/rPzF28qORbKZkhci_04fdQ/master.m3u8
+
+
+#EXTINF:-1 tvg-id="ts132" tvg-name="Sony Max" tvg-logo="http://localhost:5001/jtvimage/Sony_Max_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Sony Max
+https://dai.google.com/ssai/event/oJ-TGgVFSgSMBUoTkauvFQ/master.m3u8
+#EXTINF:-1 tvg-id="ts80" tvg-name="Sony Max HD" tvg-logo="http://localhost:5001/jtvimage/Sony_Max_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Sony Max HD
+https://dai.google.com/ssai/event/Qyqz40bSQriqSuAC7R8_Fw/master.m3u8
+#EXTINF:-1 tvg-id="ts120" tvg-name="Sony MAX2" tvg-logo="http://localhost:5001/jtvimage/Sony_MAX2.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Sony MAX2
+https://dai.google.com/ssai/event/4Jcu195QTpCNBXGnpw2I6g/master.m3u8
+#EXTINF:-1 tvg-id="ts53" tvg-name="Colors Cineplex" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex
+http://localhost:5001/live/482.m3u8
+#EXTINF:-1 tvg-id="ts61" tvg-name="Colors Cineplex HD" tvg-logo="http://localhost:5001/jtvimage/Color_Cineplex_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex HD
+http://localhost:5001/live/1477.m3u8
+#EXTINF:-1 tvg-id=1450 tvg-name="Colors Cineplex Superhit" tvg-logo="http://localhost:5001/jtvimage/Rishtey_Cineplex.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex Superhit
+http://localhost:5001/live/1450.m3u8
+#EXTINF:-1 tvg-id="ts1000" tvg-name="Colors Cineplex Bollywood" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex Bollywood
+http://localhost:5001/live/1763.m3u8
+#EXTINF:-1 tvg-id="ts32" tvg-name="SONY PIX HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pix_HD.png" tvg-language="English" tvg-type="Movies" group-title="  Marathi", SONY PIX HD
+https://dai.google.com/ssai/event/8FR5Q-WfRWCkbMq_GxZ77w/master.m3u8
+
+#EXTINF:-1 tvg-id="ts139" tvg-name="9XM" tvg-logo="http://localhost:5001/jtvimage/9XM.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", 9XM
+http://localhost:5001/live/587.m3u8
+#EXTINF:-1 tvg-id=2753 tvg-name="YRF Music" tvg-logo="http://localhost:5001/jtvimage/YRF_Music.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", YRF Music
+http://localhost:5001/live/2753.m3u8
+#EXTINF:-1 tvg-id="ts39" tvg-name="9X Jalwa" tvg-logo="http://localhost:5001/jtvimage/9X_Jalwa.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", 9X Jalwa
+http://localhost:5001/live/440.m3u8
+#EXTINF:-1 tvg-id=2065 tvg-name="Saregama Music" tvg-logo="http://localhost:5001/jtvimage/Saregama_Music.png" tvg-language="Hindi" tvg-type="Music" group-title="  Marathi", Saregama Music
+http://localhost:5001/live/2065.m3u8
+
+
+
+#EXTINF:-1 tvg-id=177 tvg-name="ABP News India" tvg-logo="http://localhost:5001/jtvimage/ABP_News_India.png" tvg-language="Hindi" tvg-type="News" group-title="  Marathi", ABP News India
+http://localhost:5001/live/177.m3u8
+#EXTINF:-1 tvg-id="ts259" tvg-name="Zee News" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_News.png" group-title="  Marathi", Zee News
+http://localhost:5001/live/504.m3u8
+#EXTINF:-1 tvg-id="ts706" tvg-name="TV9 Bharatvarsh" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png" group-title="  Marathi", TV9 Bharatvarsh
+http://localhost:5001/live/1251.m3u8
+#EXTINF:-1 tvg-id="ts179" tvg-name="NDTV India" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png" group-title="  Marathi", NDTV India
+http://localhost:5001/live/258.m3u8
+#EXTINF:-1 tvg-name="CNN NEWS 18" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png" group-title="  Marathi", CNN NEWS 18
+http://localhost:5001/live/492.m3u8
+#EXTINF:-1 tvg-id=255 tvg-name="NDTV 24x7" tvg-logo="http://localhost:5001/jtvimage/NDTV_24x7.png" tvg-language="English" tvg-type="News" group-title="  Marathi", NDTV 24x7
+http://localhost:5001/live/255.m3u8
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+
 #EXTINF:-1 tvg-id="ts546" tvg-name="Saam Tv" tvg-logo="http://localhost:5001/jtvimage/Saam_Tv.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Saam Tv
 http://localhost:5001/live/691.m3u8
 #EXTINF:-1 tvg-id="ts1102" tvg-name="Pudhari News" tvg-logo="http://localhost:5001/jtvimage/Pudhari_News.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", Pudhari News
@@ -33,8 +97,12 @@ http://localhost:5001/live/1293.m3u8
 http://localhost:5001/live/232.m3u8
 #EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="http://localhost:5001/jtvimage/Zee_24_Taas.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", Zee 24 Taas
 http://localhost:5001/live/442.m3u8
-#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://192.168.1.21:5008/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", NDTV Marathi
+#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://localhost:5001/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", NDTV Marathi
 http://localhost:5001/live/3095.m3u8
+
+
+
+///////////////////////////////////////////////
 
 
 #EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://localhost:5001/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="News" group-title="uMarathi", ABP Majha
@@ -281,6 +349,7 @@ http://localhost:5001/live/823.m3u8
 http://localhost:5001/live/821.m3u8
 #EXTINF:-1 tvg-id="ts460" tvg-name="SONY BBC Earth HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_Earth_HD_English.png" group-title="Infotainment", SONY BBC Earth HD
 https://dai.google.com/ssai/event/V73ovbgASP-xGvQQOukwTQ/master.m3u8
+
 
 
 #EXTINF:-1 tvg-id="173" tvg-name="Aaj Tak" tvg-logo="http://localhost:5001/jtvimage/Aaj_Tak.png" tvg-language="Hindi" tvg-type="News" group-title="News", Aaj Tak
