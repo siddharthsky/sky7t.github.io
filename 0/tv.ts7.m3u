@@ -1,6 +1,7 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
 
-
+#EXTINF:-1 tvg-id="ts251" tvg-name="Zee Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi.png" tvg-language="Marathi" tvg-type="Entertainment" ggroup-title="  Marathi", Zee Marathi
+http://192.168.1.101:5111?id=0-9-9z5383486
 #EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://localhost:5001/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", ABP Majha
 http://localhost:5001/live/612.m3u8
 #EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="http://localhost:5001/jtvimage/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", TV9 Marathi
