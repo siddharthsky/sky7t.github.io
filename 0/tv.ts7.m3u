@@ -5,12 +5,22 @@
 http://localhost:5001/live/612.m3u8
 #EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="http://localhost:5001/jtvimage/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", TV9 Marathi
 http://localhost:5001/live/617.m3u8
+#EXTINF:-1 tvg-id="ts251" tvg-name="Zee Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi.png" tvg-language="Marathi" tvg-type="Entertainment" ggroup-title="  Marathi", Zee Marathi
+http://192.168.1.101:5111?id=0-9-9z5383486
+#EXTINF:-1 tvg-id="ts501" tvg-name="Zee Marathi HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi_HD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Marathi HD
+http://192.168.1.101:5111?id=0-9-zeemarath
 #EXTINF:-1 tvg-id="ts134" tvg-name="Colors Marathi" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_SD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Colors Marathi
 http://localhost:5001/live/1326.m3u8
 #EXTINF:-1 tvg-id="ts308" tvg-name="Colors Marathi HD" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_HD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Colors Marathi HD
 http://localhost:5001/live/755.m3u8
 #EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="http://localhost:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Sony Marathi
 https://dai.google.com/ssai/event/-_w3Jbq3QoW-mFCM2YIzxA/master.m3u8
+#EXTINF:-1 tvg-id="ts248" tvg-name="Zee Yuva" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Yuva.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Yuva
+http://192.168.1.101:5111?id=0-9-zeeyuva
+#EXTINF:-1 tvg-id="ts249" tvg-name="Zee Talkies" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Talkies.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Zee Talkies
+http://192.168.1.101:5111?id=0-9-9z5383489
+#EXTINF:-1 tvg-id="ts515" tvg-name="Zee Talkies HD " tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Talkies_HD.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Zee Talkies HD 
+http://192.168.1.101:5111?id=0-9-zeetalkies
 #EXTINF:-1 tvg-id="ts192" tvg-name="Fakt Marathi" tvg-logo="http://localhost:5001/jtvimage/Fakt_Marathi.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Fakt Marathi
 http://localhost:5001/live/738.m3u8
 #EXTINF:-1 tvg-id="ts1221" tvg-name="Sun Marathi" tvg-logo="http://localhost:5001/jtvimage/Sun_Marathi.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Sun Marathi
@@ -25,6 +35,10 @@ http://localhost:5001/live/695.m3u8
 
 ///////////////////////////////////////////////
 
+#EXTINF:-1 tvg-id=144 tvg-name="Colors HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Colors_HD.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="  Marathi", Colors HD
+http://localhost:5001/live/144.m3u8
+#EXTINF:-1 tvg-id="ts63" tvg-name="Zee TV HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV_HD.png" group-title="  Marathi", Zee TV HD
+http://192.168.1.101:5111?id=0-9-zeetvhd
 #EXTINF:-1 tvg-id="ts15" tvg-name="SET HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HD.png" group-title="  Marathi", SET HD
 https://dai.google.com/ssai/event/HgaB-u6rSpGx3mo4Xu3sLw/master.m3u8 
 #EXTINF:-1 tvg-id="ts48" tvg-name="SONY SAB HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_SAB_HD.png" group-title="  Marathi", SONY SAB HD
@@ -34,7 +48,14 @@ https://dai.google.com/ssai/event/H_ZvXWqHRGKpHcdDE5RcDA/master.m3u8
 #EXTINF:-1 tvg-id="ts554" tvg-name="Sony Pal" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pal.png" group-title="  Marathi", Sony Pal
 https://dai.google.com/ssai/event/rPzF28qORbKZkhci_04fdQ/master.m3u8
 
-
+#EXTINF:-1 tvg-id="ts123" tvg-name="Zee Cinema" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Cinema.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Cinema
+http://192.168.1.101:5111?id=0-9-zeecinema
+#EXTINF:-1 tvg-id="ts123" tvg-name="Zee Cinema HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Cinema_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Cinema HD
+http://192.168.1.101:5111?id=0-9-zeecinemahd
+#EXTINF:-1 tvg-id="ts148" tvg-name="And Pictures" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Pictures.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", And Pictures
+http://192.168.1.101:5111?id=0-9-pictures
+#EXTINF:-1 tvg-id="ts267" tvg-name="And Pictures HD" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Pictures_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", And Pictures HD
+http://192.168.1.101:5111?id=0-9-tvpictureshd
 #EXTINF:-1 tvg-id="ts132" tvg-name="Sony Max" tvg-logo="http://localhost:5001/jtvimage/Sony_Max_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Sony Max
 https://dai.google.com/ssai/event/oJ-TGgVFSgSMBUoTkauvFQ/master.m3u8
 #EXTINF:-1 tvg-id="ts80" tvg-name="Sony Max HD" tvg-logo="http://localhost:5001/jtvimage/Sony_Max_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Sony Max HD
@@ -49,6 +70,18 @@ http://localhost:5001/live/1477.m3u8
 http://localhost:5001/live/1450.m3u8
 #EXTINF:-1 tvg-id="ts1000" tvg-name="Colors Cineplex Bollywood" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex Bollywood
 http://localhost:5001/live/1763.m3u8
+#EXTINF:-1 tvg-id="ts175" tvg-name="Zee Bollywood" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Classic.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Bollywood
+http://192.168.1.101:5001/live/487.m3u8
+#EXTINF:-1 tvg-id="ts100" tvg-name="Zee Action" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Action.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Action
+http://192.168.1.101:5111?id=0-9-zeeaction
+#EXTINF:-1 tvg-id="ts727" tvg-name="Zee Classic" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Classic_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Classic
+http://192.168.1.101:5111?id=0-9-176
+#EXTINF:-1 tvg-id="ts64" tvg-name="Zee Anmol Cinema" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Anmol_Cinema.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Anmol Cinema
+http://192.168.1.101:5111?id=0-9-zeeanmolcinema
+#EXTINF:-1 tvg-id="ts530" tvg-name="And Prive HD" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Prive_HD.png" tvg-language="English" tvg-type="Movies" group-title="  Marathi", And Prive HD
+http://192.168.1.101:5111?id=0-9-9z5543514
+#EXTINF:-1 tvg-id="ts506" tvg-name="&Flix HD" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Flix_HD.png" tvg-language="English" tvg-type="Movies" group-title="  Marathi", &Flix HD
+http://192.168.1.101:5111?id=0-9-channel_2105335046
 #EXTINF:-1 tvg-id="ts32" tvg-name="SONY PIX HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pix_HD.png" tvg-language="English" tvg-type="Movies" group-title="  Marathi", SONY PIX HD
 https://dai.google.com/ssai/event/8FR5Q-WfRWCkbMq_GxZ77w/master.m3u8
 
