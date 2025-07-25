@@ -38,7 +38,7 @@ http://localhost:5001/live/695.m3u8
 
 #EXTINF:-1 tvg-id=144 tvg-name="Colors HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Colors_HD.png" tvg-language="Hindi" tvg-type="Entertainment" group-title="  Marathi", Colors HD
 http://localhost:5001/live/144.m3u8
-#EXTINF:-1 tvg-id="ts63" tvg-name="Zee TV HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV_HD.png" group-title="  Marathi", Zee TV HD
+#EXTINF:-1 tvg-id="ts63" tvg-name="Zee TV HD" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeTVHD._Transparent_003e2ae4-feb2-4bc8-92dc-9ca0d44bfb72.png" group-title="  Marathi", Zee TV HD
 http://192.168.1.101:5111?id=0-9-zeetvhd
 #EXTINF:-1 tvg-id="ts15" tvg-name="SET HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HD.png" group-title="  Marathi", SET HD
 https://dai.google.com/ssai/event/HgaB-u6rSpGx3mo4Xu3sLw/master.m3u8 
@@ -49,9 +49,9 @@ https://dai.google.com/ssai/event/H_ZvXWqHRGKpHcdDE5RcDA/master.m3u8
 #EXTINF:-1 tvg-id="ts554" tvg-name="Sony Pal" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pal.png" group-title="  Marathi", Sony Pal
 https://dai.google.com/ssai/event/rPzF28qORbKZkhci_04fdQ/master.m3u8
 
-#EXTINF:-1 tvg-id="ts123" tvg-name="Zee Cinema" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Cinema.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Cinema
+#EXTINF:-1 tvg-id="ts123" tvg-name="Zee Cinema" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeCinema_Transparent_46db4aa6-e21e-4e49-8fdb-066b24056189.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Cinema
 http://192.168.1.101:5111?id=0-9-zeecinema
-#EXTINF:-1 tvg-id="ts123" tvg-name="Zee Cinema HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Cinema_HD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Cinema HD
+#EXTINF:-1 tvg-id="ts123" tvg-name="Zee Cinema HD" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeCinemaHD_Transparent_8a39d6c8-64f6-40d3-9174-073775b55e78.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Cinema HD
 http://192.168.1.101:5111?id=0-9-zeecinemahd
 #EXTINF:-1 tvg-id="ts148" tvg-name="And Pictures" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Pictures.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", And Pictures
 http://192.168.1.101:5111?id=0-9-pictures
@@ -71,11 +71,11 @@ http://localhost:5001/live/1477.m3u8
 http://localhost:5001/live/1450.m3u8
 #EXTINF:-1 tvg-id="ts1000" tvg-name="Colors Cineplex Bollywood" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex Bollywood
 http://localhost:5001/live/1763.m3u8
-#EXTINF:-1 tvg-id="ts175" tvg-name="Zee Bollywood" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Classic.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Bollywood
+#EXTINF:-1 tvg-id="ts175" tvg-name="Zee Bollywood" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeBollywood_Transparent_bbf66a08-b8c0-4c51-a3c8-c07bebc6aa29.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Bollywood
 http://192.168.1.101:5001/live/487.m3u8
 #EXTINF:-1 tvg-id="ts100" tvg-name="Zee Action" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Action.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Action
 http://192.168.1.101:5111?id=0-9-zeeaction
-#EXTINF:-1 tvg-id="ts727" tvg-name="Zee Classic" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Classic_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Classic
+#EXTINF:-1 tvg-id="ts727" tvg-name="Zee Classic" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeClassic_Transparent_2d4a7d7b-3072-4807-96db-f26b5384d21d.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Classic
 http://192.168.1.101:5111?id=0-9-176
 #EXTINF:-1 tvg-id="ts64" tvg-name="Zee Anmol Cinema" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Anmol_Cinema.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Anmol Cinema
 http://192.168.1.101:5111?id=0-9-zeeanmolcinema
