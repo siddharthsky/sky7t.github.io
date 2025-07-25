@@ -4,9 +4,9 @@
 http://localhost:5001/live/612.m3u8
 #EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="http://localhost:5001/jtvimage/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="News" group-title="  Marathi", TV9 Marathi
 http://localhost:5001/live/617.m3u8
-#EXTINF:-1 tvg-id="ts251" tvg-name="Zee Marathi" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi.png" tvg-language="Marathi" tvg-type="Entertainment" ggroup-title="  Marathi", Zee Marathi
+#EXTINF:-1 tvg-id="ts251" tvg-name="Zee Marathi" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeMarathi_Transparent_cd6da535-b827-4af1-a1b8-b5bba90e4475.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Marathi
 http://192.168.1.101:5111?id=0-9-9z5383486
-#EXTINF:-1 tvg-id="ts501" tvg-name="Zee Marathi HD" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Marathi_HD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Marathi HD
+#EXTINF:-1 tvg-id="ts501" tvg-name="Zee Marathi HD" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeMarathiHD_Transparent_ccd79cb3-8acd-4efc-ba35-005652a1c888.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Marathi HD
 http://192.168.1.101:5111?id=0-9-zeemarathi
 #EXTINF:-1 tvg-id="ts134" tvg-name="Colors Marathi" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_SD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Colors Marathi
 http://localhost:5001/live/1326.m3u8
