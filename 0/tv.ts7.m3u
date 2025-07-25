@@ -14,11 +14,11 @@ http://localhost:5001/live/1326.m3u8
 http://localhost:5001/live/755.m3u8
 #EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="http://localhost:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Sony Marathi
 https://dai.google.com/ssai/event/-_w3Jbq3QoW-mFCM2YIzxA/master.m3u8
-#EXTINF:-1 tvg-id="ts248" tvg-name="Zee Yuva" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Yuva.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Yuva
+#EXTINF:-1 tvg-id="ts248" tvg-name="Zee Yuva" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeYuva_Transparent_89418023-e1f5-4368-9217-173ec705d1fe.png" tvg-language="Marathi" tvg-type="Entertainment" group-title="  Marathi", Zee Yuva
 http://192.168.1.101:5111?id=0-9-zeeyuva
-#EXTINF:-1 tvg-id="ts249" tvg-name="Zee Talkies" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Talkies.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Zee Talkies
+#EXTINF:-1 tvg-id="ts249" tvg-name="Zee Talkies" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeTalkies_Transparent_9f6ee3b7-ac20-4539-b6d4-1963adb6f6bc.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Zee Talkies
 http://192.168.1.101:5111?id=0-9-9z5383489
-#EXTINF:-1 tvg-id="ts515" tvg-name="Zee Talkies HD " tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Talkies_HD.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Zee Talkies HD 
+#EXTINF:-1 tvg-id="ts515" tvg-name="Zee Talkies HD " tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeTalkiesHD_Transparent_9160b006-8050-4115-96ea-be614d4a4d2c.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Zee Talkies HD 
 http://192.168.1.101:5111?id=0-9-zeetalkies
 #EXTINF:-1 tvg-id="ts192" tvg-name="Fakt Marathi" tvg-logo="http://localhost:5001/jtvimage/Fakt_Marathi.png" tvg-language="Marathi" tvg-type="Movies" group-title="  Marathi", Fakt Marathi
 http://localhost:5001/live/738.m3u8
