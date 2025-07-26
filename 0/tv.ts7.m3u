@@ -72,7 +72,7 @@ http://localhost:5001/live/1450.m3u8
 #EXTINF:-1 tvg-id="ts1000" tvg-name="Colors Cineplex Bollywood" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Colors Cineplex Bollywood
 http://localhost:5001/live/1763.m3u8
 #EXTINF:-1 tvg-id="ts175" tvg-name="Zee Bollywood" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Classic.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Bollywood
-http://192.168.1.101:5001/live/487.m3u8
+http://192.168.1.101:5111/index.php?id=0-9-zeeclassic
 #EXTINF:-1 tvg-id="ts100" tvg-name="Zee Action" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Action.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Action
 http://192.168.1.101:5111?id=0-9-zeeaction
 #EXTINF:-1 tvg-id="ts727" tvg-name="Zee Classic" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Classic_SD.png" tvg-language="Hindi" tvg-type="Movies" group-title="  Marathi", Zee Classic
