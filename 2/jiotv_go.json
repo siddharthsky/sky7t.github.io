@@ -4,7 +4,7 @@
     "disable_ts_handler": false,
     "disable_logout": false,
     "drm": true,
-    "title": "DOCKER TEST",
+    "title": "",
     "disable_url_encryption": false,
     "path_prefix": "/vox/jio",
     "proxy": "",
