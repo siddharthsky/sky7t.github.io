@@ -99,7 +99,6 @@ case "$SHELL_NAME" in
         ;;
     *)
         echo "Unsupported shell: $SHELL_NAME"
-        exit 1
         ;;
 esac
 
