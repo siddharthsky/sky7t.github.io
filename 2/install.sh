@@ -55,7 +55,6 @@ case $ARCH in
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
-        exit 1
         ;;
 esac
 
