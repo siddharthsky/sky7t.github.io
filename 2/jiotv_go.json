@@ -6,7 +6,7 @@
     "drm": true,
     "title": "DOCKER TEST",
     "disable_url_encryption": false,
-    "path_prefix": "",
+    "path_prefix": "/vox",
     "proxy": "",
     "log_path": "",
     "log_to_stdout": false,
