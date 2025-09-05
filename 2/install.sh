@@ -32,7 +32,6 @@ case "$OSTYPE" in
         ;;
     *)
         echo "Unsupported operating system: $OSTYPE"
-        exit 1
         ;;
 esac
 
