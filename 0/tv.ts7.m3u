@@ -42,6 +42,8 @@ http://localhost:5001/live/695.m3u8
 http://localhost:5001/live/144.m3u8
 #EXTINF:-1 tvg-id="ts63" tvg-name="Zee TV HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV_HD.png" tvg-type="  Marathi" group-title="  Marathi", Zee TV HD
 http://192.168.1.101:5111?id=0-9-zeetvhd
+#EXTINF:-1 tvg-id="ts40" tvg-name="&tv HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/And_TV_HD.png" tvg-type="  Marathi" group-title="  Marathi", &tv HD
+http://192.168.1.101:5111?id=0-9-tvhd_0
 #EXTINF:-1 tvg-id="ts15" tvg-name="SET HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HD.png" tvg-type="  Marathi" group-title="  Marathi", SET HD
 https://dai.google.com/ssai/event/HgaB-u6rSpGx3mo4Xu3sLw/master.m3u8 
 #EXTINF:-1 tvg-id="ts48" tvg-name="SONY SAB HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_SAB_HD.png" tvg-type="  Marathi" group-title="  Marathi", SONY SAB HD
@@ -83,13 +85,15 @@ http://192.168.1.101:5111?id=0-9-176
 http://192.168.1.101:5111?id=0-9-zeeanmolcinema
 #EXTINF:-1 tvg-id="ts530" tvg-name="And Prive HD" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Prive_HD.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", And Prive HD
 http://192.168.1.101:5111?id=0-9-9z5543514
+#EXTINF:-1 tvg-id=1158 tvg-name="Colors Infinity HD" tvg-logo="http://localhost:5001/jtvimage/Colors_Infinity_HD.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", Colors Infinity HD
+http://localhost:5001/live/1158.m3u8
+#EXTINF:-1 tvg-id=1157 tvg-name="Comedy Central HD" tvg-logo="http://localhost:5001/jtvimage/Comedy_Central_HD.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", Comedy Central HD
+http://localhost:5001/live/1157.m3u8
 #EXTINF:-1 tvg-id="ts506" tvg-name="&Flix HD" tvg-logo="http://192.168.1.101:5001/jtvimage/And_Flix_HD.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", &Flix HD
 http://192.168.1.101:5111?id=0-9-channel_2105335046
 #EXTINF:-1 tvg-id="ts32" tvg-name="SONY PIX HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pix_HD.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", SONY PIX HD
 https://dai.google.com/ssai/event/8FR5Q-WfRWCkbMq_GxZ77w/master.m3u8
 
-#EXTINF:-1 tvg-id="ts139" tvg-name="9XM" tvg-logo="http://localhost:5001/jtvimage/9XM.png" tvg-language="Hindi" tvg-type="  Marathi" group-title="  Marathi", 9XM
-http://localhost:5001/live/587.m3u8
 #EXTINF:-1 tvg-id=2753 tvg-name="YRF Music" tvg-logo="http://localhost:5001/jtvimage/YRF_Music.png" tvg-language="Hindi" tvg-type="  Marathi" group-title="  Marathi", YRF Music
 http://localhost:5001/live/2753.m3u8
 #EXTINF:-1 tvg-id="ts39" tvg-name="9X Jalwa" tvg-logo="http://localhost:5001/jtvimage/9X_Jalwa.png" tvg-language="Hindi" tvg-type="  Marathi" group-title="  Marathi", 9X Jalwa
@@ -103,10 +107,14 @@ http://localhost:5001/live/2065.m3u8
 http://localhost:5001/live/177.m3u8
 #EXTINF:-1 tvg-id="ts259" tvg-name="Zee News" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_News.png" tvg-type="  Marathi" group-title="  Marathi", Zee News
 http://localhost:5001/live/504.m3u8
+#EXTINF:-1 tvg-id="173" tvg-name="Aaj Tak" tvg-logo="http://localhost:5001/jtvimage/Aaj_Tak.png" tvg-language="Hindi" tvg-type="  Marathi" group-title="  Marathi", Aaj Tak
+http://localhost:5001/live/173.m3u8
 #EXTINF:-1 tvg-id="ts706" tvg-name="TV9 Bharatvarsh" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Bharatvarsh.png" tvg-type="  Marathi"  group-title="  Marathi", TV9 Bharatvarsh
 http://localhost:5001/live/1251.m3u8
 #EXTINF:-1 tvg-id="ts179" tvg-name="NDTV India" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_India.png" tvg-type="  Marathi"  group-title="  Marathi", NDTV India
 http://localhost:5001/live/258.m3u8
+#EXTINF:-1 tvg-id=412 tvg-name="Wion" tvg-logo="http://localhost:5001/jtvimage/Wion.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", Wion
+http://localhost:5001/live/412.m3u8
 #EXTINF:-1 tvg-name="CNN NEWS 18" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png" tvg-type="  Marathi" group-title="  Marathi", CNN NEWS 18
 http://localhost:5001/live/492.m3u8
 #EXTINF:-1 tvg-id=255 tvg-name="NDTV 24x7" tvg-logo="http://localhost:5001/jtvimage/NDTV_24x7.png" tvg-language="English" tvg-type="  Marathi" group-title="  Marathi", NDTV 24x7
