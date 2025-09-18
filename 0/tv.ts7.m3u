@@ -12,7 +12,9 @@ http://192.168.1.101:5111?id=0-9-zeemarathi
 http://localhost:5001/live/1326.m3u8
 #EXTINF:-1 tvg-id="ts308" tvg-name="Colors Marathi HD" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_HD.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="  Marathi", Colors Marathi HD
 http://localhost:5001/live/755.m3u8
-#EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="http://localhost:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="  Marathi", Sony Marathi
+#EXTINF:-1 tvg-id="1146" tvg-name="Sony Marathi" tvg-logo="http://localhost:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="  Marathi", Sony Marathi
+http://localhost:5001/live/1146.m3u8
+#EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi Alt" tvg-logo="http://localhost:5001/jtvimage/Sony_Marathi_SD.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="  Marathi", Sony Marathi
 https://dai.google.com/ssai/event/-_w3Jbq3QoW-mFCM2YIzxA/master.m3u8
 #EXTINF:-1 tvg-id="ts248" tvg-name="Zee Yuva" tvg-logo="http://192.168.1.101:5001/jtvimage/Zee_Yuva.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="  Marathi", Zee Yuva
 http://192.168.1.101:5111?id=0-9-zeeyuva
