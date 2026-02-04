@@ -15,21 +15,19 @@ http://localhost:5001/live/617.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=658|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-9z5383486" tvg-country="IN" tvg-chno="011" tvg-language="mr" tvg-name="Zee Marathi" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-9z5383486/list/thumbnail1920x10804b8e9b0fdb9a41a6845b71593c54abea.jpg" group-title="All Marathi", Zee Marathi
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-9z5383486&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts251" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeMarathi_Transparent_cd6da535-b827-4af1-a1b8-b5bba90e4475.png" group-title="All Marathi",Zee Marathi
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=251
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=251|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-zeemarathi" tvg-country="IN" tvg-chno="002" tvg-language="mr" tvg-name="Zee Marathi HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeemarathi/list/1920x1080list63a3bd62dcbd42478d7ef28b66d31c3f.jpg" group-title="All Marathi", Zee Marathi HD
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-zeemarathi&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts501" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeMarathiHD_Transparent_bb6aa5ee-fc7d-44d6-8218-0e616a712c5a.png" group-title="All Marathi",Zee Marathi HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=501
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=501|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts134" tvg-name="Colors Marathi" tvg-logo="http://localhost:5001/jtvimage/Colors_Marathi_SD.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Colors Marathi
 http://localhost:5001/live/1326.m3u8
@@ -45,40 +43,34 @@ http://localhost:5001/live/755.m3u8
 http://localhost:8181//get-mpd.php?id=469|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 
-#EXTINF:-1 tvg-id="0-9-zeeyuva" tvg-country="IN" tvg-chno="032" tvg-language="mr" tvg-name="Zee Yuva" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeeyuva/list/1920x1080list5dd504da63d94665be555d032df9000c.jpg" group-title="All Marathi", Zee Yuva
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-zeeyuva&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts248" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeYuva_Transparent_89418023-e1f5-4368-9217-173ec705d1fe.png" group-title="All Marathi",Zee YUVA
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=248
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=248|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-9z5383489" tvg-country="IN" tvg-chno="040" tvg-language="mr" tvg-name="Zee Talkies" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-9z5383489/list/1920x1080list43aaeb0656a9484e855f731963eeeb20.jpg" group-title="All Marathi", Zee Talkies
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-9z5383489&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts249" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeTalkies_Transparent_9f6ee3b7-ac20-4539-b6d4-1963adb6f6bc.png" group-title="All Marathi",Zee Talkies
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=249
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=249|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-zeetalkies" tvg-country="IN" tvg-chno="012" tvg-language="mr" tvg-name="Zee Talkies HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeetalkies/list/1920x1080list8db83dea9fb7450aa0d1bf6a4e5f30f5.jpg" group-title="All Marathi", Zee Talkies HD
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-zeetalkies&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts515" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeTalkiesHD_Transparent_591e9935-3920-4be6-bb74-bfda286304f4.png" group-title="All Marathi",Zee Talkies HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=515
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=515|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts192" tvg-name="Fakt Marathi" tvg-logo="http://localhost:5001/jtvimage/Fakt_Marathi.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Fakt Marathi
-http://localhost:5001/live/738.m3u8
+#EXTINF:-1 tvg-id="ts192" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Fakt Marathi.png" group-title="All Marathi",Fakt Marathi
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=192
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=192|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-394" tvg-country="IN" tvg-chno="041" tvg-language="mr" tvg-name="Zee Chitramandir" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-394/list/1920x1080list5d76d6a3067442e3ad60f749952115e8.jpg" group-title="All Marathi", Zee Chitramandir
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-394&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 
 #EXTINF:-1 tvg-id="ts1221" tvg-name="Sun Marathi" tvg-logo="http://localhost:5001/jtvimage/Sun_Marathi.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Sun Marathi
 http://localhost:5001/live/2424.m3u8
@@ -127,35 +119,28 @@ http://localhost:5001/live/144.m3u8
 http://localhost:8181//get-mpd.php?id=8|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 
-#EXTINF:-1 tvg-id="0-9-zeetvhd" tvg-country="IN" tvg-chno="007" tvg-language="hi" tvg-name="Zee TV HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeetvhd/list/1920x1080list3424a135de534b88a95bfd69d193ae1c.jpg" group-title="All Marathi", Zee TV HD
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-zeetvhd&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts63" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeTVHD._Transparent_57241397-aa82-4651-8285-98e4f106c1cf.png" group-title="All Marathi",Zee TV HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=63
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=63|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-tvhd_0" tvg-country="IN" tvg-chno="022" tvg-language="hi" tvg-name="&TV HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-tvhd_0/list/1920x1080list8cecf80ef6884ff09063a5abd21f81d6.jpg" group-title="All Marathi", &TV HD
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-tvhd_0&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 
-#EXTINF:-1 tvg-id="ts15" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-All Marathi-TELEVISION-HD-Transparent.png" group-title="All Marathi, HD",SET HD
+#EXTINF:-1 tvg-id="ts40" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/&tvHD_Transparent_9e6d03b7-b1cb-4db1-a57e-26c028e8504d.png" group-title="All Marathi",&tv HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=40
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=40|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
+
+#EXTINF:-1 tvg-id="ts15" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-All Marathi-TELEVISION-HD-Transparent.png" group-title="All Marathi",SET HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=15
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=15|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts48" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-SAB-HD-Transparent.png" group-title="All Marathi, HD",SONY SAB HD
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=48
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=48|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts559" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-SAB-Transparent.png" group-title="All Marathi",SONY SAB
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -171,12 +156,6 @@ http://localhost:8181//get-mpd.php?id=559|X-Forwarded-For=59.178.74.184&Origin=h
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=551|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts56" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-WAH-Transparent.png" group-title="All Marathi",Sony Wah
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=56
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=56|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts554" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-PAL-Transparent.png" group-title="All Marathi",Sony Pal
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -186,7 +165,7 @@ http://localhost:8181//get-mpd.php?id=56|X-Forwarded-For=59.178.74.184&Origin=ht
 http://localhost:8181//get-mpd.php?id=554|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 
-#EXTINF:-1 tvg-id="0-9-zeecinema" tvg-country="IN" tvg-chno="036" tvg-language="hi" tvg-name="Zee Cinema" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeecinema/list/1920x1080list403630fe2cb2485db8bddad83245f88b.jpg" group-title="All Marathi", Zee Cinema
+#EXTINF:-1 tvg-id="0-9-zeecinema" tvg-country="IN" tvg-language="hi" tvg-name="Zee Cinema" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeecinema/list/1920x1080list403630fe2cb2485db8bddad83245f88b.jpg" group-title="All Marathi", Zee Cinema
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=HLS
 #KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
@@ -194,7 +173,7 @@ http://localhost:8181//get-mpd.php?id=554|X-Forwarded-For=59.178.74.184&Origin=h
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 http://localhost:8383/index.php?id=0-9-zeecinema&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 
-#EXTINF:-1 tvg-id="0-9-zeecinemahd" tvg-country="IN" tvg-chno="008" tvg-language="hi" tvg-name="Zee Cinema HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeecinemahd/list/1920x1080listb0707389e11d47edb651c329f76a0755.jpg" group-title="All Marathi", Zee Cinema HD
+#EXTINF:-1 tvg-id="0-9-zeecinemahd" tvg-country="IN" tvg-language="hi" tvg-name="Zee Cinema HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeecinemahd/list/1920x1080listb0707389e11d47edb651c329f76a0755.jpg" group-title="All Marathi", Zee Cinema HD
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=HLS
 #KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
@@ -210,15 +189,14 @@ http://localhost:8383/index.php?id=0-9-zeecinemahd&%7CUser-Agent=Mozilla/5.0 (Ma
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=245|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-pictures" tvg-country="IN" tvg-chno="043" tvg-language="hi" tvg-name="&Pictures" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-pictures/list/1920x1080liste1864f84ee8f422e9a726e5fe401050c.jpg" group-title="All Marathi", &Pictures
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-pictures&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts148" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/&pictures_Transparent_58945f6d-fcb2-4739-8cdd-64baa8ce932c.png" group-title="All Marathi",&pictures
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=148
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=148|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-tvpictureshd" tvg-country="IN" tvg-chno="014" tvg-language="hi" tvg-name="&Pictures HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-tvpictureshd/list/1920x1080listead02d49416241ce89c60432d7b879a6.jpg" group-title="All Marathi", &Pictures HD
+#EXTINF:-1 tvg-id="0-9-tvpictureshd" tvg-country="IN" tvg-language="hi" tvg-name="&Pictures HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-tvpictureshd/list/1920x1080listead02d49416241ce89c60432d7b879a6.jpg" group-title="All Marathi", &Pictures HD
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=HLS
 #KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
@@ -226,14 +204,8 @@ http://localhost:8383/index.php?id=0-9-pictures&%7CUser-Agent=Mozilla/5.0 (Macin
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 http://localhost:8383/index.php?id=0-9-tvpictureshd&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 
-#EXTINF:-1 tvg-id="ts132" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-MAX-Transparent.png" group-title="All Marathi",SONY MAX
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=132
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=132|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts80" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-MAX-HD-Transparent.png" group-title="All Marathi, HD",SONY MAX HD
+#EXTINF:-1 tvg-id="ts80" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-MAX-HD-Transparent.png" group-title="All Marathi",SONY MAX HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=80
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
@@ -259,29 +231,20 @@ http://localhost:5001/live/1450.m3u8
 #EXTINF:-1 tvg-id="ts1000" tvg-name="Colors Cineplex Bollywood" tvg-logo="http://localhost:5001/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", Colors Cineplex Bollywood
 http://localhost:5001/live/1763.m3u8
 
-#EXTINF:-1 tvg-id="0-9-zeeclassic" tvg-country="IN" tvg-chno="015" tvg-language="hi" tvg-name="Zee Bollywood" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeeclassic/list/1920x1080list993a532d3c6040d78b2e69a2862f4e28.jpg" group-title="All Marathi", Zee Bollywood
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-zeeclassic&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts175" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeBollywood_Transparent_34fa29aa-d287-4003-9d8c-e766c5c7f413.png" group-title="All Marathi",Zee Bollywood
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=175
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=175|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="0-9-zeeaction" tvg-country="IN" tvg-chno="037" tvg-language="hi" tvg-name="Zee Action" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-zeeaction/list/1920x1080list109ad06dd3c2485a97dbaddc85d22130.jpg" group-title="All Marathi", Zee Action
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-zeeaction&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 
-#EXTINF:-1 tvg-id="0-9-176" tvg-country="IN" tvg-chno="013" tvg-language="hi" tvg-name="Zee Classic" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-176/list/1920x1080list18cba842de654a3cb92b33556dfa0bc2.jpg" group-title="All Marathi", Zee Classic
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-176&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
+#EXTINF:-1 tvg-id="ts727" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeClassic_Transparent_2d4a7d7b-3072-4807-96db-f26b5384d21d.png" group-title="All Marathi",Zee Classic
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=727
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://localhost:8181//get-mpd.php?id=727|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts486" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Tata-Play-Bollywood-Premiere-Transparent.png" group-title="All Marathi",Tata Play Bollywood Premiere
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -296,14 +259,6 @@ http://localhost:8181//get-mpd.php?id=486|X-Forwarded-For=59.178.74.184&Origin=h
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=789|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
-
-#EXTINF:-1 tvg-id="0-9-9z5543514" tvg-country="IN" tvg-chno="026" tvg-language="en" tvg-name="&Prive HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-9z5543514/list/1920x1080listd4a78816ce2d4ea7afc7efe5e639e9cd.jpg" group-title="All Marathi", &Prive HD
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-9z5543514&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
 
 #EXTINF:-1 tvg-id="ts1130" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Bollywood-Masala-Logo-01.png" group-title="All Marathi",Tata Play Bollywood Masala
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -354,13 +309,6 @@ http://localhost:8181//get-mpd.php?id=1499|X-Forwarded-For=59.178.74.184&Origin=
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=1050|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts814" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeBiskope_Transparent_eedade17-ff8b-4323-abd5-6454e32e77fe.png" group-title="All Marathi",Zee Biskope
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=814
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=814|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
-
 
 #EXTINF:-1 tvg-id="ts64" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/AnmolCinema_Transparent_28136caa-817f-4faa-a9a5-4139b345b2b3.png" group-title="All Marathi",Anmol Cinema
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -372,15 +320,7 @@ http://localhost:8181//get-mpd.php?id=64|X-Forwarded-For=59.178.74.184&Origin=ht
 #EXTINF:-1 tvg-id=1158 tvg-name="Colors Infinity HD" tvg-logo="http://localhost:5001/jtvimage/Colors_Infinity_HD.png" tvg-language="English" tvg-type="All Marathi" group-title="All Marathi", Colors Infinity HD
 http://localhost:5001/live/1158.m3u8
 
-#EXTINF:-1 tvg-id="0-9-channel_2105335046" tvg-country="IN" tvg-chno="025" tvg-language="en" tvg-name="&flix HD" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_auto,h_396,c_scale,f_webp,q_auto:eco/resources/0-9-channel_2105335046/list/1920x1080list5d289fc39bef4ebca19c6bfe64e46e26.jpg" group-title="All Marathi", &flix HD
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=HLS
-#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10_15_7%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Safari%2F605.1.15
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-http://localhost:8383/index.php?id=0-9-channel_2105335046&%7CUser-Agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15
-
-#EXTINF:-1 tvg-id="ts32" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-PIX-HD-Transparent.png" group-title="All Marathi, HD",SONY PIX HD
+#EXTINF:-1 tvg-id="ts32" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-PIX-HD-Transparent.png" group-title="All Marathi",SONY PIX HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=32
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
@@ -393,30 +333,6 @@ http://localhost:8181//get-mpd.php?id=32|X-Forwarded-For=59.178.74.184&Origin=ht
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://localhost:8181//get-mpd.php?id=558|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
-
-
-#EXTINF:-1 tvg-id="ts45" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-YAY-Transparent.png" group-title="All Marathi",SONY YAY!
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=45
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=45|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
-
-#EXTINF:-1 tvg-id="ts127" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Sonic Nickelodeon.png" group-title="All Marathi",Sonic
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=127
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=127|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
-
-#EXTINF:-1 tvg-id="ts119" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Discovery Kids.png" group-title="All Marathi",Discovery Kids
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=119
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://localhost:8181//get-mpd.php?id=119|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
-
-
 
 
 #EXTINF:-1 tvg-id=177 tvg-name="ABP News India" tvg-logo="http://localhost:5001/jtvimage/ABP_News_India.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", ABP News India
@@ -445,3 +361,24 @@ http://localhost:5001/live/255.m3u8
 
 
 
+
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+
+#EXTINF:-1 tvg-id="ts546" tvg-name="Saam Tv" tvg-logo="http://localhost:5001/jtvimage/Saam_Tv.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Saam Tv
+http://localhost:5001/live/691.m3u8
+#EXTINF:-1 tvg-id="ts1102" tvg-name="Pudhari News" tvg-logo="http://localhost:5001/jtvimage/Pudhari_News.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Pudhari News
+http://localhost:5001/live/2935.m3u8
+#EXTINF:-1 tvg-id="ts826" tvg-name="Lokshahi News" tvg-logo="http://localhost:5001/jtvimage/Lokshahi_News.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Lokshahi News
+http://localhost:5001/live/1293.m3u8
+#EXTINF:-1 tvg-id="ts140" tvg-name="News18 Lokmat" tvg-logo="http://localhost:5001/jtvimage/IBN_Lokmat.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", News18 Lokmat
+http://localhost:5001/live/232.m3u8
+#EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="http://localhost:5001/jtvimage/Zee_24_Taas.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Zee 24 Taas
+http://localhost:5001/live/442.m3u8
+#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://localhost:5001/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", NDTV Marathi
+http://localhost:5001/live/3095.m3u8
+
+
+
+///////////////////////////////////////////////
