@@ -1,1 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A4 Editor Pro</title>
 
+<style>
+*{box-sizing:border-box;font-family:system-ui}
+
+body{
+margin:0;
+background:#0f172a;
+color:#fff;
+display:flex;
+flex-direction:column;
+height:100vh;
+}
+
+/* PREVIEW */
+.preview{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#020617;
+}
+
+.paper{
+position:relative;
+background-size:cover;
+background-position:center;
+border-radius:10px;
+overflow:hidden;
+touch-action:none;
+}
+
+.paper.portrait{aspect-ratio:1/1.414;}
+.paper.landscape{aspect-ratio:1.414/1;}
+
+/* IMAGE */
+.image-layer{
+position:absolute;
+cursor:move;
+}
+
+.image-layer.active{
+outline:2px dashed #38bdf8;
+}
+
+.image-layer img{
+display:block;
+pointer-events:none;
+}
+
+.handle{
+width:14px;height:14px;
+background:#38bdf8;
+position:absolute;
+right:-7px;bottom:-7px;
+cursor:nwse-resize;
+}
+
+/* CONTROLS */
+.controls{
+background:#1e293b;
+padding:10px;
+overflow:auto;
+border-top:1px solid #334155;
+transition: all 0.3s ease;
+padding-top: 20px;
+padding-bottom:calc(20px + env(safe-area-inset-bottom));
+}
+
+.controls.collapsed{
+height:60px;
+overflow:hidden;
+}
+
+button,input,select{
+width:100%;
+margin:6px 0;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#334155;
+color:#fff;
+}
+
+button{background:#2563eb;}
+
+.layer{
+padding:6px;
+margin:4px 0;
+background:#334155;
+border-radius:6px;
+cursor:pointer;
+}
+.layer.active{background:#2563eb;}
+
+.upload{
+border:2px dashed #475569;
+padding:10px;
+text-align:center;
+border-radius:8px;
+cursor:pointer;
+}
+
+.toggle-btn{
+background:#0ea5e9;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* DESKTOP */
+@media(min-width:900px){
+body{flex-direction:row;}
+.toggle-btn{display:none;}
+.controls{order:-1;width:320px;border-right:1px solid #334155;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="preview">
+<div class="paper portrait" id="paper"></div>
+</div>
+
+<div class="toggle-btn" onclick="toggleControls()">⬆ Controls</div>
+
+<div class="controls">
+
+<div class="upload" onclick="fileInput.click()">+ Add Image</div>
+<input type="file" id="fileInput" hidden>
+
+<div id="layers"></div>
+
+<button onclick="deleteImage()">Delete</button>
+<button onclick="resetImage()">Reset</button>
+
+<select id="orientation">
+<option value="portrait">Portrait</option>
+<option value="landscape">Landscape</option>
+</select>
+
+<label>Scale</label>
+<input type="range" id="scale" min="10" max="400">
+
+<label>Top</label>
+<input type="range" id="top" min="0" max="1000">
+
+<label>Left</label>
+<input type="range" id="left" min="0" max="1000">
+
+<button onclick="fitScreen()">Fit to Screen</button>
+
+<button onclick="exportJPEG()">Download</button>
+
+<hr>
+
+<label>Quality (JPEG)</label>
+<input type="range" id="quality" min="10" max="100" value="100">
+
+<label>Resize (%)</label>
+<input type="range" id="resize" min="10" max="100" value="100">
+
+<div id="fileInfo">Size: 0 MB</div>
+<div id="fileDiff">Change: 0%</div>
+
+</div>
+
+<script>
+const portraitBG="https://i.ibb.co/7xpfkfHb/a4-size-portrait-pixels-600dpi.jpg";
+const landscapeBG="https://i.ibb.co/nqQ9hMFC/a4-size-landscape-pixels-600dpi.jpg";
+
+const paper=document.getElementById("paper");
+paper.style.backgroundImage=`url(${portraitBG})`;
+
+let images=[];
+let activeIndex=-1;
+let baseSize=0;
+
+/* ADD IMAGE */
+fileInput.onchange=e=>{
+const file=e.target.files[0];
+if(!file)return;
+
+const url=URL.createObjectURL(file);
+
+const el=document.createElement("div");
+el.className="image-layer";
+
+const img=document.createElement("img");
+img.src=url;
+
+const handle=document.createElement("div");
+handle.className="handle";
+
+el.appendChild(img);
+el.appendChild(handle);
+paper.appendChild(el);
+
+const obj={el,img,x:100,y:100,width:200,scale:100};
+
+images.push(obj);
+activeIndex=images.length-1;
+
+attachEvents(obj);
+refreshLayers();
+updateUI();
+apply(obj);
+};
+
+/* LAYERS */
+function refreshLayers(){
+layers.innerHTML="";
+images.forEach((o,i)=>{
+const d=document.createElement("div");
+d.className="layer"+(i===activeIndex?" active":"");
+d.textContent="Image "+(i+1);
+
+d.onclick=()=>{
+activeIndex=i;
+refreshLayers();
+updateUI();
+highlight();
+};
+
+layers.appendChild(d);
+});
+highlight();
+}
+
+function highlight(){
+document.querySelectorAll(".image-layer").forEach((el,i)=>{
+el.classList.toggle("active",i===activeIndex);
+});
+}
+
+/* DRAG + RESIZE */
+function attachEvents(o){
+let mode=null,startX,startY,startW;
+
+o.el.addEventListener("pointerdown",e=>{
+activeIndex=images.indexOf(o);
+refreshLayers();
+updateUI();
+
+if(e.target.classList.contains("handle")){
+mode="resize";
+startW=o.width;
+startX=e.clientX;
+}else{
+mode="drag";
+startX=e.clientX-o.x;
+startY=e.clientY-o.y;
+}
+});
+
+window.addEventListener("pointermove",e=>{
+if(mode===null||activeIndex===-1)return;
+const obj=images[activeIndex];
+
+if(mode==="drag"){
+obj.x=e.clientX-startX;
+obj.y=e.clientY-startY;
+}
+if(mode==="resize"){
+obj.width=startW+(e.clientX-startX);
+if(obj.width<20)obj.width=20;
+obj.scale=Math.round(obj.width/2);
+}
+
+apply(obj);
+updateUI();
+});
+
+window.addEventListener("pointerup",()=>mode=null);
+}
+
+/* APPLY */
+function apply(o){
+o.el.style.left=o.x+"px";
+o.el.style.top=o.y+"px";
+o.img.style.width=o.width+"px";
+}
+
+/* CONTROLS */
+function updateFromUI(){
+if(activeIndex===-1)return;
+const o=images[activeIndex];
+
+o.scale=scale.value;
+o.width=o.scale*2;
+o.x=+left.value;
+o.y=+top.value;
+
+apply(o);
+}
+
+document.querySelectorAll("input").forEach(i=>i.oninput=updateFromUI);
+
+function updateUI(){
+if(activeIndex===-1)return;
+const o=images[activeIndex];
+
+scale.value=o.scale;
+top.value=o.y;
+left.value=o.x;
+}
+
+/* DELETE */
+function deleteImage(){
+if(activeIndex===-1)return;
+paper.removeChild(images[activeIndex].el);
+images.splice(activeIndex,1);
+activeIndex=-1;
+refreshLayers();
+}
+
+/* RESET */
+function resetImage(){
+if(activeIndex===-1)return;
+const o=images[activeIndex];
+o.x=100;o.y=100;o.width=200;o.scale=100;
+apply(o);
+updateUI();
+}
+
+/* ORIENTATION */
+orientation.onchange=e=>{
+if(e.target.value==="portrait"){
+paper.classList.remove("landscape");
+paper.classList.add("portrait");
+paper.style.backgroundImage=`url(${portraitBG})`;
+}else{
+paper.classList.remove("portrait");
+paper.classList.add("landscape");
+paper.style.backgroundImage=`url(${landscapeBG})`;
+}
+fitScreen();
+};
+
+/* FIT */
+function fitScreen(){
+const parent=document.querySelector(".preview");
+const pw=parent.clientWidth;
+const ph=parent.clientHeight;
+
+const isLand=paper.classList.contains("landscape");
+const ratio=isLand?1.414:(1/1.414);
+
+let w=pw*0.9;
+let h=w/ratio;
+
+if(h>ph*0.9){
+h=ph*0.9;
+w=h*ratio;
+}
+
+paper.style.width=w+"px";
+paper.style.height=h+"px";
+}
+
+/* GENERATE */
+async function generatePreview(){
+const isLand=paper.classList.contains("landscape");
+const qualityVal=quality.value/100;
+const resizeVal=resize.value/100;
+
+const canvas=document.createElement("canvas");
+
+const baseW=isLand?3508:2480;
+const baseH=isLand?2480:3508;
+
+canvas.width=baseW*resizeVal;
+canvas.height=baseH*resizeVal;
+
+const ctx=canvas.getContext("2d");
+
+function loadImage(src){
+return new Promise((res,rej)=>{
+const i=new Image();
+i.crossOrigin="anonymous";
+i.onload=()=>res(i);
+i.onerror=rej;
+i.src=src;
+});
+}
+
+const bg=await loadImage(isLand?landscapeBG:portraitBG);
+ctx.drawImage(bg,0,0,canvas.width,canvas.height);
+
+const sx=canvas.width/paper.clientWidth;
+const sy=canvas.height/paper.clientHeight;
+
+for(const o of images){
+const img=await loadImage(o.img.src);
+const w=o.width*sx;
+const h=w*(img.naturalHeight/img.naturalWidth);
+ctx.drawImage(img,o.x*sx,o.y*sy,w,h);
+}
+
+return new Promise(r=>{
+canvas.toBlob(b=>r(b),"image/jpeg",qualityVal);
+});
+}
+
+/* FILE INFO */
+async function updateFileInfo(){
+const blob=await generatePreview();
+if(!blob)return;
+
+const sizeMB=(blob.size/(1024*1024)).toFixed(2);
+fileInfo.innerText="Size: "+sizeMB+" MB";
+
+if(baseSize===0)baseSize=blob.size;
+
+const diff=((blob.size-baseSize)/baseSize)*100;
+fileDiff.innerText="Change: "+diff.toFixed(1)+"%";
+}
+
+quality.oninput=updateFileInfo;
+resize.oninput=updateFileInfo;
+
+/* DOWNLOAD */
+async function exportJPEG(){
+const blob=await generatePreview();
+const link=document.createElement("a");
+link.download="a4.jpg";
+link.href=URL.createObjectURL(blob);
+link.click();
+}
+
+/* MOBILE TOGGLE */
+let collapsed=false;
+function toggleControls(){
+if(window.innerWidth>=900)return;
+
+const c=document.querySelector(".controls");
+collapsed=!collapsed;
+
+c.classList.toggle("collapsed");
+
+document.querySelector(".toggle-btn").innerText=
+collapsed?"⬇ Open Controls":"⬆ Controls";
+
+setTimeout(fitScreen,300);
+}
+
+/* INIT */
+window.onload=()=>{
+fitScreen();
+setTimeout(updateFileInfo,500);
+};
+window.onresize=fitScreen;
+</script>
+
+</body>
+</html>
