@@ -327,6 +327,11 @@ http://127.0.0.1:8181//get-mpd.php?id=32|X-Forwarded-For=59.178.74.184&Origin=ht
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://127.0.0.1:8181//get-mpd.php?id=558|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
+#EXTINF:-1 tvg-id="1391" tvg-name="Hungama" tvg-logo="http://127.0.0.1:5006/jtvimage/Hungama.png" tvg-language="Hindi" tvg-type="Kids" group-title="Kids", Hungama
+http://127.0.0.1:5007/live/1391.m3u8
+
+#EXTINF:-1 tvg-id="1392" tvg-name="Super Hungama" tvg-logo="http://127.0.0.1:5006/jtvimage/Super_Hungama.png" tvg-language="Hindi" tvg-type="Kids" group-title="Kids", Super Hungama
+http://127.0.0.1:5007/live/1392.m3u8
 
 #EXTINF:-1 tvg-id=177 tvg-name="ABP News India" tvg-logo="http://127.0.0.1:5006/jtvimage/ABP_News_India.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", ABP News India
 http://127.0.0.1:5006/live/177.m3u8
