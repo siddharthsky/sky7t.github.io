@@ -1,6 +1,4 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
-#EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
-
 
 #EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://127.0.0.1:5006/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", ABP Majha
 http://127.0.0.1:5006/live/612.m3u8
