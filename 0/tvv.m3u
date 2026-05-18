@@ -7,7 +7,7 @@ http://127.0.0.1:5006/live/612.m3u8
 http://127.0.0.1:5006/live/617.m3u8
 
 #EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="http://127.0.0.1:5006/jtvimage/SonyMarathi.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Sony Marathi
-https://sl.vodep39240327.workers.dev/channel/SONY%20MARATHI.m3u8
+https://cloudplay-sonyliv.pages.dev/marathi.php
 
 #EXTINF:-1 tvg-id="ts251" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeMarathi_Transparent_cd6da535-b827-4af1-a1b8-b5bba90e4475.png" group-title="All Marathi",Zee Marathi
 #KODIPROP:inputstream.adaptive.license_type=clearkey
