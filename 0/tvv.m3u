@@ -23,11 +23,19 @@ http://127.0.0.1:8181//get-mpd.php?id=251|X-Forwarded-For=59.178.74.184&Origin=h
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://127.0.0.1:8181//get-mpd.php?id=501|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts134" tvg-name="Colors Marathi" tvg-logo="http://127.0.0.1:5006/jtvimage/Colors_Marathi_SD.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Colors Marathi
-http://127.0.0.1:5006/live/1326.m3u8
+#EXTINF:-1 tvg-id="ts134" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors-Marathi-WB-Transparent.png" group-title="Regional",Colors Marathi
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=134
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://127.0.0.1:8181//get-mpd.php?id=134|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts308" tvg-name="Colors Marathi HD" tvg-logo="http://127.0.0.1:5006/jtvimage/Colors_Marathi_HD.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Colors Marathi HD
-http://127.0.0.1:5006/live/755.m3u8
+#EXTINF:-1 tvg-id="ts308" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors-Marathi-HD-WB-Transparent.png" group-title="TV Shows",Colors Marathi HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=308
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://127.0.0.1:8181//get-mpd.php?id=308|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts469" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Star Pravah HD.png" group-title="All Marathi",Star Pravah HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -102,8 +110,12 @@ http://127.0.0.1:8181//get-mpd.php?id=1444|X-Forwarded-For=59.178.74.184&Origin=
 
 
 
-#EXTINF:-1 tvg-id=144 tvg-name="Colors HD" tvg-logo="http://192.168.1.101:5006/jtvimage/Colors_HD.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", Colors HD
-http://127.0.0.1:5006/live/144.m3u8
+#EXTINF:-1 tvg-id="ts52" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors HD.png" group-title="TV Shows",Colors HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=52
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://127.0.0.1:8181//get-mpd.php?id=52|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts8" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/STAR Plus HD.png" group-title="All Marathi",STAR Plus HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -210,17 +222,27 @@ http://127.0.0.1:8181//get-mpd.php?id=80|X-Forwarded-For=59.178.74.184&Origin=ht
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://127.0.0.1:8181//get-mpd.php?id=120|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts53" tvg-name="Colors Cineplex" tvg-logo="http://127.0.0.1:5006/jtvimage/Colors_Cineplex.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", Colors Cineplex
-http://127.0.0.1:5006/live/482.m3u8
+#EXTINF:-1 tvg-id="ts53" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors Cineplex.png" group-title="Movies",Colors Cineplex
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=53
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://127.0.0.1:8181//get-mpd.php?id=53|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts61" tvg-name="Colors Cineplex HD" tvg-logo="http://127.0.0.1:5006/jtvimage/Color_Cineplex_HD.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", Colors Cineplex HD
-http://127.0.0.1:5006/live/1477.m3u8
+#EXTINF:-1 tvg-id="ts61" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors Cineplex HD.png" group-title="Movies",Colors Cineplex HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=61
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://127.0.0.1:8181//get-mpd.php?id=61|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id=1450 tvg-name="Colors Cineplex Superhit" tvg-logo="http://127.0.0.1:5006/jtvimage/Rishtey_Cineplex.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", Colors Cineplex Superhit
-http://127.0.0.1:5006/live/1450.m3u8
 
-#EXTINF:-1 tvg-id="ts1000" tvg-name="Colors Cineplex Bollywood" tvg-logo="http://127.0.0.1:5006/jtvimage/Colors_Cineplex_Bollywood.png" tvg-language="Hindi" tvg-type="All Marathi" group-title="All Marathi", Colors Cineplex Bollywood
-http://127.0.0.1:5006/live/1763.m3u8
+#EXTINF:-1 tvg-id="ts1000" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors-Cineplex-Bollywood-Transparent.png" group-title="Movies",Colors Cineplex Bollywood
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=1000
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+http://127.0.0.1:8181//get-mpd.php?id=1000|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
 #EXTINF:-1 tvg-id="ts175" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/ZeeBollywood_Transparent_34fa29aa-d287-4003-9d8c-e766c5c7f413.png" group-title="All Marathi",Zee Bollywood
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -358,25 +380,6 @@ http://127.0.0.1:5006/live/492.m3u8
 #EXTINF:-1 tvg-id=255 tvg-name="NDTV 24x7" tvg-logo="http://127.0.0.1:5006/jtvimage/NDTV_24x7.png" tvg-language="English" tvg-type="All Marathi" group-title="All Marathi", NDTV 24x7
 http://127.0.0.1:5006/live/255.m3u8
 
-
-
-#EXTINF:-1 tvg-id="0-9-tvhd_0" group-title="Entertainment" tvg-logo="https://akamaividz2.zee5.com/image/upload/w_374,h_374,c_fill,f_webp,q_auto:eco/resources/0-9-tvhd_0/square/374x3748790ab6dd09442588cf081e4bed6a8e8",&TV HD
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36
-https://z5ak-cmaflive.zee5.com/cmaf/live/2105504/AndTVHDELE/index-connected.m3u8?hdntl=exp=1777012213~acl=%2f*~id=54d8a57c-6673-41c0-a39c-e23d27ebd6f8~data=hdntl~hmac=4f4959d200b4b4b66ff083a812973d9e87208824fb52088ba7eadb5d4a7d4b59
-
-
-
-#EXTINF:-1 tvg-id="Hungama" tvg-name="Hungama" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Hungama.png" group-title="Kids",Hungama
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-cookie=__hdnea__=st=1779132613~exp=1779154213~acl=/bpk-tv/Hungama_BTS/WDVLive/*~hmac=8a4488353a138196f3a83feede6d35a264f7f12f4535fa32a023623f9235de1c
-https://jiotvpllive.cdn.jio.com/bpk-tv/Hungama_BTS/WDVLive/index.mpd
-
-#EXTINF:-1 tvg-id="SuperHungama" tvg-name="Super Hungama" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Super_Hungama.png" group-title="Kids",Super Hungama
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-cookie=__hdnea__=st=1779132613~exp=1779154213~acl=/bpk-tv/Super_Hungama_BTS/WDVLive/*~hmac=b494457e694e8ab6d4fa9d45eef2ea712ff2cc156d7e6a606de1c2d856eb7654
-https://jiotvpllive.cdn.jio.com/bpk-tv/Super_Hungama_BTS/WDVLive/index.mpd
 
 
 
