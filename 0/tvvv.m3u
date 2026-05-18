@@ -1,10 +1,10 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
 
-#EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="http://127.0.0.1:5006/jtvimage/ABP_Majha.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", ABP Majha
-http://127.0.0.1:5006/live/612.m3u8
+#EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_Majha.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", ABP Majha
+https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/majha-livetv/master.m3u8
 
-#EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="http://127.0.0.1:5006/jtvimage/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", TV9 Marathi
-http://127.0.0.1:5006/live/617.m3u8
+#EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", TV9 Marathi
+https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/playlist.m3u8
 
 #EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="https://i.postimg.cc/ZqvcSG5j/SONY-MARATHI.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Sony Marathi
 https://cloudplay-sonyliv.pages.dev/marathi.php
@@ -387,18 +387,18 @@ http://127.0.0.1:5006/live/255.m3u8
 
 ///////////////////////////////////////////////
 
-#EXTINF:-1 tvg-id="ts546" tvg-name="Saam Tv" tvg-logo="http://127.0.0.1:5006/jtvimage/Saam_Tv.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Saam Tv
+#EXTINF:-1 tvg-id="ts546" tvg-name="Saam Tv" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Saam_Tv.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Saam Tv
 http://127.0.0.1:5006/live/691.m3u8
-#EXTINF:-1 tvg-id="ts1102" tvg-name="Pudhari News" tvg-logo="http://127.0.0.1:5006/jtvimage/Pudhari_News.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Pudhari News
+#EXTINF:-1 tvg-id="ts1102" tvg-name="Pudhari News" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Pudhari_News.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Pudhari News
 http://127.0.0.1:5006/live/2935.m3u8
-#EXTINF:-1 tvg-id="ts826" tvg-name="Lokshahi News" tvg-logo="http://127.0.0.1:5006/jtvimage/Lokshahi_News.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Lokshahi News
+#EXTINF:-1 tvg-id="ts826" tvg-name="Lokshahi News" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Lokshahi_News.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Lokshahi News
 http://127.0.0.1:5006/live/1293.m3u8
-#EXTINF:-1 tvg-id="ts140" tvg-name="News18 Lokmat" tvg-logo="http://127.0.0.1:5006/jtvimage/IBN_Lokmat.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", News18 Lokmat
-http://127.0.0.1:5006/live/232.m3u8
-#EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="http://127.0.0.1:5006/jtvimage/Zee_24_Taas.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Zee 24 Taas
-http://127.0.0.1:5006/live/442.m3u8
-#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="http://127.0.0.1:5006/jtvimage/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", NDTV Marathi
-http://127.0.0.1:5006/live/3095.m3u8
+#EXTINF:-1 tvg-id="ts140" tvg-name="News18 Lokmat" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/IBN_Lokmat.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", News18 Lokmat
+https://n18syndication.akamaized.net/bpk-tv/News18_Lokmat_NW18_MOB/output01/master.m3u8
+#EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_24_Taas.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Zee 24 Taas
+https://dgrvlduwztkd4.cloudfront.net/index_5.m3u8
+#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", NDTV Marathi
+https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/master_1.m3u8
 
 
 
