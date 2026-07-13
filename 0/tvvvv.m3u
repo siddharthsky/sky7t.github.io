@@ -13,6 +13,12 @@ https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/playlist.m3u8
 #KODIPROP:inputstream.adaptive.license_key=https://mix.drmlive.net/mix/allowipmpd_key.php?id=chlajabsdk
 https://mix.drmlive.net/mix/actchaljabsdk.mpd?token=VEZxdmhrQmRpTWxqUEdOYzhTeEFhaGtUc1JzQURjTW9YSE9KWkIyZEZtaUxnUFFoeTdTSktNWkVmYmxuN08zdDdlWER4a0hBR3BodksvQlo5NmlSd0M3Rm9qc0d3d1g3aGlrT29md1pmZDBSaXZCc0xLVkwybkpLdzM4ZHRTQmV1M29sdjdaNStEbFVQa01EUFFPVXNFZ0RmdUxheFJCRkgrWVo0M3RNRi94Y2lqa2xLbTFKNWt3bWRwZjUrN2RYMjkzTWdCb3I4aFVtUmUvSnJ0Qyt1UT09
 
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_key=https://mix.drmlive.net/mix/allowipmpd_key.php?id=chlajabsdk
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/d3Yf3PHX/DRMLIVE-Aggressive-Logo.png" group-title="2-Playlist-Activation",2 Activate Playlist
+https://mix.drmlive.net/mix/actchaljabsdk.mpd?token=VEZxdmhrQmRpTWxqUEdOYzhTeEFhaGtUc1JzQURjTW9YSE9KWkIyZEZtaUxnUFFoeTdTSktNWkVmYmxuN08zdDdlWER4a0hBR3BodksvQlo5NmlSd0M3Rm9qc0d3d1g3aGlrT29md1pmZDBSaXZCc0xLVkwybkpLdzM4ZHRTQmV1M29sdjdaNStEbFVQa01EUFFPVXNFZ0RmdUxheFJCRkgrWVo0M3RNRi94Y2lqa2xLbTFKNWt3bWRwZjUrN2RYMjkzTWdCb3I4aFVtUmUvSnJ0Qyt1UT09
+
 #EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="https://i.postimg.cc/ZqvcSG5j/SONY-MARATHI.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Sony Marathi
 https://la.drmlive.net/tp/sliv-marathi.m3u8
 
@@ -229,7 +235,7 @@ http://127.0.0.1:8181//get-mpd.php?id=148|X-Forwarded-For=59.178.74.184&Origin=h
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
 http://127.0.0.1:8181//get-mpd.php?id=267|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
 
-#EXTINF:-1 tvg-id="ts80" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-MAX-HD-Transparent.png" group-title="All Marathi", HD
+#EXTINF:-1 tvg-id="ts80" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/SONY-MAX-HD-Transparent.png" group-title="All Marathi", Sony Max HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=80
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
