@@ -4,36 +4,11 @@
 
 #EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
 
-
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_key=https://mix.drmlive.net/mix/allowipmpd_key.php?id=chlajabsdk
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/d3Yf3PHX/DRMLIVE-Aggressive-Logo.png" group-title="1-Playlist-Activation",Activate Playlist
-https://mix.drmlive.net/mix/actchaljabsdk.mpd?token=VEZxdmhrQmRpTWxqUEdOYzhTeEFhaGtUc1JzQURjTW9YSE9KWkIyZEZtaUxnUFFoeTdTSktNWkVmYmxuN08zdDdlWER4a0hBR3BodksvQlo5NmlSd0M3Rm9qc0d3d1g3aGlrT29md1pmZDBSaXZCc0xLVkwybkpLdzM4ZHRTQmV1M29sdjdaNStEbFVQa01EUFFPVXNFZ0RmdUxheFJCRkgrWVo0M3RNRi94Y2lqa2xLbTFKNWt3bWRwZjUrN2RYMjkzTWdCb3I4aFVtUmUvSnJ0Qyt1UT09
-
-
 #EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_Majha.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", ABP Majha
 https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/majha-livetv/master.m3u8
 
 #EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", TV9 Marathi
 https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9marlygv8h/liveabr/playlist.m3u8
-
-
-#EXTINF:-1 tvg-logo="https://i.ibb.co/XxVSTdsz/tx-ctx-engine-1.png" group-title="1-Playlist-Activation",Activate Playlist
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_key=https://mix.drmlive.net/mix/allowipmpd_key.php?id=chlajabsdk
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
-https://mix.drmlive.net/mix/actchaljabsdk.mpd?token=VEZxdmhrQmRpTWxqUEdOYzhTeEFhaGtUc1JzQURjTW9YSE9KWkIyZEZtaUxnUFFoeTdTSktNWkVmYmxuN08zdDdlWER4a0hBR3BodksvQlo5NmlSd0M3Rm9qc0d3d1g3aGlrT29md1pmZDBSaXZCc0xLVkwybkpLdzM4ZHRTQmV1M29sdjdaNStEbFVQa01EUFFPVXNFZ0RmdUxheFJCRkgrWVo0M3RNRi94Y2lqa2xLbTFKNWt3bWRwZjUrN2RYMjkzTWdCb3I4aFVtUmUvSnJ0Qyt1UT09
-
-
-
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_key=https://mix.drmlive.net/mix/allowipmpd_key.php?id=chlajabsdk
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/d3Yf3PHX/DRMLIVE-Aggressive-Logo.png" group-title="1-Playlist-Activation",Activate Playlist
-https://mix.drmlive.net/mix/actchaljabsdk.mpd?token=VEZxdmhrQmRpTWxqUEdOYzhTeEFhaGtUc1JzQURjTW9YSE9KWkIyZEZtaUxnUFFoeTdTSktNWkVmYmxuN08zdDdlWER4a0hBR3BodksvQlo5NmlSd0M3Rm9qc0d3d1g3aGlrT29md1pmZDBSaXZCc0xLVkwybkpLdzM4ZHRTQmV1M29sdjdaNStEbFVQa01EUFFPVXNFZ0RmdUxheFJCRkgrWVo0M3RNRi94Y2lqa2xLbTFKNWt3bWRwZjUrN2RYMjkzTWdCb3I4aFVtUmUvSnJ0Qyt1UT09
-
 
 #EXTINF:-1 tvg-id="ts658" tvg-name="Sony Marathi" tvg-logo="https://i.postimg.cc/ZqvcSG5j/SONY-MARATHI.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", Sony Marathi
 https://la.drmlive.net/tp/sliv-marathi.m3u8
