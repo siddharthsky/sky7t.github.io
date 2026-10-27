@@ -102,6 +102,11 @@ http://127.0.0.1:5006/live/695.m3u8
 
 ///////////////////////////////////////////////
 
+#EXTINF:-1 tvg-id="1125" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Gold.png" group-title="All Marathi",Star Gold
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1125
+https://jt.drmlive.net/jiotvplus/1125.mpd
+
 #EXTINF:-1 tvg-id="156" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Gold_HD.png" group-title="All Marathi",Star Gold HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=156
@@ -112,10 +117,6 @@ https://jt.drmlive.net/jiotvplus/156.mpd
 #KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1113
 https://jt.drmlive.net/jiotvplus/1113.mpd
 
-#EXTINF:-1 tvg-id="1125" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Gold.png" group-title="All Marathi",Star Gold
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1125
-https://jt.drmlive.net/jiotvplus/1125.mpd
 
 #EXTINF:-1 tvg-id="1154" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Gold_2.png" group-title="All Marathi",Star Gold 2
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -143,15 +144,24 @@ https://jt.drmlive.net/jiotvplus/3098.mpd
 #KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=2832
 https://jt.drmlive.net/jiotvplus/2832.mpd
 
+#EXTINF:-1 tvg-id="289" tvg-name="Sony Max SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sony_Max_SD.png" group-title="Movies", Sony Max SD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=289
+https://jt.drmlive.net/jiotvplus/289.mpd
+
+#EXTINF:-1 tvg-id="0-9-tvpictureshd" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-tvpictureshd/channel_list/1920x1080listead02d49416241ce89c60432d7b879a6.png" group-title="Movie", &Pictures HD
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+https://la.drmlive.net/tp/zee5/tvpictureshd/index.m3u8
+
+#EXTINF:-1 tvg-id="0-9-pictures" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-pictures/channel_list/1920x1080liste1864f84ee8f422e9a726e5fe401050c.png" group-title="Movie", &Pictures
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+https://la.drmlive.net/tp/zee5/pictures/index.m3u8
+
 #EXTINF:-1 tvg-id="476" tvg-name="Sony Max HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/SonyMAX.png" group-title="Movies", Sony Max HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=476
 https://jt.drmlive.net/jiotvplus/476.mpd
 
-#EXTINF:-1 tvg-id="289" tvg-name="Sony Max SD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sony_Max_SD.png" group-title="Movies", Sony Max SD
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=289
-https://jt.drmlive.net/jiotvplus/289.mpd
 
 #EXTINF:-1 tvg-id="3418" tvg-name="Sony MAX1" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/SonyMAX1.png" group-title="Movies", Sony MAX1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -168,13 +178,7 @@ https://jt.drmlive.net/jiotvplus/2834.mpd
 #KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=483
 https://jt.drmlive.net/jiotvplus/483.mpd
 
-#EXTINF:-1 tvg-id="0-9-tvpictureshd" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-tvpictureshd/channel_list/1920x1080listead02d49416241ce89c60432d7b879a6.png" group-title="Movie", &Pictures HD
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
-https://la.drmlive.net/tp/zee5/tvpictureshd/index.m3u8
 
-#EXTINF:-1 tvg-id="0-9-pictures" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-pictures/channel_list/1920x1080liste1864f84ee8f422e9a726e5fe401050c.png" group-title="Movie", &Pictures
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
-https://la.drmlive.net/tp/zee5/pictures/index.m3u8
 
 
 #EXTINF:-1 tvg-id="ts52" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/Colors HD.png" group-title="TV Shows",Colors HD
