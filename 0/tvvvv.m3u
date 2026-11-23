@@ -213,8 +213,6 @@ https://mix.drmlive.net/mix/xiaomi-66406.m3u8
 #EXTINF:-1 tvg-id="66408" tvg-logo="https://cdn.alsgp0.fds.api.mi-img.com/mitv/tv_plus/channel/0/1da6f1c1496682ae5690b9f578fab7ad.webp" group-title="xiaomitvplus-Unknown", Zee South flix
 https://mix.drmlive.net/mix/xiaomi-66408.m3u8
 
-#EXTINF:-1 tvg-id="66405" tvg-logo="https://cdn.alsgp0.fds.api.mi-img.com/mitv/tv_plus/channel/0/3d0dbfd26c9982bd2cc54aac362b5093.webp" group-title="xiaomitvplus-Unknown", ZEE Horror Nights
-https://mix.drmlive.net/mix/xiaomi-66405.m3u8
 
 
 
@@ -240,13 +238,15 @@ https://jt.drmlive.net/jiotvplus/1132.mpd
 #KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=167
 https://jt.drmlive.net/jiotvplus/167.mpd
 
-
-#EXTINF:-1 tvg-id="ts40" tvg-logo="https://dvdh7g0f0hwck.cloudfront.net/assets/images/channel/&tvHD_Transparent_9e6d03b7-b1cb-4db1-a57e-26c028e8504d.png" group-title="All Marathi",&tv HD
+#EXTINF:-1 tvg-id="291" tvg-name="SET HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sony_HD.png" group-title="Entertainment", SET HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=https://tp.drmlive-01.workers.dev?id=40
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
-http://127.0.0.1:8181//get-mpd.php?id=40|X-Forwarded-For=59.178.74.184&Origin=https://watch.tataplay.com&Referer=https://watch.tataplay.com/
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=291
+https://jt.drmlive.net/jiotvplus/291.mpd
+
+
+#EXTINF:-1 tvg-id="0-9-tvhd_0" tvg-logo="https://akamaividz2.zee5.com/image/upload/resources/0-9-tvhd_0/channel_list/1920x1080list8cecf80ef6884ff09063a5abd21f81d6.png" group-title="Entertainment", &TV HD
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+https://la.drmlive.net/tp/zee5/tvhd_0/index.m3u8
 
 #EXTINF:-1 tvg-id="471" tvg-name="Sony SAB HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/SonySAB.png" group-title="Entertainment", Sony SAB HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
