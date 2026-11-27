@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/epg.xml.gz"
 
-#EXTINF:-1 tvg-id="ts155" tvg-name="ABP Majha" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_Majha.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", ABP Majha
+#EXTINF:-1 tvg-id="612" tvg-name="ABP Majha" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_Majha.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", ABP Majha
 https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/majha-livetv/master.m3u8
 
 #EXTINF:-1 tvg-id="ts97" tvg-name="TV9 Marathi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Maharashtra.png" tvg-language="Marathi" tvg-type="All Marathi" group-title="All Marathi", TV9 Marathi
@@ -385,7 +385,7 @@ http://127.0.0.1:5006/live/mpd/1293
 https://n18syndication.akamaized.net/bpk-tv/News18_Lokmat_NW18_MOB/output01/master.m3u8
 #EXTINF:-1 tvg-id="ts261" tvg-name="Zee 24 Taas" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_24_Taas.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", Zee 24 Taas
 https://dgrvlduwztkd4.cloudfront.net/index_5.m3u8
-#EXTINF:-1 tvg-id=3095 tvg-name="NDTV Marathi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", NDTV Marathi
+#EXTINF:-1 tvg-id="3095" tvg-name="NDTV Marathi" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_Marathi.png" tvg-language="Marathi" tvg-type="  Marathi" group-title="All Marathi", NDTV Marathi
 https://web-ndtv-marathi.akamaized.net/hls/live/2110470/ndtvmarathi/master_1.m3u8
 
 
